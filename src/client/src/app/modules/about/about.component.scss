@@ -1,10 +1,45 @@
 :host {
-  overflow: auto;
-  display: block;
   position: relative;
-  top: 0;
-  left: 0;
   z-index: 0;
-  color: white;
-  padding: 2rem;
+  display: block;
+}
+
+section {
+  background-position: center;
+  height: 100vh;
+  min-height: 80rem;
+  max-height: 120rem;
+  position: relative;
+}
+
+.about-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90rem;
+  width: 90%;
+
+  h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #e4e4e4;
+    font-weight: 800;
+  }
+}
+
+.info {
+  margin: 3rem auto 0 auto;
+  max-width: 80rem;
+}
+
+.text {
+  color: #cfcfcf;
+  opacity: 0.9;
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  line-height: 2;
 }
