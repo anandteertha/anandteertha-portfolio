@@ -1,0 +1,30 @@
+<section>
+    <div class="main-container">
+        <div class="title">
+            <h1 class="heading-main">Work Experience</h1>
+        </div>
+        <div class="content">
+            <div class="content-container" *ngFor="let entity of workExperience">
+                <div class="logo">
+                    <img [src]="entity.logoPath" [alt]="entity.logoPath">
+                </div>
+                <div class="main">
+                    <div class="header">
+                        <div class="header-details">
+                            <h1>{{entity.name}} | {{entity.role}}</h1>
+                        </div>
+                        <div class="header-duration">
+                            <small><i>{{entity.from}} - {{entity.to}}</i></small>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p class="text-description">{{entity.description}}</p>
+                    </div>
+                    <div class="skills">
+                        <span class="skill" *ngFor="let skill of entity.skills">{{skill}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

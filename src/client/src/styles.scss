@@ -8,6 +8,7 @@ body {
     font-family: "Source Sans Pro", sans-serif;
     font-size: 62.5%;
     scroll-behavior: smooth;
+    color: #ffffff;
 }
 
 canvas {
@@ -25,6 +26,113 @@ canvas {
 a {
     text-decoration: none;
 }
+
+.main-container {
+    max-width: 90rem;
+    width: 90%;
+    margin: auto;
+    position: relative;
+}
+
+h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #e4e4e4;
+    font-weight: 800;
+}
+
+.title {
+    height: 5rem;
+    max-height: 10%;
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 600;
+    }
+
+    ::after {
+        content: '';
+        position: absolute;
+        height: 5px;
+        width: 4rem;
+        background: #FFD700;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        top: 90%;
+    }
+
+}
+
+.main-container {
+    font-size: 1.5rem;
+    text-align: left;
+
+    .content {
+        position: absolute;
+        top: 200%;
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .header {
+            .header-details {
+                h1 {
+                    font-size: 2rem;
+                    text-align: left;
+                }
+            }
+
+            .header-duration {
+                small {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        .logo {
+            img {
+                width: 15rem;
+                height: 15rem;
+                border-radius: 10rem;
+            }
+
+            margin: 1rem;
+            padding-right: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            .skill {
+                display: block;
+                margin: 1rem 2rem;
+                padding: 1rem 1rem;
+                background-color:   rgba(153,153,153,0.2);
+                border-radius: 5px;
+            }
+        }
+
+    }
+}
+
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: inherit;
+}
+
+
+
 
 ::-webkit-scrollbar {
     width: 4px;
