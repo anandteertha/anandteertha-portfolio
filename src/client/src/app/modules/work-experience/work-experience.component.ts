@@ -22,7 +22,7 @@ export class WorkExperienceComponent {
     },
     {
       name: 'Outrider.live',
-      description: ["Integrated Google Maps Drawing API to display live salesman locations and building backend APIs for seamless data exchange. Oversaw task assignments, conducted code reviews, and coordinated directly with stakeholders to translate business requirements into technical solutions."],
+      description: ["Integrated Google Maps Drawing API to display live salesman locations and building backend APIs for seamless data exchange.", "Oversaw task assignments, conducted code reviews, and coordinated directly with stakeholders to translate business requirements into technical solutions."],
       from: '3rd September 2020',
       to: '19th June 2021',
       skills: ["NodeJS", "JavaScript", "Socket.io", "HTML", "CSS", "Github", "Scrum Master", "Leadership"],

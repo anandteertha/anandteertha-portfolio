@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     <div class="description">
-                        <ul *ngIf="entity.description.length > 1" ;else simpleDescription>
+                        <ul *ngIf="entity.description.length > 1 ;else simpleDescription">
                             <li class="text-description" *ngFor="let point of entity.description">
                                 {{point}}
                             </li>
