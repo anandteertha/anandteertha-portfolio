@@ -6,4 +6,5 @@ export interface IContainerTemplate {
     skills: string[];
     logoPath: string;
     role: string;
+    id?: string;
 }

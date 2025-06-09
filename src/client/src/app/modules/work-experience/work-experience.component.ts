@@ -19,6 +19,16 @@ export class WorkExperienceComponent {
       skills: ["TypeScript", "JavaScript", "Angular", "Three.Js", "Python", ".NET", "HTML", "CSS", "AWS", "GIT", "Gitlab", "JIRA"],
       logoPath: 'assets/chemelex.png',
       role: 'Full Stack Developer'
+    },
+    {
+      name: 'Outrider.live',
+      description: ["Integrated Google Maps Drawing API to display live salesman locations and building backend APIs for seamless data exchange. Oversaw task assignments, conducted code reviews, and coordinated directly with stakeholders to translate business requirements into technical solutions."],
+      from: '3rd September 2020',
+      to: '19th June 2021',
+      skills: ["NodeJS", "JavaScript", "Socket.io", "HTML", "CSS", "Github", "Scrum Master", "Leadership"],
+      logoPath: 'assets/outrider.png',
+      role: 'Software developer Intern',
+      id: 'fitImage'
     }
   ];
 

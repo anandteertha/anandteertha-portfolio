@@ -6,7 +6,7 @@
         <div class="content">
             <div class="content-container" *ngFor="let entity of workExperience">
                 <div class="logo">
-                    <img [src]="entity.logoPath" [alt]="entity.logoPath">
+                    <img [id]="entity.id ?? ''" [src]="entity.logoPath" [alt]="entity.logoPath">
                 </div>
                 <div class="main">
                     <div class="header">
@@ -18,11 +18,14 @@
                         </div>
                     </div>
                     <div class="description">
-                        <ul>
+                        <ul *ngIf="entity.description.length > 1" ;else simpleDescription>
                             <li class="text-description" *ngFor="let point of entity.description">
                                 {{point}}
                             </li>
                         </ul>
+                        <ng-template #simpleDescription>
+                            <p>{{entity.description[0]}}</p>
+                        </ng-template>
                     </div>
                     <div class="skills">
                         <span class="skill" *ngFor="let skill of entity.skills">{{skill}}</span>
