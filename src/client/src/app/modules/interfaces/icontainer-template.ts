@@ -1,6 +1,6 @@
 export interface IContainerTemplate {
     name: string;
-    description: string;
+    description: string[];
     from: string;
     to: string;
     skills: string[];

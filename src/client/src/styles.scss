@@ -123,6 +123,13 @@ h1 {
     }
 }
 
+@media only screen and (max-width: 37.5em) {
+    .content-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 ::after,
 ::before {
     margin: 0;

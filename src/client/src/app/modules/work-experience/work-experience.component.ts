@@ -13,7 +13,7 @@ export class WorkExperienceComponent {
   workExperience: IContainerTemplate[] = [
     {
       name: 'Raychem (Chemelex)',
-      description: 'Built and maintained full-stack applications using Angular, .NET, and Python. Led the development of a smart Python code editor and deployed it on AWS Lambda, allowing users to run custom scripts safely. Worked on a 3D piping system renderer using Three.js and .NET-based file parsers.',
+      description: ["Led the development of a smart Python code editor, allowing users to run custom scripts securely.", "Worked on a 3D piping system renderer."],
       from: '5th July 2022',
       to: '1st April 2025',
       skills: ["TypeScript", "JavaScript", "Angular", "Three.Js", "Python", ".NET", "HTML", "CSS", "AWS", "GIT", "Gitlab", "JIRA"],

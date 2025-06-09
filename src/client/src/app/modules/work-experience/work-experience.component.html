@@ -18,7 +18,11 @@
                         </div>
                     </div>
                     <div class="description">
-                        <p class="text-description">{{entity.description}}</p>
+                        <ul>
+                            <li class="text-description" *ngFor="let point of entity.description">
+                                {{point}}
+                            </li>
+                        </ul>
                     </div>
                     <div class="skills">
                         <span class="skill" *ngFor="let skill of entity.skills">{{skill}}</span>
