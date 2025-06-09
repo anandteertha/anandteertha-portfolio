@@ -111,11 +111,12 @@ h1 {
         .skills {
             display: flex;
             flex-wrap: wrap;
+
             .skill {
                 display: block;
                 margin: 1rem 2rem;
                 padding: 1rem 1rem;
-                background-color:   rgba(153,153,153,0.2);
+                background-color: rgba(153, 153, 153, 0.2);
                 border-radius: 5px;
             }
         }
@@ -127,6 +128,14 @@ h1 {
     .content-container {
         display: flex;
         flex-direction: column;
+        .logo {
+            padding-right: 0 !important;
+            img {
+                width: 30rem !important;
+                height: 30rem !important;
+                border-radius: 15rem !important;
+            }
+        }
     }
 }
 
