@@ -11,7 +11,8 @@
                 <div class="main">
                     <div class="header">
                         <div class="header-details">
-                            <h1>{{entity.name}} | {{entity.role}}</h1>
+                            <h1 *ngIf="!!entity.role;else displayName">{{entity.name}} | {{entity.role}}</h1>
+                            <ng-template #displayName><h1>{{entity.name}}</h1></ng-template>
                         </div>
                         <div class="header-duration">
                             <small><i>{{entity.from}} - {{entity.to}}</i></small>

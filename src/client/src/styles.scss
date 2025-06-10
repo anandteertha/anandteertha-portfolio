@@ -45,6 +45,7 @@ h1 {
 
 .title {
     height: 5rem;
+    margin-top: 5rem;
     max-height: 10%;
 
     h1 {
@@ -61,7 +62,7 @@ h1 {
         left: 50%;
         transform: translateX(-50%);
         border-radius: 5px;
-        top: 90%;
+        top: 50px;
     }
 
 }
@@ -71,8 +72,7 @@ h1 {
     text-align: left;
 
     .content {
-        position: absolute;
-        top: 200%;
+        margin-top: 5rem;
 
         .content-container {
             display: flex;
@@ -84,12 +84,14 @@ h1 {
                 h1 {
                     font-size: 2rem;
                     text-align: left;
+                    font-style: bold;
                 }
             }
 
             .header-duration {
                 small {
                     font-size: 1.3rem;
+                    font-style: italic;
                 }
             }
         }
@@ -135,8 +137,10 @@ h1 {
     .content-container {
         display: flex;
         flex-direction: column;
+
         .logo {
             padding-right: 0 !important;
+
             img {
                 width: 30rem !important;
                 height: 30rem !important;
