@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
+import { WorkProjectEntityComponent } from "../work-project-entity/work-project-entity.component";
 import { IContainerTemplate } from '../interfaces/icontainer-template';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-work-experience',
-  imports: [CommonModule],
+  imports: [WorkProjectEntityComponent],
   templateUrl: './work-experience.component.html',
   styleUrl: './work-experience.component.scss'
 })
 export class WorkExperienceComponent {
-
+  title: string = "Work Experience";
   workExperience: IContainerTemplate[] = [
     {
       name: 'Raychem (Chemelex)',
