@@ -1,4 +1,4 @@
 export enum WorkType {
-    Project = "Project",
+    Projects = "Projects",
     WorkExperience = "Work Experience"
 }

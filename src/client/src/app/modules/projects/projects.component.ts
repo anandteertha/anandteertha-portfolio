@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { WorkProjectEntityComponent } from "../work-project-entity/work-project-entity.component";
 import { IContainerTemplate } from '../interfaces/icontainer-template';
+import { WorkType } from '../enums/work-type';
 
 @Component({
   selector: 'app-projects',
@@ -9,7 +10,7 @@ import { IContainerTemplate } from '../interfaces/icontainer-template';
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
-  title: string = "Projects";
+  title: string = WorkType.Projects;
   projects: IContainerTemplate[] = [
     {
       name: 'Faculty Attendance System',

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { WorkProjectEntityComponent } from "../work-project-entity/work-project-entity.component";
 import { IContainerTemplate } from '../interfaces/icontainer-template';
+import { WorkType } from '../enums/work-type';
 
 @Component({
   selector: 'app-work-experience',
@@ -9,7 +10,7 @@ import { IContainerTemplate } from '../interfaces/icontainer-template';
   styleUrl: './work-experience.component.scss'
 })
 export class WorkExperienceComponent {
-  title: string = "Work Experience";
+  title: string = WorkType.WorkExperience;
   workExperience: IContainerTemplate[] = [
     {
       name: 'Raychem (Chemelex)',
