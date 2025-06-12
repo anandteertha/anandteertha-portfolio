@@ -13,6 +13,15 @@ export class ProjectsComponent {
   title: string = WorkType.Projects;
   projects: IContainerTemplate[] = [
     {
+      name: 'Lung Capacity Check',
+      description: ['Developed an IoT-based system to measure human lung capacity using airflow sensors.', 'The device captures real-time breathing data and transmits it to the app for analysis and visualization.', 'Designed for low-cost health screening, especially in remote or resource-limited settings.'],
+      from: 'November 2021',
+      to: 'April 2022',
+      skills: ['IOT', 'Arduino', 'sockets', 'Java', 'Android App Development', 'UI/UX', 'Deep Learning', 'Tensorflow', 'Python'],
+      logoPath: 'assets/lung-capacity-check.png',
+      role: 'IOT & App Developer'
+    },
+    {
       name: 'Faculty Attendance System',
       description: ['A smart faculty attendance system using facial recognition, geofencing, and secure Node.js backend, enabling one-click attendance with fraud prevention. Published in the Turkish Journal of Computer and Mathematics.'],
       from: 'January 2021',
