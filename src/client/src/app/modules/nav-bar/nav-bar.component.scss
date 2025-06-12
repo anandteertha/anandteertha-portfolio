@@ -3,8 +3,6 @@ header {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 10px 100px rgba(101, 100, 100, 0.1);
-    // background-color:   #FBF5E5;
-    // color: black;
 }
 
 .header-content {
@@ -22,7 +20,6 @@ header {
     display: flex;
     align-items: center;
     cursor: pointer;
-    // color: black;
     transition: color .3s;
 
     .image-container {
@@ -79,5 +76,8 @@ header {
 @media only screen and (max-width: 37.5em) {
     .links {
         display: none;
+    }
+    .header-content {
+        background-color: black;
     }
 }
