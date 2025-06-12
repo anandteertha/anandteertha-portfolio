@@ -8,7 +8,7 @@ body {
     font-family: "Source Sans Pro", sans-serif;
     font-size: 62.5%;
     scroll-behavior: smooth;
-    color: #ffffff;
+    color: #FBF5E5;
 }
 
 canvas {
@@ -30,11 +30,9 @@ a {
 .seperator {
     width: 90%;
     height: 0.1rem;
-    background-color: #e4e4e4;
+    background-color: #FBF5E5;
     opacity: 0.3;
     margin: 10rem auto;
-    // position: relative;
-    // top: 100px;
 }
 
 .main-container {
@@ -49,7 +47,7 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 3px;
     text-align: center;
-    color: #e4e4e4;
+    color: #FBF5E5;
     font-weight: 800;
 }
 
@@ -68,7 +66,7 @@ h1 {
         position: absolute;
         height: 5px;
         width: 4rem;
-        background: #FFD700;
+        background: #C890A7;
         left: 50%;
         transform: translateX(-50%);
         border-radius: 5px;
