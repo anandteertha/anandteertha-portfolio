@@ -19,7 +19,7 @@ export class ProjectsComponent {
       to: 'May 2021',
       skills: ['Facial Recognition', 'Python', 'OpenCV', 'Node.js', 'REST APIs', 'Geofencing', 'Haversine Formula', 'Authentication & Authorization', 'Research & Technical Writing'],
       logoPath: 'assets/faculty-attendance.png',
-      role: ''
+      role: 'Full Stack Developer'
     },
     {
       name: 'Crowd Counting',
@@ -28,7 +28,7 @@ export class ProjectsComponent {
       to: 'April 2021',
       skills: ['Python', 'YOLO (You Only Look Once)', 'OpenCV', 'Flask', 'Real-time Video Processing', 'Multithreading', 'Data Visualization',],
       logoPath: 'assets/crowd-counting.png',
-      role: ''
+      role: 'Full Stack Developer'
     },
     {
       name: 'Gym Manager Application',
@@ -37,7 +37,7 @@ export class ProjectsComponent {
       to: 'January 2021',
       skills: ['NodeJS', 'Socket.io', 'HTML', 'CSS', 'EJS', 'MVC', 'Express JS', 'Stripe', 'MySQL'],
       logoPath: 'assets/gym-manager-application.png',
-      role: ''
+      role: 'Full Stack Developer'
     },
   ];
 
