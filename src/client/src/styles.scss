@@ -8,6 +8,7 @@ body {
     font-family: "Source Sans Pro", sans-serif;
     font-size: 62.5%;
     scroll-behavior: smooth;
+    color: #FBF5E5;
 }
 
 canvas {
@@ -25,6 +26,148 @@ canvas {
 a {
     text-decoration: none;
 }
+
+.seperator {
+    width: 90%;
+    height: 0.1rem;
+    background-color: #FBF5E5;
+    opacity: 0.3;
+    margin: 10rem auto;
+}
+
+.main-container {
+    max-width: 95rem;
+    width: 90%;
+    margin: auto;
+    position: relative;
+}
+
+h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #FBF5E5;
+    font-weight: 800;
+}
+
+.title {
+    height: 5rem;
+    margin-top: 5rem;
+    max-height: 10%;
+
+    h1 {
+        font-size: 3.5rem;
+        font-weight: 600;
+    }
+
+    ::after {
+        content: '';
+        position: absolute;
+        height: 5px;
+        width: 4rem;
+        background: #C890A7;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        top: 50px;
+    }
+
+}
+
+.main-container {
+    font-size: 1.5rem;
+    text-align: left;
+
+    .content {
+        margin-top: 5rem;
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .header {
+            .header-details {
+                h1 {
+                    font-size: 2rem;
+                    text-align: left;
+                    font-style: bold;
+                }
+            }
+
+            .header-duration {
+                small {
+                    font-size: 1.3rem;
+                    font-style: italic;
+                }
+            }
+        }
+
+        .logo {
+            img {
+                width: 20rem;
+                height: 20rem;
+                display: block;
+                background: #F1F1F2;
+                padding: 1rem;
+                border-radius: 15rem;
+            }
+
+            #fitImage {
+                object-fit: contain;
+            }
+
+            margin: 1rem;
+            padding-right: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+
+            .skill {
+                display: block;
+                margin: 1rem 2rem;
+                padding: 1rem 1rem;
+                background-color: rgba(153, 153, 153, 0.2);
+                border-radius: 5px;
+            }
+        }
+
+    }
+}
+
+@media only screen and (max-width: 37.5em) {
+    .content-container {
+        display: flex;
+        flex-direction: column;
+
+        .logo {
+            padding-right: 0 !important;
+
+            img {
+                width: 30rem !important;
+                height: 30rem !important;
+                border-radius: 20rem !important;
+            }
+        }
+    }
+}
+
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: inherit;
+}
+
+
+
 
 ::-webkit-scrollbar {
     width: 4px;
