@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
-import { IContainerTemplate } from '../interfaces/icontainer-template';
-import { CommonModule } from '@angular/common';
 import { camelCase } from 'lodash';
-import { WorkType } from '../enums/work-type';
+
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { WorkType } from '@modules/enums/work-type';
+import { IContainerTemplate } from '@modules/interfaces/icontainer-template';
 
 @Component({
   selector: 'app-work-project-entity',

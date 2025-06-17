@@ -1,17 +1,13 @@
 import { Component } from '@angular/core';
-import { BackgroundComponent } from "./modules/background/background.component";
-import { AboutComponent } from "./modules/about/about.component";
-import { NavBarComponent } from "./modules/nav-bar/nav-bar.component";
-import { WorkExperienceComponent } from "./modules/work-experience/work-experience.component";
-import { ProjectsComponent } from "./modules/projects/projects.component";
-import { ContactComponent } from "./modules/contact/contact.component";
+import { RouterOutlet } from '@angular/router';
+import { BackgroundComponent } from '@modules/background/background.component';
+import { ContactComponent } from '@modules/contact/contact.component';
+import { NavBarComponent } from '@modules/nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [BackgroundComponent, AboutComponent, NavBarComponent, WorkExperienceComponent, ProjectsComponent, ContactComponent],
+  imports: [BackgroundComponent, NavBarComponent, ContactComponent, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'client';
-}
+export class AppComponent {}

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { WorkProjectEntityComponent } from "../work-project-entity/work-project-entity.component";
-import { IContainerTemplate } from '../interfaces/icontainer-template';
-import { WorkType } from '../enums/work-type';
+import { WorkType } from '@modules/enums/work-type';
+import { IContainerTemplate } from '@modules/interfaces/icontainer-template';
+import {
+    WorkProjectEntityComponent
+} from '@modules/work-project-entity/work-project-entity.component';
 
 @Component({
   selector: 'app-projects',
