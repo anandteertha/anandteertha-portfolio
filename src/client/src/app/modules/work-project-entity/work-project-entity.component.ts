@@ -6,18 +6,21 @@ import { Router } from '@angular/router';
 import { WorkType } from '@modules/enums/work-type';
 import { IContainerTemplate } from '@modules/interfaces/icontainer-template';
 
+import {
+    WorkProjectTemplateComponent
+} from '../work-project-template/work-project-template.component';
+
 @Component({
   selector: 'app-work-project-entity',
-  imports: [CommonModule],
+  imports: [CommonModule, WorkProjectTemplateComponent],
   templateUrl: './work-project-entity.component.html',
   styleUrl: './work-project-entity.component.scss'
 })
 export class WorkProjectEntityComponent {
-
   @Input() title: string = "";
   @Input() entities: IContainerTemplate[] = [];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   get id(): string {
     return camelCase(this.title);
