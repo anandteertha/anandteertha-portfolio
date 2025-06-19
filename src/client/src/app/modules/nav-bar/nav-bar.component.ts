@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './nav-bar.component.scss'
 })
 export class NavBarComponent {
+  constructor(private router: Router) {}
+  routeTo(url: string): void {
+    console.log(url)
+    this.router.navigate([`/${url}`])
+  }
 
 }

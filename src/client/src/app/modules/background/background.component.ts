@@ -1,5 +1,9 @@
+import {
+    AdditiveBlending, AmbientLight, BufferGeometry, Float32BufferAttribute, MathUtils,
+    PerspectiveCamera, Points, PointsMaterial, Scene, Texture, TextureLoader, WebGLRenderer
+} from 'three';
+
 import { Component, OnInit } from '@angular/core';
-import { AdditiveBlending, AmbientLight, BufferGeometry, Float32BufferAttribute, MathUtils, PerspectiveCamera, Points, PointsMaterial, Scene, Texture, TextureLoader, WebGLRenderer } from 'three';
 
 @Component({
   selector: 'app-background',

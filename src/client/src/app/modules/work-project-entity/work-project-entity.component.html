@@ -3,37 +3,8 @@
         <div class="title">
             <h1 class="heading-main">{{title}}</h1>
         </div>
-        <div class="content">
-            <div class="content-container" *ngFor="let entity of entities">
-                <div class="logo">
-                    <img [id]="entity.id ?? ''" [src]="entity.logoPath" [alt]="entity.logoPath">
-                </div>
-                <div class="main">
-                    <div class="header">
-                        <div class="header-details">
-                            <h1 *ngIf="!!entity.role;else displayName">{{entity.name}} | {{entity.role}}</h1>
-                            <ng-template #displayName><h1>{{entity.name}}</h1></ng-template>
-                        </div>
-                        <div class="header-duration">
-                            <small><i>{{entity.from}} - {{entity.to}}</i></small>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <ul *ngIf="entity.description.length > 1 ;else simpleDescription">
-                            <li class="text-description" *ngFor="let point of entity.description">
-                                {{point}}
-                            </li>
-                        </ul>
-                        <ng-template #simpleDescription>
-                            <p>{{entity.description[0]}}</p>
-                        </ng-template>
-                    </div>
-                    <div class="skills">
-                        <span class="skill" *ngFor="let skill of entity.skills">{{skill}}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <app-work-project-template *ngFor="let entity of entities" [entity]="entity" [description]="entity.description"
+            (redirectToEvent)="redirectTo(entity)"></app-work-project-template>
     </div>
 </section>
 <div class="seperator" *ngIf="isDisplaySeperator()"></div>

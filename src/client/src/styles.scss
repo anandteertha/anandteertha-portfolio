@@ -85,6 +85,7 @@ h1 {
         .content-container {
             display: flex;
             justify-content: center;
+            cursor: pointer;
         }
 
         .header {
@@ -141,7 +142,60 @@ h1 {
     }
 }
 
+.standalone-container {
+    max-width: 100%;
+    display: block;
+    .content {
+        margin-top: 15rem;
+
+        .content-container {
+            cursor: default;
+        }
+
+        .header {
+            .header-details {
+                h1 {
+                    font-size: 4rem;
+                    text-align: left;
+                    font-style: bold;
+                }
+            }
+
+            .header-duration {
+                small {
+                    font-size: 2rem;
+                    font-style: italic;
+                }
+            }
+        }
+
+        img {
+            width: 40rem !important;
+            height: 40rem !important;
+            border-radius: 25rem !important;
+        }
+
+        .skill {
+            margin: 1rem 2rem !important;
+            padding: 1.5rem 2rem !important;
+            border-radius: 1.5rem !important;
+            font-size: 2.5rem;
+        }
+
+        .description {
+            font-size: 2rem;
+            line-height: 3rem;
+        }
+    }
+}
+
 @media only screen and (max-width: 37.5em) {
+    .standalone-container {
+        .content {
+            margin-top: 10rem !important;
+        }
+    }
+
     .content-container {
         display: flex;
         flex-direction: column;
@@ -154,6 +208,32 @@ h1 {
                 height: 30rem !important;
                 border-radius: 20rem !important;
             }
+        }
+
+        .description {
+            font-size: inherit !important;
+            line-height: inherit !important;
+        }
+
+        .header {
+            .header-details {
+                h1 {
+                    font-size: 2rem !important;
+                }
+            }
+
+            .header-duration {
+                small {
+                    font-size: 1.3rem !important;
+                }
+            }
+        }
+
+        .skill {
+            font-size: inherit !important;
+            margin: 1rem 2rem !important;
+            padding: 1rem 1rem !important;
+            border-radius: 5px !important;
         }
     }
 }
