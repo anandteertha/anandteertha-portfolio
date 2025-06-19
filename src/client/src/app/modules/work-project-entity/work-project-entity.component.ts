@@ -5,10 +5,9 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { WorkType } from '@modules/enums/work-type';
 import { IContainerTemplate } from '@modules/interfaces/icontainer-template';
-
 import {
     WorkProjectTemplateComponent
-} from '../work-project-template/work-project-template.component';
+} from '@modules/work-project-template/work-project-template.component';
 
 @Component({
   selector: 'app-work-project-entity',
