@@ -1,5 +1,5 @@
 <div class="main-container standalone-container">
-    <app-work-project-template [entity]="queryDetails.container" [description]="queryDetails.desccription"></app-work-project-template>
+    <app-work-project-template [entity]="queryDetails.container" [description]="queryDetails.description" [isDetailed]="true"></app-work-project-template>
     <div class="carousel" *ngIf="queryDetails.carousel.length > 0">
         <div class="image-container fade" *ngFor="let imagePath of queryDetails.carousel; index as index"
             [ngStyle]="imageIndex === (index + 1)?{'display': 'block'}:{'display': 'none'}">

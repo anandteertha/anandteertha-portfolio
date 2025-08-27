@@ -29,5 +29,8 @@
                 <span class="skill" *ngFor="let skill of entity.skills" [title]="skill">{{skill}}</span>
             </div>
         </div>
+        <div class="redict-button" *ngIf="!isDetailed">
+            <button>View more..</button>
+        </div>
     </div>
 </div>

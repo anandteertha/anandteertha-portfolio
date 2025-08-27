@@ -11,6 +11,7 @@ import { IContainerTemplate } from '@modules/interfaces/icontainer-template';
 export class WorkProjectTemplateComponent {
   @Input() entity!: IContainerTemplate;
   @Input() description: string[] = [];
+  @Input() isDetailed: boolean = false;
   @Output() redirectToEvent: EventEmitter<IContainerTemplate> = new EventEmitter<IContainerTemplate>();
 
   redirectTo(entity: IContainerTemplate): void {

@@ -1,0 +1,22 @@
+.logo {
+    flex: 1 1 20%
+}
+
+.main {
+    flex: 1 1 70%
+}
+
+.redict-button {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+
+    button {
+        cursor: pointer;
+        width: 20rem;
+        height: 3rem;
+        border-radius: 3rem;
+    }
+}

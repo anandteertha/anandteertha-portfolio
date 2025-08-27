@@ -11,7 +11,7 @@ export class EntityProxyMapper {
             name: EntityName.raychem,
             type: WorkType.WorkExperience,
             carousel: this.getCarousel(EntityName.raychem, 'jpg', 10),
-            desccription: this.raychemDescription(),
+            description: this.raychemDescription(),
             comments: [],
             container: this.raychemContainer()
         },
@@ -19,7 +19,7 @@ export class EntityProxyMapper {
             name: EntityName.outrider,
             type: WorkType.WorkExperience,
             carousel: this.getCarousel(EntityName.outrider, 'jpg', 1),
-            desccription: this.outriderDescription(),
+            description: this.outriderDescription(),
             comments: [],
             container: this.outriderContainer()
         },
@@ -27,7 +27,7 @@ export class EntityProxyMapper {
             name: EntityName.lungCapacityCheck,
             type: WorkType.Projects,
             carousel: this.getCarousel(EntityName.lungCapacityCheck, 'png', 4),
-            desccription: this.lungCapacityCheckDescription(),
+            description: this.lungCapacityCheckDescription(),
             comments: [],
             container: this.lungCapacityCheckContainer()
         },
@@ -35,7 +35,7 @@ export class EntityProxyMapper {
             name: EntityName.facultyAttendance,
             type: WorkType.Projects,
             carousel: [],
-            desccription: this.facultyAttendanceDescription(),
+            description: this.facultyAttendanceDescription(),
             comments: [],
             container: this.facultyAttendanceContainer()
         },
@@ -43,7 +43,7 @@ export class EntityProxyMapper {
             name: EntityName.facultyAttendance,
             type: WorkType.Projects,
             carousel: this.getCarousel(EntityName.crowdCounting, 'png', 1),
-            desccription: this.crowdCountingDescription(),
+            description: this.crowdCountingDescription(),
             comments: [],
             container: this.crowdCountingContainer()
         },
@@ -51,7 +51,7 @@ export class EntityProxyMapper {
             name: EntityName.gymManagerApplication,
             type: WorkType.Projects,
             carousel: this.getCarousel(EntityName.gymManagerApplication, 'jpg', 2),
-            desccription: this.gymManagerApplicationDescription(),
+            description: this.gymManagerApplicationDescription(),
             comments: [],
             container: this.gymManagerApplicationContainer()
         },

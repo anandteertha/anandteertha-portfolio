@@ -6,7 +6,7 @@ export interface IentityType {
     name: string;
     type: WorkType;
     carousel: string[];
-    desccription: string[];
+    description: string[];
     comments: Icomments[];
     container: IContainerTemplate
 }
