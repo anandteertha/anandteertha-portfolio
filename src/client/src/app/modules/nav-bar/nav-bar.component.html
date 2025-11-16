@@ -1,19 +1,19 @@
 <header>
     <div class="header-content">
-        <div class="logo-container">
+        <div class="logo-container" (click)="routeTo('home')">
             <div class="image-container"><img src="assets/anand-pic.JPG" alt="Anandteertha Rao"></div>
-            <span (click)="routeTo('home')">Anandteertha Rao</span>
+            <span>Anandteertha Rao</span>
         </div>
         <div class="main">
             <ul class="links">
                 <li class="link-wrapper">
-                    <a href="#about" class="header-link">About</a>
+                    <a routerLink="/home" routerLinkActive="active" class="header-link">Home</a>
                 </li>
                 <li class="link-wrapper">
-                    <a href="#workExperience" class="header-link">Work Experience</a>
+                    <a routerLink="/experience" routerLinkActive="active" class="header-link">Experience</a>
                 </li>
                 <li class="link-wrapper">
-                    <a href="#projects" class="header-link">Projects</a>
+                    <a routerLink="/projects" routerLinkActive="active" class="header-link">Projects</a>
                 </li>
                 <li class="link-wrapper">
                     <a href="#contact" class="header-link">Contact</a>

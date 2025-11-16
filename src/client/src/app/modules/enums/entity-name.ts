@@ -4,5 +4,6 @@ export enum EntityName {
     lungCapacityCheck = 'Lung Capacity Check',
     facultyAttendance = 'Faculty Attendance System',
     crowdCounting = 'Crowd Counting',
-    gymManagerApplication = 'Gym Manager Application'
+    gymManagerApplication = 'Gym Manager Application',
+    nutribite = 'NutriBite'
 }

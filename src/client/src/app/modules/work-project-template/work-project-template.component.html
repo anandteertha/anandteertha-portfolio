@@ -6,7 +6,10 @@
         <div class="main">
             <div class="header">
                 <div class="header-details">
-                    <h1 *ngIf="!!entity.role;else displayName">{{entity.name}} | {{entity.role}}</h1>
+                    <ng-container *ngIf="!!entity.role;else displayName">
+                        <h1>{{entity.name}}</h1>
+                        <i>{{entity.role}}</i>
+                    </ng-container>
                     <ng-template #displayName>
                         <h1>{{entity.name}}</h1>
                     </ng-template>

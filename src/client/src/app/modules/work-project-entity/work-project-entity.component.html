@@ -1,10 +1,13 @@
-<section [id]="this.id">
-    <div class="main-container">
-        <div class="title">
-            <h1 class="heading-main">{{title}}</h1>
-        </div>
-        <app-work-project-template *ngFor="let entity of entities" [entity]="entity" [description]="entity.description"
+<div class="main-container">
+    <div class="title">
+        <h1 class="heading-main">{{title}}</h1>
+    </div>
+    <div class="content">
+        <app-work-project-template *ngFor="let entity of entities; let i = index" 
+            [entity]="entity" 
+            [description]="entity.description"
+            [style.animation-delay]="i * 0.1 + 's'"
             (redirectToEvent)="redirectTo(entity)"></app-work-project-template>
     </div>
-</section>
+</div>
 <div class="seperator" *ngIf="isDisplaySeperator()"></div>

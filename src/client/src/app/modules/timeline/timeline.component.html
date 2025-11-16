@@ -1,0 +1,50 @@
+<section class="timeline-section">
+  <div class="timeline-container">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="glow-text">Hey, I'm</span>
+        <span class="name-text">Anandteertha Rao</span>
+      </h1>
+      <p class="hero-subtitle">
+        M.S. Computer Science &#64; NC State | 3 yrs SDE &#64; Raychem | Builder
+        of real-world solutions
+      </p>
+      <div class="cta-buttons">
+        <button class="cta-btn primary" (click)="navigateToExperience()">
+          <span>Work Experience</span>
+          <span class="arrow">→</span>
+        </button>
+        <button class="cta-btn secondary" (click)="navigateToProjects()">
+          <span>View Projects</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="timeline-wrapper">
+      <h2 class="timeline-title">Journey Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-line"></div>
+        <div class="milestone" *ngFor="let milestone of milestones">
+          <div
+            class="milestone-marker"
+            [style.background-color]="milestone.color"
+          >
+            <span class="milestone-icon">{{ milestone.icon }}</span>
+          </div>
+          <div class="milestone-content">
+            <div class="milestone-year">{{ milestone.year }}</div>
+            <h3 class="milestone-title">{{ milestone.title }}</h3>
+            <p class="milestone-subtitle">{{ milestone.subtitle }}</p>
+            <p class="milestone-description">{{ milestone.description }}</p>
+            <div class="milestone-skills" *ngIf="milestone.skills">
+              <span class="skill-tag" *ngFor="let skill of milestone.skills">{{
+                skill
+              }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

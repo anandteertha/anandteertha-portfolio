@@ -40,7 +40,7 @@ export class EntityProxyMapper {
             container: this.facultyAttendanceContainer()
         },
         [EntityName.crowdCounting]: {
-            name: EntityName.facultyAttendance,
+            name: EntityName.crowdCounting,
             type: WorkType.Projects,
             carousel: this.getCarousel(EntityName.crowdCounting, 'png', 1),
             description: this.crowdCountingDescription(),
@@ -54,6 +54,14 @@ export class EntityProxyMapper {
             description: this.gymManagerApplicationDescription(),
             comments: [],
             container: this.gymManagerApplicationContainer()
+        },
+        [EntityName.nutribite]: {
+            name: EntityName.nutribite,
+            type: WorkType.Projects,
+            carousel: [],
+            description: this.nutribiteDescription(),
+            comments: [],
+            container: this.nutribiteContainer()
         },
     }
 
@@ -89,7 +97,7 @@ export class EntityProxyMapper {
             to: '1st April 2025',
             skills: ["TypeScript", "JavaScript", "Angular", "Three.Js", "Python", ".NET", "HTML", "CSS", "AWS", "GIT", "Gitlab", "JIRA", "Py-Test", "Jasmine/Karma", "Jest", "Cypress", "XUnit Test"],
             logoPath: 'assets/chemelex.png',
-            role: 'Full Stack Developer'
+            role: 'Software Development Engineer'
         }
     }
 
@@ -101,7 +109,7 @@ export class EntityProxyMapper {
             to: '19th June 2021',
             skills: ["NodeJS", "JavaScript", "Socket.io", "SQL", "HTML", "CSS", "Github", "Scrum Master", "Leadership"],
             logoPath: 'assets/outrider.png',
-            role: 'Software developer Intern',
+            role: 'Software Development Engineer Intern',
             id: 'fitImage'
         }
     }
@@ -173,9 +181,7 @@ export class EntityProxyMapper {
         return [
             "📐 Designed and developed a portable IoT system to measure human lung capacity using air pressure sensors, microcontrollers, and real - time data visualization.",
             "💨 Built a custom hardware prototype that captured the airflow data when a user exhaled into a tube, translating physical force into digital signals using an analog pressure sensor.",
-            "🧠 Used an Arduino Uno board to read sensor data, apply analog - to - digital conversion, and perform real - time calculations to estimate lung volume based on airflow duration and pressure changes.",
-            "📊 Visualized live readings via a connected web dashboard using Python(Flask) for the backend and Chart.js for dynamic graphs—allowing users to track and compare their lung performance.",
-            "🧪 Implemented data smoothing techniques to eliminate sensor noise and enhance the accuracy of lung volume measurements.",
+            "🧠 Used an NodeMCU board to read sensor data, apply analog - to - digital conversion, and perform real - time calculations to estimate lung volume based on airflow duration and pressure changes.",
             "📥 Enabled data logging and export to CSV/Excel for medical professionals to review patient history over time.",
             "⚠️ Added warning / alert system based on threshold values to notify users of abnormally low or high lung capacity, useful for detecting early signs of respiratory issues.",
             "🔌 Designed a minimal power circuit for extended portable use, with easy USB connectivity and plug - and - play functionality.",
@@ -213,13 +219,38 @@ export class EntityProxyMapper {
         return [
             "🧾 Developed a complete gym management web app, allowing gym owners to handle member registrations, payment tracking, subscription tiers, and trainer assignments.",
             "💳 Enabled payment gateway integration(mocked via APIs) to simulate real - time subscription upgrades, renewals, and receipts.",
-            "🧑‍🏫 Created multi - role login access for admins, trainers, and members, with dashboards personalized to each role’s needs.",
+            "🧑‍🏫 Created multi - role login access for admins, trainers, and members, with dashboards personalized to each role's needs.",
             "🗂️ Used MySQL for backend database design, managing users, plans, workout history, and attendance logs efficiently.",
             "🎨 Built responsive UI with HTML, CSS, and JavaScript, offering clean navigation, visual metrics(like attendance trends), and calendar views.",
             "⚙️ Enabled CRUD operations for all entities(users, subscriptions, trainers), along with search and filter functionalities.",
             "🔒 Implemented session - based authentication and input validation, maintaining security and protecting sensitive data.",
             "📈 Provided analytics features for gym admins to track active subscriptions, member engagement, and trainer workloads.",
             "📚 Followed agile methodology, setting sprint goals, and delivering weekly updates with code reviews and team sync - ups.",
+        ]
+    }
+
+    public static nutribiteContainer(): IContainerTemplate {
+        return {
+            name: EntityName.nutribite,
+            description: ['Built a FastAPI backend with MySQL and Redis for caching/sessions.', 'Designed a BCNF-normalized MySQL schema and built reusable React components.', 'Added a RAG-based recommender for healthier menu suggestions.'],
+            from: '2024',
+            to: '2024',
+            skills: ['FastAPI', 'Python', 'MySQL', 'Redis', 'React', 'RAG', 'Pytest', 'Cypress', 'CI/CD', 'SOLID Principles'],
+            logoPath: 'assets/nutribite.png',
+            role: 'Full Stack Developer'
+        }
+    }
+
+    private static nutribiteDescription(): string[] {
+        return [
+            "🚀 Built a FastAPI backend with MySQL and Redis for efficient caching and session management, improving application performance and user experience.",
+            "📋 Managed the product backlog by creating and prioritizing user stories, ensuring agile development practices and clear project roadmap.",
+            "🗄️ Designed a BCNF-normalized MySQL database schema ensuring data integrity and wrote efficient SQL queries for optimal performance.",
+            "⚛️ Built reusable React components for user food preferences and customization, promoting code reusability and maintainability.",
+            "🤖 Added a RAG (Retrieval-Augmented Generation) based recommender system for healthier menu suggestions, leveraging AI to provide personalized recommendations.",
+            "🏗️ Followed SOLID principles and clean coding practices throughout the development lifecycle, ensuring scalable and maintainable codebase.",
+            "🧪 Set up comprehensive testing infrastructure with Pytest for backend testing and Cypress for end-to-end testing, ensuring code quality.",
+            "🔄 Integrated continuous integration (CI) pipelines to run automated tests, ensuring code reliability and preventing regressions.",
         ]
     }
 }

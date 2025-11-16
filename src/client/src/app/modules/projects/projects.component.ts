@@ -16,6 +16,7 @@ import {
 export class ProjectsComponent {
   title: string = WorkType.Projects;
   projects: IContainerTemplate[] = [
+    EntityProxyMapper.nutribiteContainer(),
     EntityProxyMapper.lungCapacityCheckContainer(),
     EntityProxyMapper.facultyAttendanceContainer(),
     EntityProxyMapper.crowdCountingContainer(),
