@@ -49,6 +49,8 @@
         display: block;
         width: 10rem;
         height: 10rem;
+        min-width: 5rem;
+        min-height: 5rem;
         padding: 4px;
         object-fit: contain;
         background-color: #FBF5E5;
@@ -60,5 +62,9 @@
 @media (max-width: 768px) {
     .footer-links {
         margin-top: 0.5rem;
+    }
+
+    .footer-link {
+        margin: 0.5rem 0.5rem !important;
     }
 }

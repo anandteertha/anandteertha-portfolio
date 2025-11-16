@@ -2,6 +2,9 @@
 
 # Step 1: Build the Angular app with the specified base href
 Write-Host "Building Angular app with base href..."
+npm run build
+clear
+Write-Host "Building Angular app with base href..."
 ng build --base-href "https://anandteertha.github.io/anandteertha-portfolio/"
 
 # Step 2: Deploy to GitHub Pages

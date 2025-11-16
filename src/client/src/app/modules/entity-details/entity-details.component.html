@@ -1,0 +1,20 @@
+<div class="main-container standalone-container">
+    <app-work-project-template [entity]="queryDetails.container" [description]="queryDetails.container.description" [isDetailed]="true"></app-work-project-template>
+    
+    <div class="detailed-description" *ngIf="queryDetails.description && queryDetails.description.length > 0">
+        <h2 class="section-title">Key Highlights</h2>
+        <ul>
+            <li *ngFor="let point of queryDetails.description">{{point}}</li>
+        </ul>
+    </div>
+
+    <div class="carousel" *ngIf="queryDetails.carousel.length > 0">
+        <div class="image-container fade" *ngFor="let imagePath of queryDetails.carousel; index as index"
+            [ngStyle]="imageIndex === (index + 1)?{'display': 'block'}:{'display': 'none'}">
+            <div class="number-text">{{index + 1}} / {{queryDetails.carousel.length}}</div>
+            <img [src]="imagePath" [alt]="'Screenshot ' + (index + 1)">
+        </div>
+        <a class="prev" (click)="moveSlide(-1)">&#10094;</a>
+        <a class="next" (click)="moveSlide(1)">&#10095;</a>
+    </div>
+</div>

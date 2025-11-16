@@ -1,0 +1,39 @@
+<div class="content">
+    <div class="content-container" [title]="entity.name" (click)="redirectTo(entity)">
+        <div class="logo">
+            <img [id]="entity.id ?? ''" [src]="entity.logoPath" [alt]="entity.logoPath">
+        </div>
+        <div class="main">
+            <div class="header">
+                <div class="header-details">
+                    <ng-container *ngIf="!!entity.role;else displayName">
+                        <h1>{{entity.name}}</h1>
+                        <i>{{entity.role}}</i>
+                    </ng-container>
+                    <ng-template #displayName>
+                        <h1>{{entity.name}}</h1>
+                    </ng-template>
+                </div>
+                <div class="header-duration">
+                    <small><i>{{entity.from}} - {{entity.to}}</i></small>
+                </div>
+            </div>
+            <div class="description">
+                <ul *ngIf="description.length > 1 ;else simpleDescription">
+                    <li class="text-description" *ngFor="let point of description">
+                        {{point}}
+                    </li>
+                </ul>
+                <ng-template #simpleDescription>
+                    <p>{{description[0]}}</p>
+                </ng-template>
+            </div>
+            <div class="skills">
+                <span class="skill" *ngFor="let skill of entity.skills" [title]="skill">{{skill}}</span>
+            </div>
+        </div>
+        <div class="redict-button" *ngIf="!isDetailed">
+            <button>View more..</button>
+        </div>
+    </div>
+</div>
