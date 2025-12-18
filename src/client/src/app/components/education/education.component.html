@@ -1,0 +1,112 @@
+<section id="education" class="education">
+  <div class="container">
+    <div class="section-header" appScrollAnimation>
+      <span class="section-badge">Education</span>
+      <h2 class="section-title">Academic Journey</h2>
+      <p class="section-description">
+        Pursuing excellence in computer science with a focus on algorithms, software engineering, and data science
+      </p>
+    </div>
+
+    <div class="education-timeline">
+      <div class="education-item"
+           *ngFor="let edu of educations; let i = index"
+           [class.current]="edu.isCurrent"
+           (click)="openDetail(edu)"
+           appScrollAnimation>
+        <div class="education-card">
+          <div class="education-header">
+            <div class="education-logo">
+              <img [src]="edu.logo" [alt]="edu.institution">
+            </div>
+            <div class="education-info">
+              <h3 class="education-degree">{{edu.degree}}</h3>
+              <p class="education-institution">{{edu.institution}}</p>
+              <p class="education-location">{{edu.location}}</p>
+            </div>
+            <div class="education-meta">
+              <span class="education-period">{{edu.period}}</span>
+              <span class="education-gpa" *ngIf="edu.gpa">{{edu.gpa}}</span>
+              <span class="education-badge" *ngIf="edu.isCurrent">Current</span>
+            </div>
+            <div class="education-secondary-logo" *ngIf="edu.secondaryLogo">
+              <img [src]="edu.secondaryLogo" [alt]="'Mumbai University'">
+            </div>
+          </div>
+          
+          <div class="education-preview" *ngIf="edu.courses.completed && edu.courses.completed.length > 0">
+            <div class="preview-item">
+              <span class="preview-icon">📚</span>
+              <p>{{edu.courses.completed.length}} courses completed</p>
+            </div>
+          </div>
+          
+          <div class="education-action">
+            <span>View Details →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" *ngIf="showModal" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeModal()">×</button>
+      
+      <div class="modal-header" *ngIf="selectedEducation">
+        <div class="modal-logo">
+          <img [src]="selectedEducation.logo" [alt]="selectedEducation.institution">
+        </div>
+        <div class="modal-secondary-logo" *ngIf="selectedEducation.secondaryLogo">
+          <img [src]="selectedEducation.secondaryLogo" [alt]="'Mumbai University'">
+        </div>
+        <div>
+          <h2 class="modal-title">{{selectedEducation.degree}}</h2>
+          <p class="modal-institution">{{selectedEducation.institution}}</p>
+          <p class="modal-location">{{selectedEducation.location}}</p>
+          <div class="modal-meta">
+            <span class="modal-period">{{selectedEducation.period}}</span>
+            <span class="modal-gpa" *ngIf="selectedEducation.gpa">{{selectedEducation.gpa}}</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-body" *ngIf="selectedEducation">
+        <div class="modal-section" *ngIf="selectedEducation.courses.completed && selectedEducation.courses.completed.length > 0">
+          <h3>Completed Courses</h3>
+          <div class="course-list">
+            <div class="course-item" *ngFor="let course of selectedEducation.courses.completed">
+              <span class="course-icon">✓</span>
+              <div class="course-info">
+                <span class="course-name">{{course.name}}</span>
+                <span class="course-grade">{{course.grade}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-section" *ngIf="selectedEducation.courses.upcoming && selectedEducation.courses.upcoming.length > 0">
+          <h3>Upcoming Courses (Spring Semester)</h3>
+          <div class="course-list">
+            <div class="course-item upcoming" *ngFor="let course of selectedEducation.courses.upcoming">
+              <span class="course-icon">📅</span>
+              <span class="course-name">{{course}}</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-section" *ngIf="selectedEducation.achievements && selectedEducation.achievements.length > 0">
+          <h3>Achievements</h3>
+          <div class="achievement-list">
+            <div class="achievement-item" *ngFor="let achievement of selectedEducation.achievements">
+              <span class="achievement-icon">🏆</span>
+              <p>{{achievement}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

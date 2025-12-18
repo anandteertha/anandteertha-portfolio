@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 
 interface Project {
   id: string;
@@ -11,11 +12,12 @@ interface Project {
   period: string;
   isHighlight?: boolean;
   github?: string;
+  logo?: string;
 }
 
 @Component({
   selector: 'app-projects',
-  imports: [CommonModule],
+  imports: [CommonModule, ScrollAnimationDirective],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
@@ -25,8 +27,9 @@ export class ProjectsComponent {
       id: 'neatd',
       title: 'Neatd',
       subtitle: 'Rust CLI Tool for Automated Folder Organization',
-      period: '2024 - Present',
+      period: 'September 2025 - Present',
       isHighlight: true,
+      logo: 'assets/rust-logo.svg',
       description: [
         'Neatd is a Rust CLI application (with an optional daemon mode) for automated folder organization. Users define organization rules in a TOML configuration file, and Neatd applies those rules to classify files by patterns (extensions, naming conventions, and/or directories) and move them into consistent target structures.',
         'The CLI is built using Clap for ergonomic commands and flags, including config initialization and safe overwrite behavior. Internally, Neatd emphasizes correctness and maintainability: typed configuration parsing, explicit error handling (Result-based flows), and careful filesystem operations to prevent accidental data loss.'
@@ -45,6 +48,7 @@ export class ProjectsComponent {
       title: 'Lung Capacity Check',
       subtitle: 'IoT Health Monitoring System',
       period: 'November 2021 - April 2022',
+      logo: 'assets/lung-capacity-check.png',
       description: [
         'Developed an IoT-based system to measure human lung capacity using airflow sensors.',
         'The device captures real-time breathing data and transmits it to the app for analysis and visualization.',
@@ -59,6 +63,7 @@ export class ProjectsComponent {
       title: 'Faculty Attendance System',
       subtitle: 'Smart Attendance with Facial Recognition',
       period: 'January 2021 - May 2021',
+      logo: 'assets/faculty-attendance.png',
       description: [
         'A smart faculty attendance system using facial recognition, geofencing, and secure Node.js backend, enabling one-click attendance with fraud prevention.',
         'Published research paper in the Turkish Journal of Computer and Mathematics.',
@@ -87,6 +92,7 @@ export class ProjectsComponent {
       title: 'Gym Manager Application',
       subtitle: 'Full-featured Gym Management System',
       period: 'September 2020 - January 2021',
+      logo: 'assets/gym-manager-application.png',
       description: [
         'Led development of a full-featured Gym Manager Application supporting user registration, multi-tier subscriptions, seamless payment integration, and real-time trainer-client chat using Socket.io.',
         'Implemented secure payment processing using Stripe.',
@@ -110,7 +116,7 @@ export class ProjectsComponent {
   closeModal() {
     this.showModal = false;
     this.selectedProject = null;
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = '';
   }
 }
 

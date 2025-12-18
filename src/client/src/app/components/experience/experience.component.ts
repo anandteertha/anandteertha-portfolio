@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 
 interface Experience {
   id: string;
@@ -11,11 +12,12 @@ interface Experience {
   description: string[];
   technologies: string[];
   isCurrent?: boolean;
+  logo?: string;
 }
 
 @Component({
   selector: 'app-experience',
-  imports: [CommonModule],
+  imports: [CommonModule, ScrollAnimationDirective],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.scss'
 })
@@ -29,6 +31,7 @@ export class ExperienceComponent {
       period: '2024 - Present',
       type: 'part-time',
       isCurrent: true,
+      logo: 'assets/ncstate-logo.svg',
       description: [
         'Developing and maintaining web applications for research and data management',
         'Building responsive frontend interfaces using React with modern best practices',
@@ -45,6 +48,7 @@ export class ExperienceComponent {
       location: 'Remote',
       period: 'July 2022 - April 2025',
       type: 'full-time',
+      logo: 'assets/chemelex.png',
       description: [
         'Led the development of a smart Python code editor, allowing users to run custom scripts securely',
         'Worked on a 3D piping system renderer using Three.js for interactive visualization',
@@ -61,6 +65,7 @@ export class ExperienceComponent {
       location: 'Remote',
       period: 'September 2020 - June 2021',
       type: 'internship',
+      logo: 'assets/outrider.png',
       description: [
         'Integrated Google Maps Drawing API to display live salesman locations and building backend APIs for seamless data exchange',
         'Oversaw task assignments, conducted code reviews, and coordinated directly with stakeholders',
@@ -83,7 +88,7 @@ export class ExperienceComponent {
   closeModal() {
     this.showModal = false;
     this.selectedExperience = null;
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = '';
   }
 
   getTypeBadgeClass(type: string): string {

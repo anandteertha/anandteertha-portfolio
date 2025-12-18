@@ -1,27 +1,37 @@
 <section id="projects" class="projects">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" appScrollAnimation>
       <span class="section-badge">Projects</span>
       <h2 class="section-title">Featured Work</h2>
       <p class="section-description">
-        Building innovative solutions with a focus on Rust and systems programming
+        Building innovative solutions across web development and systems programming
       </p>
     </div>
 
     <div class="projects-grid">
       <div class="project-card" 
-           *ngFor="let project of projects"
+           *ngFor="let project of projects; let i = index"
            [class.highlight]="project.isHighlight"
+           [style.animation-delay.ms]="i * 100"
+           appScrollAnimation
            (click)="openDetail(project)">
         <div class="project-header">
-          <div class="project-icon" *ngIf="project.isHighlight">🦀</div>
-          <div>
+          <div class="project-logo" *ngIf="project.logo">
+            <img [src]="project.logo" [alt]="project.title">
+          </div>
+          <div class="project-icon" *ngIf="project.isHighlight && !project.logo">🦀</div>
+          <div class="project-info">
             <h3 class="project-title">{{project.title}}</h3>
             <p class="project-subtitle">{{project.subtitle}}</p>
           </div>
         </div>
         
-        <p class="project-description">{{project.description[0]}}</p>
+        <div class="project-description">
+          <div class="description-item">
+            <span class="desc-icon">▸</span>
+            <p>{{project.description[0]}}</p>
+          </div>
+        </div>
         
         <div class="project-tech">
           <span class="tech-tag" *ngFor="let tech of project.technologies.slice(0, 4)">{{tech}}</span>
@@ -42,7 +52,10 @@
       <button class="modal-close" (click)="closeModal()">×</button>
       
       <div class="modal-header" *ngIf="selectedProject">
-        <div class="project-icon-large" *ngIf="selectedProject.isHighlight">🦀</div>
+        <div class="modal-logo" *ngIf="selectedProject.logo">
+          <img [src]="selectedProject.logo" [alt]="selectedProject.title">
+        </div>
+        <div class="project-icon-large" *ngIf="selectedProject.isHighlight && !selectedProject.logo">🦀</div>
         <div>
           <h2 class="modal-title">{{selectedProject.title}}</h2>
           <p class="modal-subtitle">{{selectedProject.subtitle}}</p>
@@ -53,16 +66,22 @@
       <div class="modal-body" *ngIf="selectedProject">
         <div class="modal-section">
           <h3>About</h3>
-          <ul>
-            <li *ngFor="let desc of selectedProject.description">{{desc}}</li>
-          </ul>
+          <div class="description-list">
+            <div class="description-item-modal" *ngFor="let desc of selectedProject.description">
+              <span class="desc-icon-modal">▸</span>
+              <p>{{desc}}</p>
+            </div>
+          </div>
         </div>
         
         <div class="modal-section" *ngIf="selectedProject.features && selectedProject.features.length > 0">
           <h3>Key Features</h3>
-          <ul>
-            <li *ngFor="let feature of selectedProject.features">{{feature}}</li>
-          </ul>
+          <div class="feature-list">
+            <div class="feature-item" *ngFor="let feature of selectedProject.features">
+              <span class="feature-icon">✓</span>
+              <p>{{feature}}</p>
+            </div>
+          </div>
         </div>
         
         <div class="modal-section">

@@ -1,7 +1,9 @@
 .projects {
   padding: 12rem 2rem;
-  background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+  background: #ffffff;
   position: relative;
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
 }
 
 .container {
@@ -28,10 +30,11 @@
 
 .section-title {
   font-size: 4.5rem;
-  font-weight: 800;
+  font-weight: 700;
   color: #1a202c;
   margin-bottom: 1.5rem;
-  letter-spacing: -1px;
+  letter-spacing: -0.02em;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .section-description {
@@ -60,6 +63,13 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+
+  &.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   &:hover {
     transform: translateY(-10px);
@@ -91,9 +101,35 @@
   gap: 1.5rem;
 }
 
+.project-logo {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+}
+
 .project-icon {
   font-size: 4rem;
   flex-shrink: 0;
+}
+
+.project-info {
+  flex: 1;
 }
 
 .project-title {
@@ -110,10 +146,38 @@
 }
 
 .project-description {
-  font-size: 1.5rem;
-  line-height: 1.8;
-  color: #4a5568;
   flex-grow: 1;
+}
+
+.description-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #667eea;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+  }
+
+  .desc-icon {
+    font-size: 1.6rem;
+    color: #667eea;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin: 0;
+  }
 }
 
 .project-tech {
@@ -241,11 +305,33 @@
 }
 
 .modal-header {
-  padding: 3rem 3rem 2rem 3rem;
+  padding: 3rem 6rem 2rem 3rem;
   border-bottom: 2px solid #e2e8f0;
   display: flex;
   align-items: flex-start;
   gap: 2rem;
+  position: relative;
+}
+
+.modal-logo {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
 
 .project-icon-large {
@@ -289,27 +375,80 @@
     font-weight: 700;
     color: #1a202c;
     margin-bottom: 1.5rem;
+    font-family: 'Space Grotesk', sans-serif;
   }
 
-  ul {
-    list-style: none;
-    padding: 0;
+  .description-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
-    li {
+  .description-item-modal {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid #667eea;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #e9ecef;
+      transform: translateX(5px);
+    }
+
+    .desc-icon-modal {
+      font-size: 1.6rem;
+      color: #667eea;
+      font-weight: bold;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    p {
       font-size: 1.6rem;
       line-height: 1.8;
       color: #4a5568;
-      margin-bottom: 1rem;
-      padding-left: 2rem;
-      position: relative;
+      margin: 0;
+    }
+  }
 
-      &::before {
-        content: '▸';
-        position: absolute;
-        left: 0;
-        color: #667eea;
-        font-weight: bold;
-      }
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid #28a745;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #e9ecef;
+      transform: translateX(5px);
+    }
+
+    .feature-icon {
+      font-size: 1.6rem;
+      color: #28a745;
+      font-weight: bold;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+      line-height: 1.8;
+      color: #4a5568;
+      margin: 0;
     }
   }
 }

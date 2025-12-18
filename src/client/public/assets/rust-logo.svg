@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="rustGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#CE422B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A8321D;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="20" fill="url(#rustGrad)"/>
+  <circle cx="100" cy="100" r="60" fill="none" stroke="#ffffff" stroke-width="8"/>
+  <path d="M 70 100 L 90 80 L 110 100 L 90 120 Z" fill="#ffffff"/>
+  <path d="M 130 100 L 150 80 L 170 100 L 150 120 Z" fill="#ffffff"/>
+  <text x="100" y="160" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">RUST</text>
+</svg>

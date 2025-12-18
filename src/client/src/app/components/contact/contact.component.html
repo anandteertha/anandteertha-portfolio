@@ -1,35 +1,43 @@
 <section id="contact" class="contact">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" appScrollAnimation>
       <span class="section-badge">Get In Touch</span>
-      <h2 class="section-title">Let's Connect</h2>
+      <h2 class="section-title">Let's Build Something Together</h2>
       <p class="section-description">
-        Interested in Rust development opportunities or collaboration? I'd love to hear from you.
+        I'm actively seeking opportunities to contribute to innovative projects. Whether you're looking for a developer 
+        for systems programming, web applications, or Rust development—let's connect and discuss how I can help.
       </p>
     </div>
 
     <div class="contact-content">
       <div class="contact-info">
-        <div class="info-card">
-          <div class="info-icon">💼</div>
-          <h3>Looking for Opportunities</h3>
-          <p>Actively seeking Rust development roles where I can contribute to building robust, performant systems.</p>
+        <div class="info-card" appScrollAnimation>
+          <div class="info-icon">🦀</div>
+          <h3>Seeking Rust Opportunities</h3>
+          <p>Passionate about <strong>systems programming</strong> and <strong>Rust development</strong>. Looking for roles where I can leverage my experience in building memory-safe, high-performance software. Open to full-time positions, contract work, or collaborative projects in Rust.</p>
         </div>
         
-        <div class="info-card">
-          <div class="info-icon">🤝</div>
-          <h3>Open to Collaboration</h3>
-          <p>Interested in collaborating on Rust projects, open source contributions, or technical discussions.</p>
+        <div class="info-card" appScrollAnimation>
+          <div class="info-icon">💼</div>
+          <h3>Full-Stack Expertise Available</h3>
+          <p>With <strong>3+ years</strong> of experience in <strong>Angular</strong>, <strong>Python</strong>, <strong>TypeScript</strong>, and <strong>.NET</strong>, I'm also open to full-stack development roles. Ready to contribute to your team and deliver quality solutions.</p>
+        </div>
+        
+        <div class="info-card" appScrollAnimation>
+          <div class="info-icon">🚀</div>
+          <h3>Let's Discuss Your Project</h3>
+          <p>Have a project in mind? Need a developer for your team? Let's connect and explore how I can help bring your vision to life. I'm always excited to discuss new opportunities and innovative projects.</p>
         </div>
       </div>
 
-      <div class="social-links">
+      <div class="social-links" appScrollAnimation>
         <a 
-          *ngFor="let link of socialLinks"
+          *ngFor="let link of socialLinks; let i = index"
           [href]="link.url" 
           target="_blank" 
           rel="noopener noreferrer"
           class="social-link"
+          [style.animation-delay.ms]="i * 100"
           [style.background]="link.color">
           <img [src]="link.icon" [alt]="link.name">
           <span>{{link.name}}</span>
@@ -39,7 +47,7 @@
 
     <div class="footer">
       <p>&copy; 2025 Anandteertha Rao. All rights reserved.</p>
-      <p class="footer-note">Built with focus on Rust development</p>
+      <p class="footer-note">Open to opportunities in Rust development and systems programming</p>
     </div>
   </div>
 </section>

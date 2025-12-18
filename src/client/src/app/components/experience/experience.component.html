@@ -1,6 +1,6 @@
 <section id="experience" class="experience">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" appScrollAnimation>
       <span class="section-badge">Experience</span>
       <h2 class="section-title">Work Experience</h2>
       <p class="section-description">
@@ -14,6 +14,8 @@
       <div class="experience-item" 
            *ngFor="let exp of experiences; let i = index"
            [class.current]="exp.isCurrent"
+           [style.animation-delay.ms]="i * 150"
+           appScrollAnimation
            (click)="openDetail(exp)">
         <div class="timeline-marker">
           <div class="marker-dot"></div>
@@ -21,7 +23,10 @@
         
         <div class="experience-card">
           <div class="experience-header">
-            <div>
+            <div class="experience-logo" *ngIf="exp.logo">
+              <img [src]="exp.logo" [alt]="exp.company">
+            </div>
+            <div class="experience-info">
               <h3 class="experience-title">{{exp.title}}</h3>
               <p class="experience-company">{{exp.company}}</p>
               <p class="experience-location">{{exp.location}}</p>
@@ -35,7 +40,10 @@
           </div>
           
           <div class="experience-preview">
-            <p>{{exp.description[0]}}</p>
+            <div class="preview-item">
+              <span class="preview-icon">→</span>
+              <p>{{exp.description[0]}}</p>
+            </div>
           </div>
           
           <div class="experience-tech">
@@ -57,6 +65,9 @@
       <button class="modal-close" (click)="closeModal()">×</button>
       
       <div class="modal-header" *ngIf="selectedExperience">
+        <div class="modal-logo" *ngIf="selectedExperience.logo">
+          <img [src]="selectedExperience.logo" [alt]="selectedExperience.company">
+        </div>
         <div>
           <h2 class="modal-title">{{selectedExperience.title}}</h2>
           <p class="modal-company">{{selectedExperience.company}}</p>
@@ -73,9 +84,12 @@
       <div class="modal-body" *ngIf="selectedExperience">
         <div class="modal-section">
           <h3>Responsibilities</h3>
-          <ul>
-            <li *ngFor="let desc of selectedExperience.description">{{desc}}</li>
-          </ul>
+          <div class="responsibility-list">
+            <div class="responsibility-item" *ngFor="let desc of selectedExperience.description">
+              <span class="resp-icon">→</span>
+              <p>{{desc}}</p>
+            </div>
+          </div>
         </div>
         
         <div class="modal-section">

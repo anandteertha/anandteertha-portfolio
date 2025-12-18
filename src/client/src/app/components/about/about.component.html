@@ -1,53 +1,66 @@
 <section id="about" class="about">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" appScrollAnimation>
       <span class="section-badge">About Me</span>
-      <h2 class="section-title">Passionate Rust Developer</h2>
+      <h2 class="section-title">Ready to Build Something Amazing?</h2>
       <p class="section-description">
-        Building robust, performant systems with a focus on correctness and maintainability
+        I'm actively seeking opportunities to contribute to innovative projects. Whether you need a developer 
+        for systems programming, web applications, or something in between—let's connect and discuss how I can help.
       </p>
     </div>
 
     <div class="about-content">
-      <div class="about-text">
-        <div class="text-block">
-          <h3>Who I Am</h3>
-          <p>
-            I'm a software developer passionate about Rust and systems programming. Currently, I'm building 
-            <strong>Neatd</strong>, a Rust CLI application for automated folder organization that emphasizes 
-            type safety, explicit error handling, and safe filesystem operations.
-          </p>
+      <div class="about-cards">
+        <div class="about-card" appScrollAnimation>
+          <div class="card-icon">🤝</div>
+          <div class="card-content">
+            <h3>Looking for the Right Fit</h3>
+            <p>
+              With <strong>3+ years</strong> of experience building production applications, I bring expertise in 
+              <strong>Angular</strong>, <strong>Python</strong>, <strong>TypeScript</strong>, and <strong>.NET</strong>. 
+              Currently building <strong>Neatd</strong> in <strong>Rust</strong> and actively seeking opportunities 
+              where I can leverage systems programming skills and contribute to memory-safe, high-performance solutions.
+            </p>
+          </div>
         </div>
         
-        <div class="text-block">
-          <h3>My Focus</h3>
-          <p>
-            I'm actively seeking opportunities in Rust development. My work focuses on creating CLI tools 
-            and systems software that are both performant and maintainable. I believe in writing code that 
-            is correct by construction, leveraging Rust's type system and ownership model.
-          </p>
+        <div class="about-card" appScrollAnimation>
+          <div class="card-icon">💡</div>
+          <div class="card-content">
+            <h3>What I Bring</h3>
+            <p>
+              Experience building complex applications with <strong>Angular</strong> and <strong>Three.js</strong>, 
+              robust <strong>FastAPI</strong> backends, microservices, and CI/CD pipelines. Strong foundation in 
+              full-stack development with a growing passion for <strong>Rust</strong> and systems programming. 
+              Ready to tackle challenging problems and deliver quality solutions.
+            </p>
+          </div>
         </div>
 
-        <div class="text-block">
-          <h3>Current Work</h3>
-          <p>
-            I'm currently working part-time as a Software Developer at the Khayrallah Center for Lebanese 
-            Diaspora Studies at NC State, where I build web applications using React, FastAPI, and pytest. 
-            I also implement stress testing using Locust to ensure system reliability.
-          </p>
+        <div class="about-card" appScrollAnimation>
+          <div class="card-icon">🎯</div>
+          <div class="card-content">
+            <h3>Let's Collaborate</h3>
+            <p>
+              Currently working part-time at <strong>Khayrallah Center</strong> (NC State) while pursuing my MS in CS. 
+              Open to full-time opportunities, especially in <strong>systems programming</strong> and <strong>Rust development</strong>. 
+              Have a project in mind? Let's discuss how I can help bring your vision to life.
+            </p>
+          </div>
         </div>
       </div>
 
-      <div class="skills-grid">
-        <div class="skill-card" *ngFor="let skill of skills">
-          <div class="skill-header">
-            <span class="skill-icon">{{skill.icon}}</span>
-            <span class="skill-name">{{skill.name}}</span>
+      <div class="skills-section" appScrollAnimation>
+        <div class="skill-category" *ngFor="let category of skillCategories">
+          <h4 class="category-title">{{category.title}}</h4>
+          <div class="skill-tags">
+            <div class="skill-tag" 
+                 *ngFor="let skill of category.skills"
+                 [class.rust-skill]="skill === 'Rust'"
+                 [title]="getSkillName(skill)">
+              <img [src]="getSkillLogo(skill)" [alt]="skill" class="skill-logo">
+            </div>
           </div>
-          <div class="skill-bar">
-            <div class="skill-progress" [style.width.%]="skill.level"></div>
-          </div>
-          <div class="skill-level">{{skill.level}}%</div>
         </div>
       </div>
     </div>
