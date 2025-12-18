@@ -1,0 +1,39 @@
+{
+  "name": "Anandteertha Rao - Rust Developer & Full Stack Software Engineer Portfolio",
+  "short_name": "Anandteertha Portfolio",
+  "description": "Professional portfolio of Anandteertha Rao - Rust Developer and Full Stack Software Engineer with 3+ years of experience in Angular, Python, TypeScript, .NET, React, FastAPI, and systems programming",
+  "start_url": "/anandteertha-portfolio/",
+  "display": "standalone",
+  "background_color": "#faf8f3",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology", "software"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/anandteertha-portfolio/",
+  "shortcuts": [
+    {
+      "name": "Projects",
+      "short_name": "Projects",
+      "description": "View featured projects",
+      "url": "/anandteertha-portfolio/#projects",
+      "icons": [{ "src": "assets/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch",
+      "url": "/anandteertha-portfolio/#contact",
+      "icons": [{ "src": "assets/favicon.svg", "sizes": "any" }]
+    }
+  ]
+}
+

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://anandteertha.github.io/anandteertha-portfolio/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+

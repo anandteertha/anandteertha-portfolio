@@ -10,3 +10,4 @@
   <circle cx="85" cy="15" r="8" fill="#ff6b6b"/>
   <path d="M 20 20 L 30 30 M 30 20 L 20 30" stroke="white" stroke-width="2" stroke-linecap="round"/>
 </svg>
+
