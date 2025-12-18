@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <defs>
+    <linearGradient id="siesGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#003366;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0066CC;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="100" rx="8" fill="url(#siesGrad)"/>
+  <text x="150" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">SIES</text>
+  <text x="150" y="65" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle">GRADUATE SCHOOL OF TECHNOLOGY</text>
+  <text x="150" y="85" font-family="Arial, sans-serif" font-size="12" fill="#FFD700" text-anchor="middle">AUTONOMOUS</text>
+</svg>
