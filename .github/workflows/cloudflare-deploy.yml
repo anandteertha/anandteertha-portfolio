@@ -32,6 +32,20 @@ jobs:
         env:
           NODE_ENV: production
       
+      - name: Check secrets
+        run: |
+          if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
+            echo "❌ Error: CLOUDFLARE_API_TOKEN secret is not set"
+            echo "Please add it in: Settings → Secrets and variables → Actions"
+            exit 1
+          fi
+          if [ -z "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}" ]; then
+            echo "❌ Error: CLOUDFLARE_ACCOUNT_ID secret is not set"
+            echo "Please add it in: Settings → Secrets and variables → Actions"
+            exit 1
+          fi
+          echo "✅ Secrets are configured"
+      
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
@@ -40,4 +54,5 @@ jobs:
           projectName: anandteertha-portfolio
           directory: src/client/dist/client/browser
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: false
 
