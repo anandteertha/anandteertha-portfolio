@@ -46,6 +46,20 @@ jobs:
           fi
           echo "✅ Secrets are configured"
       
+      - name: Verify build output exists
+        working-directory: ./src/client
+        run: |
+          if [ ! -d "dist/client/browser" ]; then
+            echo "❌ Build output directory not found. Build may have failed."
+            exit 1
+          fi
+          if [ ! -f "dist/client/browser/index.html" ]; then
+            echo "❌ index.html not found in build output."
+            exit 1
+          fi
+          echo "✅ Build output verified"
+          ls -la dist/client/browser/ | head -10
+      
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
@@ -54,5 +68,6 @@ jobs:
           projectName: anandteertha-portfolio
           directory: src/client/dist/client/browser
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          wranglerVersion: "3"
         continue-on-error: false
 
