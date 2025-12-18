@@ -4,25 +4,26 @@
     <div class="gradient-orb orb-2"></div>
     <div class="gradient-orb orb-3"></div>
   </div>
-  
+
   <div class="hero-container">
     <div class="hero-content">
       <div class="hero-badge">
         <span class="badge-icon">🦀</span>
         <span>Rust Developer</span>
       </div>
-      
+
       <h1 class="hero-title">
         Building Robust Systems with
         <span class="gradient-text">Rust</span>
       </h1>
-      
+
       <p class="hero-description">
-        Passionate Rust developer focused on creating performant CLI tools and systems software. 
-        Currently building <strong>Neatd</strong>, an automated folder organization tool, and seeking 
-        opportunities in Rust development.
+        Passionate Rust developer focused on creating performant CLI tools and
+        systems software. Currently building <strong>Neatd</strong>, an
+        automated folder organization tool, and seeking opportunities in Rust
+        development.
       </p>
-      
+
       <div class="hero-actions">
         <button class="btn btn-primary" (click)="scrollToSection('projects')">
           View Projects
@@ -31,7 +32,7 @@
           Get in Touch
         </button>
       </div>
-      
+
       <div class="hero-stats">
         <div class="stat-item">
           <div class="stat-number">3+</div>
@@ -47,7 +48,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="hero-visual">
       <div class="code-window">
         <div class="code-header">
@@ -59,18 +60,41 @@
           <span class="code-title">neatd.rs</span>
         </div>
         <div class="code-content">
-          <div class="code-line"><span class="keyword">use</span>&nbsp;<span class="string">clap</span><span class="operator">&#58;&#58;</span><span class="string">Parser</span>;</div>
-          <div class="code-line"><span class="keyword">use</span>&nbsp;<span class="string">neatd</span><span class="operator">&#58;&#58;</span><span class="string">config</span><span class="operator">&#58;&#58;</span><span class="string">Config</span>;</div>
+          <div class="code-line">
+            <span class="keyword">use</span>&nbsp;<span class="string"
+              >clap</span
+            ><span class="operator">&#58;&#58;</span
+            ><span class="string">Parser</span>;
+          </div>
+          <div class="code-line">
+            <span class="keyword">use</span>&nbsp;<span class="string"
+              >neatd</span
+            ><span class="operator">&#58;&#58;</span
+            ><span class="string">config</span
+            ><span class="operator">&#58;&#58;</span
+            ><span class="string">Config</span>;
+          </div>
           <div class="code-line"></div>
-          <div class="code-line"><span class="keyword">fn</span> <span class="function">main</span>() <span class="operator">&#123;</span></div>
-          <div class="code-line">  <span class="keyword">let</span> config = <span class="type">Config</span><span class="operator">&#58;&#58;</span><span class="function">load</span>();</div>
-          <div class="code-line">  <span class="function">organize_files</span>(config);</div>
+          <div class="code-line">
+            <span class="keyword">fn</span>&nbsp;<span class="function"
+              >main</span
+            >() <span class="operator">&#123;</span>
+          </div>
+          <div class="code-line">
+            <span class="keyword">let</span> config =
+            <span class="type">Config</span
+            ><span class="operator">&#58;&#58;</span
+            ><span class="function">load</span>();
+          </div>
+          <div class="code-line">
+            <span class="function">organize_files</span>(config);
+          </div>
           <div class="code-line"><span class="operator">&#125;</span></div>
         </div>
       </div>
     </div>
   </div>
-  
+
   <div class="scroll-indicator">
     <div class="mouse"></div>
   </div>
