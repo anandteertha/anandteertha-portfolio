@@ -28,7 +28,7 @@ export class ExperienceComponent {
       title: 'Software Developer',
       company: 'Khayrallah Center for Lebanese Diaspora Studies',
       location: 'NC State University',
-      period: '2024 - Present',
+      period: '2025 - Present',
       type: 'part-time',
       isCurrent: true,
       logo: 'assets/ncstate-logo.svg',
