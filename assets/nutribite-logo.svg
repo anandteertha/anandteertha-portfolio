@@ -1,0 +1,18 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="40" fill="url(#nutribiteGradient)"/>
+  <path d="M100 50L120 70L100 90L80 70L100 50Z" fill="white" fill-opacity="0.2"/>
+  <circle cx="100" cy="100" r="30" fill="white" fill-opacity="0.3"/>
+  <path d="M100 85L110 95L100 105L90 95L100 85Z" fill="#FF6B6B"/>
+  <text x="100" y="140" font-family="Space Grotesk" font-weight="700" font-size="24" fill="white" text-anchor="middle">NutriBite</text>
+  <path d="M70 120L130 120" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="85" cy="120" r="4" fill="white"/>
+  <circle cx="100" cy="120" r="4" fill="white"/>
+  <circle cx="115" cy="120" r="4" fill="white"/>
+  <defs>
+    <linearGradient id="nutribiteGradient" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4ECDC4"/>
+      <stop offset="1" stop-color="#44A08D"/>
+    </linearGradient>
+  </defs>
+</svg>
+
