@@ -1,4 +1,4 @@
-<section id="projects" class="projects">
+<section id="projects" class="projects" aria-label="Projects Section">
   <div class="container">
     <div class="section-header" appScrollAnimation>
       <span class="section-badge">Projects</span>
@@ -17,7 +17,7 @@
            (click)="openDetail(project)">
         <div class="project-header">
           <div class="project-logo" *ngIf="project.logo">
-            <img [src]="project.logo" [alt]="project.title">
+            <img [src]="project.logo" [alt]="'Logo for ' + project.title + ' - ' + project.subtitle">
           </div>
           <div class="project-icon" *ngIf="project.isHighlight && !project.logo">🦀</div>
           <div class="project-info">
@@ -53,7 +53,7 @@
       
       <div class="modal-header" *ngIf="selectedProject">
         <div class="modal-logo" *ngIf="selectedProject.logo">
-          <img [src]="selectedProject.logo" [alt]="selectedProject.title">
+          <img [src]="selectedProject.logo" [alt]="'Logo for ' + selectedProject.title + ' - ' + selectedProject.subtitle">
         </div>
         <div class="project-icon-large" *ngIf="selectedProject.isHighlight && !selectedProject.logo">🦀</div>
         <div>

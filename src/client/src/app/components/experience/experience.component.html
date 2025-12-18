@@ -1,4 +1,4 @@
-<section id="experience" class="experience">
+<section id="experience" class="experience" aria-label="Work Experience Section">
   <div class="container">
     <div class="section-header" appScrollAnimation>
       <span class="section-badge">Experience</span>
@@ -24,7 +24,7 @@
         <div class="experience-card">
           <div class="experience-header">
             <div class="experience-logo" *ngIf="exp.logo">
-              <img [src]="exp.logo" [alt]="exp.company">
+              <img [src]="exp.logo" [alt]="'Logo for ' + exp.company + ' - ' + exp.title">
             </div>
             <div class="experience-info">
               <h3 class="experience-title">{{exp.title}}</h3>
@@ -66,7 +66,7 @@
       
       <div class="modal-header" *ngIf="selectedExperience">
         <div class="modal-logo" *ngIf="selectedExperience.logo">
-          <img [src]="selectedExperience.logo" [alt]="selectedExperience.company">
+          <img [src]="selectedExperience.logo" [alt]="'Logo for ' + selectedExperience.company + ' - ' + selectedExperience.title">
         </div>
         <div>
           <h2 class="modal-title">{{selectedExperience.title}}</h2>

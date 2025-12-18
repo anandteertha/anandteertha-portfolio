@@ -1,4 +1,4 @@
-<section id="education" class="education">
+<section id="education" class="education" aria-label="Education Section">
   <div class="container">
     <div class="section-header" appScrollAnimation>
       <span class="section-badge">Education</span>
@@ -17,7 +17,7 @@
         <div class="education-card">
           <div class="education-header">
             <div class="education-logo">
-              <img [src]="edu.logo" [alt]="edu.institution">
+              <img [src]="edu.logo" [alt]="'Logo for ' + edu.institution + ' - ' + edu.degree">
             </div>
             <div class="education-info">
               <h3 class="education-degree">{{edu.degree}}</h3>
@@ -30,7 +30,7 @@
               <span class="education-badge" *ngIf="edu.isCurrent">Current</span>
             </div>
             <div class="education-secondary-logo" *ngIf="edu.secondaryLogo">
-              <img [src]="edu.secondaryLogo" [alt]="'Mumbai University'">
+              <img [src]="edu.secondaryLogo" [alt]="'Mumbai University Logo - ' + edu.degree">
             </div>
           </div>
           
