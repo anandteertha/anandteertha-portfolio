@@ -233,35 +233,68 @@ anandteertha-portfolio/
 
 ## 🚢 **Deployment**
 
-### **GitHub Pages with CI/CD**
+### **Cloudflare Pages (Recommended)**
 
-The portfolio is automatically deployed to GitHub Pages using GitHub Actions whenever code is pushed to the `main` branch.
+The portfolio is automatically deployed to Cloudflare Pages using GitHub Actions whenever code is pushed to the `main` branch.
 
-The CI/CD pipeline:
-1. Builds the Angular application
-2. Deploys to the `gh-pages` branch
-3. Makes the site available at `https://anandteertha.github.io/anandteertha-portfolio/`
+#### **Automatic Deployment Setup**
 
-### **Manual Deployment**
+1. **Get Cloudflare API Credentials**
+   - Log in to [Cloudflare Dashboard](https://dash.cloudflare.com/)
+   - Go to **My Profile** → **API Tokens** → **Create Token**
+   - Use **Edit Cloudflare Workers** template or create custom token with:
+     - **Account** → **Cloudflare Pages** → **Edit** permissions
+   - Copy the API token
 
-1. **Build with base href**
+2. **Get Cloudflare Account ID**
+   - In Cloudflare Dashboard, select your account
+   - Copy the Account ID from the right sidebar
+
+3. **Set Up GitHub Secrets**
+   - Go to your GitHub repository → **Settings** → **Secrets and variables** → **Actions**
+   - Add two secrets:
+     - `CLOUDFLARE_API_TOKEN` - Your Cloudflare API token
+     - `CLOUDFLARE_ACCOUNT_ID` - Your Cloudflare Account ID
+
+4. **Push to Main Branch**
    ```bash
-   ng build --base-href "https://anandteertha.github.io/anandteertha-portfolio/"
+   git push origin main
    ```
+   The GitHub Actions workflow will automatically build and deploy to Cloudflare Pages.
 
-2. **Deploy using Angular CLI GitHub Pages**
-   ```bash
-   npx angular-cli-ghpages --dir=dist/client/browser
-   ```
+#### **Configure Custom Domain**
 
-### **Alternative: PowerShell Script**
+1. In Cloudflare Dashboard → **Pages** → **anandteertha-portfolio**
+2. Click **Custom domains** → **Set up a custom domain**
+3. Enter your domain and follow DNS configuration instructions
 
-A deployment script is available at `src/client/deploy.ps1`:
+📖 **Detailed Setup Guide**: See [cloudflare-setup.md](cloudflare-setup.md) for complete instructions.
 
+#### **Manual Deployment**
+
+**Using PowerShell (Windows):**
 ```powershell
 cd src/client
-.\deploy.ps1
+.\deploy-cloudflare.ps1
 ```
+
+**Using Bash (Linux/Mac):**
+```bash
+cd src/client
+./deploy-cloudflare.sh
+```
+
+**Using npm script:**
+```bash
+cd src/client
+npm run deploy:cloudflare
+```
+
+**Note**: You'll need to set `CLOUDFLARE_API_TOKEN` environment variable for manual deployment.
+
+### **GitHub Pages (Alternative)**
+
+The portfolio can also be deployed to GitHub Pages. See the original `deploy.yml` workflow for GitHub Pages deployment.
 
 ---
 

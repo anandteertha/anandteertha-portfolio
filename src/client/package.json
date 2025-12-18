@@ -5,8 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:production": "ng build --configuration production",
+    "build:cloudflare": "ng build --configuration production --base-href=/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy:cloudflare": "npm run build:cloudflare && npx wrangler pages deploy dist/client/browser --project-name=anandteertha-portfolio"
   },
   "private": true,
   "dependencies": {
