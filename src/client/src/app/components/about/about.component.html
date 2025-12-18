@@ -1,0 +1,56 @@
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">About Me</span>
+      <h2 class="section-title">Passionate Rust Developer</h2>
+      <p class="section-description">
+        Building robust, performant systems with a focus on correctness and maintainability
+      </p>
+    </div>
+
+    <div class="about-content">
+      <div class="about-text">
+        <div class="text-block">
+          <h3>Who I Am</h3>
+          <p>
+            I'm a software developer passionate about Rust and systems programming. Currently, I'm building 
+            <strong>Neatd</strong>, a Rust CLI application for automated folder organization that emphasizes 
+            type safety, explicit error handling, and safe filesystem operations.
+          </p>
+        </div>
+        
+        <div class="text-block">
+          <h3>My Focus</h3>
+          <p>
+            I'm actively seeking opportunities in Rust development. My work focuses on creating CLI tools 
+            and systems software that are both performant and maintainable. I believe in writing code that 
+            is correct by construction, leveraging Rust's type system and ownership model.
+          </p>
+        </div>
+
+        <div class="text-block">
+          <h3>Current Work</h3>
+          <p>
+            I'm currently working part-time as a Software Developer at the Khayrallah Center for Lebanese 
+            Diaspora Studies at NC State, where I build web applications using React, FastAPI, and pytest. 
+            I also implement stress testing using Locust to ensure system reliability.
+          </p>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card" *ngFor="let skill of skills">
+          <div class="skill-header">
+            <span class="skill-icon">{{skill.icon}}</span>
+            <span class="skill-name">{{skill.name}}</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" [style.width.%]="skill.level"></div>
+          </div>
+          <div class="skill-level">{{skill.level}}%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

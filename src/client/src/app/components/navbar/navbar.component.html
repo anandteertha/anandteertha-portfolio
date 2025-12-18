@@ -1,0 +1,24 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="navbar-container">
+    <div class="navbar-brand" (click)="scrollToSection('hero')">
+      <div class="brand-avatar">
+        <img src="assets/anand-pic.JPG" alt="Anandteertha Rao">
+      </div>
+      <span class="brand-name">Anandteertha Rao</span>
+    </div>
+    
+    <ul class="navbar-menu" [class.active]="isMobileMenuOpen">
+      <li><a (click)="scrollToSection('about')">About</a></li>
+      <li><a (click)="scrollToSection('experience')">Experience</a></li>
+      <li><a (click)="scrollToSection('projects')">Projects</a></li>
+      <li><a (click)="scrollToSection('contact')">Contact</a></li>
+    </ul>
+    
+    <button class="mobile-menu-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+

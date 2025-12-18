@@ -1,0 +1,78 @@
+<section id="projects" class="projects">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Projects</span>
+      <h2 class="section-title">Featured Work</h2>
+      <p class="section-description">
+        Building innovative solutions with a focus on Rust and systems programming
+      </p>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card" 
+           *ngFor="let project of projects"
+           [class.highlight]="project.isHighlight"
+           (click)="openDetail(project)">
+        <div class="project-header">
+          <div class="project-icon" *ngIf="project.isHighlight">🦀</div>
+          <div>
+            <h3 class="project-title">{{project.title}}</h3>
+            <p class="project-subtitle">{{project.subtitle}}</p>
+          </div>
+        </div>
+        
+        <p class="project-description">{{project.description[0]}}</p>
+        
+        <div class="project-tech">
+          <span class="tech-tag" *ngFor="let tech of project.technologies.slice(0, 4)">{{tech}}</span>
+          <span class="tech-more" *ngIf="project.technologies.length > 4">+{{project.technologies.length - 4}}</span>
+        </div>
+        
+        <div class="project-footer">
+          <span class="project-period">{{project.period}}</span>
+          <span class="project-action">View Details →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" *ngIf="showModal" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeModal()">×</button>
+      
+      <div class="modal-header" *ngIf="selectedProject">
+        <div class="project-icon-large" *ngIf="selectedProject.isHighlight">🦀</div>
+        <div>
+          <h2 class="modal-title">{{selectedProject.title}}</h2>
+          <p class="modal-subtitle">{{selectedProject.subtitle}}</p>
+          <span class="modal-period">{{selectedProject.period}}</span>
+        </div>
+      </div>
+      
+      <div class="modal-body" *ngIf="selectedProject">
+        <div class="modal-section">
+          <h3>About</h3>
+          <ul>
+            <li *ngFor="let desc of selectedProject.description">{{desc}}</li>
+          </ul>
+        </div>
+        
+        <div class="modal-section" *ngIf="selectedProject.features && selectedProject.features.length > 0">
+          <h3>Key Features</h3>
+          <ul>
+            <li *ngFor="let feature of selectedProject.features">{{feature}}</li>
+          </ul>
+        </div>
+        
+        <div class="modal-section">
+          <h3>Technologies</h3>
+          <div class="modal-tech">
+            <span class="tech-tag" *ngFor="let tech of selectedProject.technologies">{{tech}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

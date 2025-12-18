@@ -1,0 +1,91 @@
+<section id="experience" class="experience">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Experience</span>
+      <h2 class="section-title">Work Experience</h2>
+      <p class="section-description">
+        Building software solutions across different domains and technologies
+      </p>
+    </div>
+
+    <div class="experience-timeline">
+      <div class="timeline-line"></div>
+      
+      <div class="experience-item" 
+           *ngFor="let exp of experiences; let i = index"
+           [class.current]="exp.isCurrent"
+           (click)="openDetail(exp)">
+        <div class="timeline-marker">
+          <div class="marker-dot"></div>
+        </div>
+        
+        <div class="experience-card">
+          <div class="experience-header">
+            <div>
+              <h3 class="experience-title">{{exp.title}}</h3>
+              <p class="experience-company">{{exp.company}}</p>
+              <p class="experience-location">{{exp.location}}</p>
+            </div>
+            <div class="experience-meta">
+              <span class="experience-period">{{exp.period}}</span>
+              <span class="experience-badge" [ngClass]="getTypeBadgeClass(exp.type)">
+                {{exp.type === 'full-time' ? 'Full-time' : exp.type === 'part-time' ? 'Part-time' : 'Internship'}}
+              </span>
+            </div>
+          </div>
+          
+          <div class="experience-preview">
+            <p>{{exp.description[0]}}</p>
+          </div>
+          
+          <div class="experience-tech">
+            <span class="tech-tag" *ngFor="let tech of exp.technologies.slice(0, 5)">{{tech}}</span>
+            <span class="tech-more" *ngIf="exp.technologies.length > 5">+{{exp.technologies.length - 5}} more</span>
+          </div>
+          
+          <div class="experience-action">
+            <span>View Details →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" *ngIf="showModal" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeModal()">×</button>
+      
+      <div class="modal-header" *ngIf="selectedExperience">
+        <div>
+          <h2 class="modal-title">{{selectedExperience.title}}</h2>
+          <p class="modal-company">{{selectedExperience.company}}</p>
+          <p class="modal-location">{{selectedExperience.location}}</p>
+          <div class="modal-meta">
+            <span class="modal-period">{{selectedExperience.period}}</span>
+            <span class="modal-badge" [ngClass]="getTypeBadgeClass(selectedExperience.type)">
+              {{selectedExperience.type === 'full-time' ? 'Full-time' : selectedExperience.type === 'part-time' ? 'Part-time' : 'Internship'}}
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-body" *ngIf="selectedExperience">
+        <div class="modal-section">
+          <h3>Responsibilities</h3>
+          <ul>
+            <li *ngFor="let desc of selectedExperience.description">{{desc}}</li>
+          </ul>
+        </div>
+        
+        <div class="modal-section">
+          <h3>Technologies</h3>
+          <div class="modal-tech">
+            <span class="tech-tag" *ngFor="let tech of selectedExperience.technologies">{{tech}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

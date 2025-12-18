@@ -1,0 +1,46 @@
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Get In Touch</span>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="section-description">
+        Interested in Rust development opportunities or collaboration? I'd love to hear from you.
+      </p>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon">💼</div>
+          <h3>Looking for Opportunities</h3>
+          <p>Actively seeking Rust development roles where I can contribute to building robust, performant systems.</p>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-icon">🤝</div>
+          <h3>Open to Collaboration</h3>
+          <p>Interested in collaborating on Rust projects, open source contributions, or technical discussions.</p>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <a 
+          *ngFor="let link of socialLinks"
+          [href]="link.url" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="social-link"
+          [style.background]="link.color">
+          <img [src]="link.icon" [alt]="link.name">
+          <span>{{link.name}}</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2025 Anandteertha Rao. All rights reserved.</p>
+      <p class="footer-note">Built with focus on Rust development</p>
+    </div>
+  </div>
+</section>
+
