@@ -11,6 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy to Cloudflare Pages
     
+    permissions:
+      contents: read
+      deployments: write
+      pages: write
+      id-token: write
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -92,5 +98,6 @@ jobs:
           projectName: anandteertha-portfolio
           directory: src/client/dist/client/browser
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          skipGitHubDeployment: true
         continue-on-error: false
 
