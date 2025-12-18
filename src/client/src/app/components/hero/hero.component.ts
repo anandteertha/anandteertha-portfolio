@@ -32,15 +32,21 @@ export class HeroComponent implements OnInit, OnDestroy {
   private updateIndicatorPosition() {
     const heroSection = document.getElementById('hero');
     if (heroSection) {
+      const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
-      const heroHeight = heroSection.offsetHeight;
+      
+      // Hide indicator on very small screens (less than 480px width)
+      if (viewportWidth < 480) {
+        this.showScrollIndicator = false;
+        return;
+      }
       
       // Position indicator at bottom of viewport, but ensure it's within hero section
       // On mobile, use a smaller bottom value
-      if (viewportHeight < 768) {
-        // Mobile: position at bottom of viewport with some padding
-        this.indicatorBottom = '1.5rem';
-      } else if (viewportHeight < 1024) {
+      if (viewportWidth < 768) {
+        // Small mobile: position at bottom with minimal padding
+        this.indicatorBottom = '1rem';
+      } else if (viewportWidth < 1024) {
         // Tablet: medium spacing
         this.indicatorBottom = '2rem';
       } else {
