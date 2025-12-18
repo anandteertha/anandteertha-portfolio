@@ -510,6 +510,13 @@
 }
 
 @media (max-width: 768px) {
+  .experience {
+    padding: 8rem 1.5rem;
+  }
+
+  .container {
+    padding: 0;
+  }
   .experience-timeline {
     padding-left: 3rem;
   }
