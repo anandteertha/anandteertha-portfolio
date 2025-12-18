@@ -71,6 +71,10 @@
   color: #CE422B;
   margin-bottom: 2.5rem;
   animation: pulse 2s ease-in-out infinite;
+  white-space: nowrap;
+  flex-wrap: wrap;
+  max-width: 100%;
+  word-break: break-word;
 }
 
 @keyframes pulse {
@@ -375,6 +379,11 @@
     font-size: 1.2rem;
     padding: 0.6rem 1.2rem;
     margin-bottom: 2rem;
+    white-space: normal;
+    text-align: center;
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
   }
 
   .hero-title {
@@ -441,6 +450,15 @@
 
   .hero-content {
     text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-badge {
+    align-self: center;
+    justify-content: center;
   }
 
   .scroll-indicator {
@@ -464,14 +482,31 @@
     gap: 2rem;
   }
 
+  .hero-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .hero-badge {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
     margin-bottom: 1.5rem;
+    white-space: normal;
+    text-align: center;
+    display: flex;
+    width: fit-content;
+    max-width: calc(100% - 2rem);
+    gap: 0.5rem;
+    line-height: 1.4;
+    align-self: center;
+    justify-content: center;
   }
 
   .badge-icon {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    flex-shrink: 0;
   }
 
   .hero-title {
@@ -539,6 +574,16 @@
 @media (max-width: 375px) {
   .hero {
     padding: 6rem 0.8rem 4rem 0.8rem;
+  }
+
+  .hero-badge {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.7rem;
+    gap: 0.4rem;
+  }
+
+  .badge-icon {
+    font-size: 1.2rem;
   }
 
   .hero-title {
