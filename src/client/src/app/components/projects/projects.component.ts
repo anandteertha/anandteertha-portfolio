@@ -44,6 +44,30 @@ export class ProjectsComponent {
       technologies: ['Rust', 'Clap', 'TOML', 'CLI Development', 'Filesystem Automation']
     },
     {
+      id: 'nutribite',
+      title: 'NutriBite',
+      subtitle: 'Food Recommendation System with RAG',
+      period: 'August 2025 - December 2025',
+      logo: 'assets/nutribite-logo.svg',
+      description: [
+        'Built a comprehensive food recommendation system as part of a Software Engineering course project. Developed a FastAPI backend with MySQL and Redis for caching and session management.',
+        'Designed and implemented a BCNF-normalized MySQL database schema with efficient SQL queries for optimal performance.',
+        'Created reusable React components for user food preferences and customization features.',
+        'Implemented a RAG-based (Retrieval-Augmented Generation) recommender system for healthier menu suggestions.',
+        'Followed SOLID principles and clean coding practices throughout the development lifecycle.',
+        'Set up comprehensive testing with Pytest for backend and Cypress for frontend, integrated into CI pipeline.'
+      ],
+      features: [
+        'FastAPI backend with MySQL database and Redis caching',
+        'BCNF-normalized database schema with optimized SQL queries',
+        'Reusable React components for food preferences and customization',
+        'RAG-based recommender system for personalized menu suggestions',
+        'Comprehensive testing with Pytest and Cypress in CI pipeline',
+        'SOLID principles and clean code architecture'
+      ],
+      technologies: ['FastAPI', 'Python', 'MySQL', 'Redis', 'React', 'RAG', 'Pytest', 'Cypress', 'CI/CD', 'SOLID Principles', 'Database Design', 'Backend Development', 'Frontend Development']
+    },
+    {
       id: 'lung-capacity',
       title: 'Lung Capacity Check',
       subtitle: 'IoT Health Monitoring System',
@@ -72,30 +96,6 @@ export class ProjectsComponent {
       ],
       features: [],
       technologies: ['Facial Recognition', 'Python', 'OpenCV', 'Node.js', 'REST APIs', 'Geofencing', 'Haversine Formula', 'Authentication & Authorization', 'Research & Technical Writing']
-    },
-    {
-      id: 'nutribite',
-      title: 'NutriBite',
-      subtitle: 'Food Recommendation System with RAG',
-      period: 'August 2025 - December 2025',
-      logo: 'assets/nutribite-logo.svg',
-      description: [
-        'Built a comprehensive food recommendation system as part of a Software Engineering course project. Developed a FastAPI backend with MySQL and Redis for caching and session management.',
-        'Designed and implemented a BCNF-normalized MySQL database schema with efficient SQL queries for optimal performance.',
-        'Created reusable React components for user food preferences and customization features.',
-        'Implemented a RAG-based (Retrieval-Augmented Generation) recommender system for healthier menu suggestions.',
-        'Followed SOLID principles and clean coding practices throughout the development lifecycle.',
-        'Set up comprehensive testing with Pytest for backend and Cypress for frontend, integrated into CI pipeline.'
-      ],
-      features: [
-        'FastAPI backend with MySQL database and Redis caching',
-        'BCNF-normalized database schema with optimized SQL queries',
-        'Reusable React components for food preferences and customization',
-        'RAG-based recommender system for personalized menu suggestions',
-        'Comprehensive testing with Pytest and Cypress in CI pipeline',
-        'SOLID principles and clean code architecture'
-      ],
-      technologies: ['FastAPI', 'Python', 'MySQL', 'Redis', 'React', 'RAG', 'Pytest', 'Cypress', 'CI/CD', 'SOLID Principles', 'Database Design', 'Backend Development', 'Frontend Development']
     },
     {
       id: 'crowd-counting',
