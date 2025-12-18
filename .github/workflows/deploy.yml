@@ -33,6 +33,11 @@ jobs:
         working-directory: ./src/client
         run: npm run build -- --base-href="https://anandteertha.github.io/anandteertha-portfolio/"
       
+      - name: Configure Git
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+      
       - name: Deploy to GitHub Pages
         working-directory: ./src/client
         run: npx angular-cli-ghpages --dir=dist/client/browser --no-silent
