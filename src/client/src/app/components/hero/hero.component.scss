@@ -367,8 +367,9 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 8rem 1.5rem 6rem 1.5rem;
+    padding: 10rem 1.5rem 6rem 1.5rem;
     min-height: 100vh;
+    padding-top: 10rem;
   }
 
   .hero-container {
@@ -474,8 +475,9 @@
 // Extra small mobile devices
 @media (max-width: 480px) {
   .hero {
-    padding: 7rem 1rem 5rem 1rem;
+    padding: 9rem 1rem 5rem 1rem;
     min-height: 100vh;
+    padding-top: 9rem;
   }
 
   .hero-container {
@@ -573,7 +575,8 @@
 // Very small devices (iPhone SE, etc.)
 @media (max-width: 375px) {
   .hero {
-    padding: 6rem 0.8rem 4rem 0.8rem;
+    padding: 8rem 0.8rem 4rem 0.8rem;
+    padding-top: 8rem;
   }
 
   .hero-badge {
