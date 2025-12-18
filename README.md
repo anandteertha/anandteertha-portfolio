@@ -1,15 +1,14 @@
 <div align="center">
 
-# 🚀 Cyberpunk 2099 Portfolio
+# 🦀 Anandteertha Rao - Portfolio
 
-### **A Futuristic, Interactive Portfolio Experience Built with Angular & Three.js**
+### **Professional Portfolio | Rust Developer & Full Stack Software Engineer**
 
 [![Angular](https://img.shields.io/badge/Angular-19.2.0-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7.2-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Three.js](https://img.shields.io/badge/Three.js-0.175.0-000000?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
-[![GSAP](https://img.shields.io/badge/GSAP-3.12.7-88CE02?style=for-the-badge&logo=greensock&logoColor=white)](https://greensock.com/gsap/)
+[![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
-[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/anandteertha/anandteertha-portfolio?style=for-the-badge&logo=github)](https://github.com/anandteertha/anandteertha-portfolio/stargazers)
@@ -21,7 +20,7 @@
 
 ## ✨ **Overview**
 
-Welcome to **Cyberpunk 2099 Portfolio** — a cutting-edge, immersive portfolio website that combines stunning 3D graphics, smooth animations, and a cyberpunk aesthetic to showcase professional work and projects. Built with modern web technologies, this portfolio delivers an unforgettable user experience that stands out from the crowd.
+A modern, professional portfolio website showcasing my work as a **Rust Developer** and **Full Stack Software Engineer**. Built with Angular and optimized for SEO, this portfolio highlights my experience in systems programming, web development, and software engineering.
 
 ### 🎯 **Live Demo**
 
@@ -31,50 +30,63 @@ Welcome to **Cyberpunk 2099 Portfolio** — a cutting-edge, immersive portfolio 
 
 ## 🎨 **Features**
 
-### 🌌 **Immersive 3D Background**
-- **Dynamic starfield animation** powered by Three.js
-- **1000+ animated stars** creating a mesmerizing space effect
-- **Smooth camera movements** and responsive rendering
-- **Non-blocking background** that doesn't interfere with UI interactions
-
-### 🎭 **Cyberpunk Aesthetic**
-- **Neon glow effects** on interactive elements
-- **Dark theme** with vibrant accent colors
-- **Smooth GSAP animations** for transitions and interactions
+### 🚀 **Modern Design**
+- **Clean, professional UI** with a light theme optimized for readability
 - **Responsive design** that works flawlessly on all devices
+- **Smooth scroll animations** and interactive elements
+- **Optimized typography** and spacing for excellent UX
 
 ### 📱 **Portfolio Sections**
 
 #### 🏠 **Hero Section**
-- Animated introduction with glowing text effects
-- Smooth scroll navigation
-- Eye-catching call-to-action elements
+- Professional introduction with availability badge
+- Interactive Rust code snippet display
+- Call-to-action buttons for collaboration
+- Statistics showcase (Experience, Projects, Specialization)
 
 #### 👨‍💻 **About Section**
 - Personal introduction and professional summary
-- Educational background and current pursuits
-- Engaging visual presentation
+- Technical skills showcase with categorized technologies
+- Focus on Rust, systems programming, and full-stack development
+- Invitation for collaboration and job opportunities
+
+#### 🎓 **Education**
+- **North Carolina State University** — Master of Science in Computer Science (2025-2027)
+- **Mumbai University** — Bachelor of Engineering in Computer Engineering (2018-2022)
+- Course listings and achievements
 
 #### 💼 **Work Experience**
-- Interactive timeline showcasing professional journey
-- Detailed work history with:
-  - **Raychem (Chemelex)** — 3 years as Software Development Engineer
-  - **Outrider.live** — Additional professional experience
-- Hover effects and neon accents
+- **Khayrallah Center for Lebanese Diaspora Studies** (2025 - Present)
+  - Software Developer (Part-time)
+  - React, FastAPI, Python, pytest, Locust
+- **Raychem (Chemelex)** (2022-2025)
+  - Full Stack Developer (Full-time)
+  - Angular, TypeScript, Python, .NET, Three.js, AWS
+- **Outrider.live** (2020-2021)
+  - Software Developer Intern
+  - Node.js, Socket.io, Google Maps API
 
 #### 🚀 **Projects Showcase**
-- Grid layout displaying featured projects:
-  - **Lung Capacity Check** — Healthcare application
-  - **Faculty Attendance System** — Management solution
-  - **Crowd Counting** — Computer vision project
-  - **Gym Manager Application** — Full-stack application
-- Detailed project pages with images and descriptions
-- Interactive cards with smooth animations
+- **Neatd** — Rust CLI tool for automated folder organization (2025 - Present)
+- **NutriBite** — Food recommendation system with RAG (2025)
+- **Lung Capacity Check** — IoT health monitoring system (2021-2022)
+- **Faculty Attendance System** — Smart attendance with facial recognition (2021)
+- **Crowd Counting** — Real-time video analysis system (2021)
+- **Gym Manager Application** — Full-featured gym management system (2020-2021)
 
 #### 📧 **Contact Section**
 - Social media integration (GitHub, LinkedIn, Email)
 - Professional contact information
-- Easy-to-access links with hover effects
+- Call-to-action for opportunities
+
+### 🔍 **SEO Optimizations**
+- **Comprehensive meta tags** (200+ keywords)
+- **Structured data** (JSON-LD schemas for Person, WebSite, Projects, WorkExperience, Education)
+- **Open Graph** and **Twitter Card** tags
+- **Sitemap.xml** and **robots.txt**
+- **Semantic HTML** with ARIA labels
+- **Performance optimizations** (preconnect, DNS prefetch, preload)
+- **PWA support** with manifest.json
 
 ---
 
@@ -83,24 +95,16 @@ Welcome to **Cyberpunk 2099 Portfolio** — a cutting-edge, immersive portfolio 
 ### **Frontend Framework**
 - **Angular 19.2.0** — Modern, component-based framework
 - **TypeScript 5.7.2** — Type-safe development
-- **RxJS 7.8.0** — Reactive programming
-
-### **3D Graphics & Animation**
-- **Three.js 0.175.0** — 3D graphics library
-- **GSAP 3.12.7** — Professional animation library
+- **RxJS** — Reactive programming
 
 ### **Styling**
 - **SCSS** — Advanced CSS preprocessing
-- **Custom cyberpunk color palette**
+- **Custom design system** with consistent spacing and typography
 - **Responsive design** with mobile-first approach
 
-### **Utilities**
-- **Lodash 4.17.21** — JavaScript utility library
-- **Zone.js 0.15.0** — Angular change detection
-
 ### **Build Tools**
-- **Angular CLI 19.2.6** — Development and build tooling
-- **Karma & Jasmine** — Testing framework
+- **Angular CLI** — Development and build tooling
+- **GitHub Actions** — CI/CD for automated deployment
 
 ---
 
@@ -160,25 +164,28 @@ anandteertha-portfolio/
 │   └── client/
 │       ├── src/
 │       │   ├── app/
-│       │   │   ├── modules/
+│       │   │   ├── components/
 │       │   │   │   ├── about/          # About section component
-│       │   │   │   ├── background/      # 3D Three.js background
-│       │   │   │   ├── contact/         # Contact & social links
-│       │   │   │   ├── home/            # Home page component
-│       │   │   │   ├── nav-bar/         # Navigation bar
-│       │   │   │   ├── projects/        # Projects showcase
-│       │   │   │   └── work-experience/ # Work experience timeline
-│       │   │   ├── models/              # Data models & mappers
-│       │   │   ├── resolvers/           # Route resolvers
-│       │   │   └── app.component.ts     # Root component
+│       │   │   │   ├── contact/        # Contact & social links
+│       │   │   │   ├── education/      # Education section
+│       │   │   │   ├── experience/     # Work experience timeline
+│       │   │   │   ├── hero/           # Hero section
+│       │   │   │   ├── navbar/         # Navigation bar
+│       │   │   │   └── projects/       # Projects showcase
+│       │   │   ├── directives/         # Custom directives
+│       │   │   ├── services/          # Services (SEO, etc.)
+│       │   │   └── app.component.ts    # Root component
 │       │   ├── styles/
-│       │   │   └── _variables.scss      # Global SCSS variables
-│       │   └── main.ts                  # Application entry point
+│       │   │   └── _variables.scss    # Global SCSS variables
+│       │   └── index.html              # Main HTML with SEO meta tags
 │       ├── public/
-│       │   └── assets/                  # Images, certificates, etc.
-│       ├── angular.json                 # Angular configuration
-│       ├── package.json                 # Dependencies
-│       └── tsconfig.json                # TypeScript configuration
+│       │   ├── assets/                # Images, logos, certificates
+│       │   ├── manifest.json          # PWA manifest
+│       │   ├── robots.txt             # SEO robots file
+│       │   └── sitemap.xml            # SEO sitemap
+│       ├── angular.json               # Angular configuration
+│       ├── package.json               # Dependencies
+│       └── tsconfig.json              # TypeScript configuration
 └── README.md
 ```
 
@@ -186,23 +193,38 @@ anandteertha-portfolio/
 
 ## 🎯 **Key Components**
 
-### **BackgroundComponent**
-- Manages Three.js scene, camera, and renderer
-- Creates animated starfield with 1000+ particles
-- Handles window resize events
-- Implements smooth star animation loop
+### **HeroComponent**
+- Main landing section with introduction
+- Interactive Rust code snippet display
+- Call-to-action buttons
+- Statistics display
 
-### **HomeComponent**
-- Main landing page orchestrator
-- Integrates About, Work Experience, and Projects sections
-- Provides smooth navigation flow
+### **AboutComponent**
+- Professional introduction
+- Skills showcase with categorized technologies
+- Collaboration invitation
 
-### **ProjectsComponent & WorkExperienceComponent**
-- Display projects and work experience in grid/timeline format
-- Interactive cards with hover effects
-- Route to detailed entity pages
+### **EducationComponent**
+- Academic journey timeline
+- Course listings and achievements
+- Institution logos and details
 
-### **NavBarComponent**
+### **ExperienceComponent**
+- Work experience timeline
+- Detailed job descriptions
+- Technology stacks used
+
+### **ProjectsComponent**
+- Featured projects grid
+- Project details with technologies
+- Interactive project cards
+
+### **ContactComponent**
+- Social media links
+- Contact information
+- Call-to-action for opportunities
+
+### **NavbarComponent**
 - Responsive navigation bar
 - Smooth scrolling to sections
 - Profile image and branding
@@ -211,7 +233,16 @@ anandteertha-portfolio/
 
 ## 🚢 **Deployment**
 
-### **Deploy to GitHub Pages**
+### **GitHub Pages with CI/CD**
+
+The portfolio is automatically deployed to GitHub Pages using GitHub Actions whenever code is pushed to the `main` branch.
+
+The CI/CD pipeline:
+1. Builds the Angular application
+2. Deploys to the `gh-pages` branch
+3. Makes the site available at `https://anandteertha.github.io/anandteertha-portfolio/`
+
+### **Manual Deployment**
 
 1. **Build with base href**
    ```bash
@@ -236,26 +267,42 @@ cd src/client
 
 ## 🎨 **Customization**
 
-### **Changing Colors**
+### **Updating Personal Information**
 
-Edit `src/client/src/styles/_variables.scss` to customize the cyberpunk color palette:
+Edit the component TypeScript files to update:
+- **Hero Section**: `src/client/src/app/components/hero/hero.component.html`
+- **About Section**: `src/client/src/app/components/about/about.component.ts`
+- **Education**: `src/client/src/app/components/education/education.component.ts`
+- **Experience**: `src/client/src/app/components/experience/experience.component.ts`
+- **Projects**: `src/client/src/app/components/projects/projects.component.ts`
+- **Contact**: `src/client/src/app/components/contact/contact.component.ts`
 
-```scss
-$primary-color: #your-color;
-$accent-color: #your-accent;
-$neon-glow: #your-glow-color;
-```
+### **Updating SEO Meta Tags**
 
-### **Adding Projects**
+Edit `src/client/src/index.html` to update:
+- Meta description and keywords
+- Open Graph tags
+- Twitter Card tags
+- Structured data (JSON-LD schemas)
 
-Update the `EntityProxyMapper` class in `src/client/src/app/models/entity-proxy-mapper.ts` to add new projects or work experience entries.
+### **Changing Colors & Styling**
 
-### **Modifying 3D Background**
+Edit `src/client/src/styles/_variables.scss` to customize the color palette and design system.
 
-Customize the starfield in `src/client/src/app/modules/background/background.component.ts`:
-- Change star count: `this.addStarField(2000)` // More stars
-- Adjust animation speed: Modify the `speed` variable
-- Customize star appearance: Edit `PointsMaterial` properties
+---
+
+## 🔍 **SEO Features**
+
+This portfolio includes comprehensive SEO optimizations:
+
+- ✅ **200+ targeted keywords** for software developer, Rust developer, full stack developer, etc.
+- ✅ **Structured data** (Person, WebSite, ProfilePage, BreadcrumbList, ItemList, SoftwareApplication, WorkExperience, EducationalOccupationalCredential)
+- ✅ **Open Graph** and **Twitter Card** meta tags
+- ✅ **Sitemap.xml** with all sections
+- ✅ **robots.txt** for search engine crawlers
+- ✅ **Semantic HTML** with ARIA labels
+- ✅ **Performance optimizations** (preconnect, DNS prefetch, preload)
+- ✅ **PWA support** with manifest.json
 
 ---
 
@@ -282,17 +329,16 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 **Anandteertha Rao**
 
 - 🌐 **Portfolio**: [anandteertha.github.io/anandteertha-portfolio](https://anandteertha.github.io/anandteertha-portfolio/)
-- 💼 **LinkedIn**: [anandteertha-rao-0a25ba189](https://www.linkedin.com/in/anandteertha-rao-0a25ba189/)
+- 💼 **LinkedIn**: [anandteertha-rao](https://www.linkedin.com/in/anandteertha-rao/)
 - 🐙 **GitHub**: [@anandteertha](https://github.com/anandteertha)
-- 📧 **Email**: [raoanandteertha@gmail.com](mailto:raoanandteertha@gmail.com)
+- 📧 **Email**: Available on portfolio contact section
 
 ---
 
 ## 🙏 **Acknowledgments**
 
-- **Three.js** community for amazing 3D graphics capabilities
 - **Angular** team for the powerful framework
-- **GSAP** for smooth, professional animations
+- **Rust** community for amazing systems programming capabilities
 - All open-source contributors who made this project possible
 
 ---
@@ -307,8 +353,8 @@ If you like this project, please consider giving it a ⭐ on GitHub!
 
 **Built with ❤️ and lots of ☕ by Anandteertha Rao**
 
-*"Always reaching for the stars ✨"*
+*"Crafting high-performance software solutions 🦀"*
 
-[⬆ Back to Top](#-cyberpunk-2099-portfolio)
+[⬆ Back to Top](#-anandteertha-rao---portfolio)
 
 </div>
