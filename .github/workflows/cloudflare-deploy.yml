@@ -46,6 +46,30 @@ jobs:
           fi
           echo "✅ Secrets are configured"
       
+      - name: Install Wrangler CLI
+        run: npm install -g wrangler@latest
+      
+      - name: Authenticate Wrangler
+        run: |
+          export CLOUDFLARE_API_TOKEN="${{ secrets.CLOUDFLARE_API_TOKEN }}"
+          export CLOUDFLARE_ACCOUNT_ID="${{ secrets.CLOUDFLARE_ACCOUNT_ID }}"
+          wrangler whoami
+      
+      - name: Create Cloudflare Pages project if it doesn't exist
+        run: |
+          export CLOUDFLARE_API_TOKEN="${{ secrets.CLOUDFLARE_API_TOKEN }}"
+          export CLOUDFLARE_ACCOUNT_ID="${{ secrets.CLOUDFLARE_ACCOUNT_ID }}"
+          
+          echo "🔍 Checking if project exists..."
+          if wrangler pages project list 2>&1 | grep -q "anandteertha-portfolio"; then
+            echo "✅ Project 'anandteertha-portfolio' already exists"
+          else
+            echo "📦 Project doesn't exist. Creating it now..."
+            wrangler pages project create anandteertha-portfolio --production-branch=main
+            echo "✅ Project created successfully"
+          fi
+        continue-on-error: false
+      
       - name: Verify build output exists
         working-directory: ./src/client
         run: |
@@ -68,6 +92,5 @@ jobs:
           projectName: anandteertha-portfolio
           directory: src/client/dist/client/browser
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          wranglerVersion: "3"
         continue-on-error: false
 
