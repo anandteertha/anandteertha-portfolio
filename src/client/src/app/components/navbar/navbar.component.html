@@ -1,26 +1,26 @@
-<nav class="navbar" [class.scrolled]="isScrolled">
+<nav class="navbar" [class.scrolled]="isScrolled" role="navigation" aria-label="Main navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
   <div class="navbar-container">
-    <div class="navbar-brand" (click)="scrollToSection('hero')">
+    <div class="navbar-brand" (click)="scrollToSection('hero')" itemprop="name" aria-label="Anandteertha Rao Portfolio Home">
       <div class="brand-container">
         <div class="brand-avatar">
-          <img src="assets/anand-pic.JPG" alt="Anandteertha Rao - Rust Developer and Full Stack Software Engineer">
+          <img src="assets/anand-pic.JPG" alt="Anandteertha Rao - Rust Developer and Full Stack Software Engineer" itemprop="image">
         </div>
         <div class="brand-text">
-          <span class="brand-name">Anandteertha Rao</span>
-          <span class="brand-title">Software Developer</span>
+          <span class="brand-name" itemprop="author">Anandteertha Rao</span>
+          <span class="brand-title" itemprop="jobTitle">Software Developer</span>
         </div>
       </div>
     </div>
     
-    <ul class="navbar-menu" [class.active]="isMobileMenuOpen">
-      <li><a (click)="scrollToSection('about')">About</a></li>
-      <li><a (click)="scrollToSection('education')">Education</a></li>
-      <li><a (click)="scrollToSection('experience')">Experience</a></li>
-      <li><a (click)="scrollToSection('projects')">Projects</a></li>
-      <li><a (click)="scrollToSection('contact')">Contact</a></li>
+    <ul class="navbar-menu" [class.active]="isMobileMenuOpen" role="menubar">
+      <li role="none"><a (click)="scrollToSection('about')" role="menuitem" aria-label="About section" itemprop="url">About</a></li>
+      <li role="none"><a (click)="scrollToSection('education')" role="menuitem" aria-label="Education section" itemprop="url">Education</a></li>
+      <li role="none"><a (click)="scrollToSection('experience')" role="menuitem" aria-label="Experience section" itemprop="url">Experience</a></li>
+      <li role="none"><a (click)="scrollToSection('projects')" role="menuitem" aria-label="Projects section" itemprop="url">Projects</a></li>
+      <li role="none"><a (click)="scrollToSection('contact')" role="menuitem" aria-label="Contact section" itemprop="url">Contact</a></li>
     </ul>
     
-    <button class="mobile-menu-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+    <button class="mobile-menu-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navbar-menu">
       <span></span>
       <span></span>
       <span></span>
