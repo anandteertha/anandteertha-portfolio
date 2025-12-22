@@ -24,6 +24,27 @@ interface Project {
 export class ProjectsComponent {
   projects: Project[] = [
     {
+      id: 'nebulakv',
+      title: 'NebulaKV',
+      subtitle: 'C++ Client SDK for Key-Value Storage with Custom Wire Protocol',
+      period: 'December 2024 - Present',
+      isHighlight: true,
+      description: [
+        'NebulaKV is a C++-focused project building a production-ready client SDK for a distributed key-value storage system. The C++ client implements a custom binary wire protocol over TCP, featuring connection pooling, timeout/retry logic, typed APIs for GET/PUT/DELETE operations, and optional CLI/benchmarking tools.',
+        'The wire protocol (v1) is designed for correctness and safety: explicit message framing with length prefixes, big-endian encoding, protocol versioning, and deterministic error handling. The C++ implementation emphasizes zero-copy parsing where possible, RAII-based resource management, and robust error handling with structured error codes. The SDK provides a clean, type-safe API that abstracts protocol details while maintaining performance and control.'
+      ],
+      features: [
+        'C++ client SDK: connection pooling, timeout/retry logic, and typed API for GET/PUT/DELETE operations',
+        'Custom binary wire protocol: length-prefixed frames, versioned headers, big-endian encoding over TCP',
+        'Protocol implementation: explicit framing prevents message boundary issues, validation of all length fields',
+        'Error handling: structured error codes (UNSUPPORTED_VERSION, MALFORMED_FRAME, LIMIT_EXCEEDED, etc.)',
+        'Performance focus: zero-copy parsing, RAII-based resource management, bounded memory usage',
+        'Operational features: request correlation via request_id, configurable frame/key/value size limits',
+        'CLI and benchmarking tools: C++ utilities for testing, performance measurement, and integration'
+      ],
+      technologies: ['C++', 'TCP/IP', 'Binary Protocols', 'Network Programming', 'Systems Programming', 'Protocol Design', 'Connection Pooling', 'Error Handling', 'SDK Development', 'RAII', 'Zero-Copy I/O']
+    },
+    {
       id: 'neatd',
       title: 'Neatd',
       subtitle: 'Rust CLI Tool for Automated Folder Organization',
