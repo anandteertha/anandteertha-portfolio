@@ -29,9 +29,6 @@
               <span class="education-gpa" *ngIf="edu.gpa">{{edu.gpa}}</span>
               <span class="education-badge" *ngIf="edu.isCurrent">Current</span>
             </div>
-            <div class="education-secondary-logo" *ngIf="edu.secondaryLogo">
-              <img [src]="edu.secondaryLogo" [alt]="'Mumbai University Logo - ' + edu.degree">
-            </div>
           </div>
           
           <div class="education-preview" *ngIf="edu.courses.completed && edu.courses.completed.length > 0">
@@ -57,9 +54,6 @@
       <div class="modal-header" *ngIf="selectedEducation">
         <div class="modal-logo">
           <img [src]="selectedEducation.logo" [alt]="selectedEducation.institution">
-        </div>
-        <div class="modal-secondary-logo" *ngIf="selectedEducation.secondaryLogo">
-          <img [src]="selectedEducation.secondaryLogo" [alt]="'Mumbai University'">
         </div>
         <div>
           <h2 class="modal-title">{{selectedEducation.degree}}</h2>

@@ -59,7 +59,16 @@
                  *ngFor="let skill of category.skills"
                  [class.rust-skill]="skill === 'Rust'"
                  [title]="getSkillName(skill)">
-              <img [src]="getSkillLogo(skill)" [alt]="skill + ' programming language or technology logo'" class="skill-logo">
+              <div class="skill-logo-container">
+                <img [src]="getSkillLogo(skill)" [alt]="skill + ' programming language or technology logo'" class="skill-logo">
+              </div>
+              <span class="skill-name">{{skill}}</span>
+              <div class="skill-tooltip">
+                <div class="tooltip-header">
+                  <span class="tooltip-name">{{skill}}</span>
+                </div>
+                <div class="tooltip-description">{{getSkillDescription(skill)}}</div>
+              </div>
             </div>
           </div>
         </div>

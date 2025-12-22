@@ -45,18 +45,22 @@ export class ExperienceComponent {
       id: 'raychem',
       title: 'Full Stack Developer',
       company: 'Raychem (Chemelex)',
-      location: 'Remote',
+      location: 'Mumbai, India',
       period: 'July 2022 - April 2025',
       type: 'full-time',
       logo: 'assets/chemelex.png',
       description: [
-        'Led the development of a smart Python code editor, allowing users to run custom scripts securely',
-        'Worked on a 3D piping system renderer using Three.js for interactive visualization',
-        'Developed full-stack solutions using TypeScript, Angular, and Python with comprehensive testing',
-        'Managed AWS infrastructure and CI/CD pipelines using GitLab',
-        'Conducted code reviews and maintained high code quality standards'
+        'Developed a .NET microservice to parse PCF files for 3D pipe design, eliminating reliance on costly legacy software and reducing 3D renderer parsing and generation time by 2 days, resulting in significant cost savings',
+        'Built a 3D renderer in Three.js to visualize entire factory piping systems, improving the speed and clarity of design reviews',
+        'Developed and published multiple Angular libraries on MyGet Package Manager, enabling cross-team reusability',
+        'Implemented calculation formulas and mapper services while leveraging design patterns like Proxy, Abstract Factory, and Strategy to ensure scalability, maintainability, and consistency in business logic',
+        'Optimized complex UI, improving application performance and UX by reducing loading time by 20% through API and database query optimizations',
+        'Integrated a Python-based scripting editor within an Angular application, allowing users to write, execute, and customize real-time validations (\'Smart Scripts\'), which enabled on-the-fly modifications and automated warnings',
+        'Enabled scripts to dynamically modify input fields and automate repetitive tasks, which reduced manual effort, minimized errors, and enhanced design efficiency',
+        'Deployed on AWS Lambda for scalability and serverless execution, providing an efficient alternative to Flask running in a Docker container on EC2, which improved system performance and reduced operational costs',
+        'Wrote automated tests, achieving 100% test coverage in pytest, Jest, and Cypress'
       ],
-      technologies: ['TypeScript', 'JavaScript', 'Angular', 'Three.js', 'Python', '.NET', 'AWS', 'GitLab', 'JIRA', 'pytest', 'Jasmine/Karma', 'Jest', 'Cypress', 'XUnit Test']
+      technologies: ['TypeScript', 'JavaScript', 'Angular', 'Three.js', 'Python', '.NET', 'AWS', 'AWS Lambda', 'Docker', 'EC2', 'GitLab', 'MyGet', 'JIRA', 'pytest', 'Jasmine/Karma', 'Jest', 'Cypress', 'XUnit Test', 'Design Patterns', 'Microservices']
     },
     {
       id: 'outrider',

@@ -27,10 +27,10 @@ export class ProjectsComponent {
       id: 'nebulakv',
       title: 'NebulaKV',
       subtitle: 'C++ Client SDK for Key-Value Storage with Custom Wire Protocol',
-      period: 'December 2024 - Present',
+      period: 'December 2025 - Present',
       isHighlight: true,
       description: [
-        'NebulaKV is a C++-focused project building a production-ready client SDK for a distributed key-value storage system. The C++ client implements a custom binary wire protocol over TCP, featuring connection pooling, timeout/retry logic, typed APIs for GET/PUT/DELETE operations, and optional CLI/benchmarking tools.',
+        'NebulaKV is a C++ project focused on building a production-ready client SDK for key-value storage. The C++ implementation includes a custom binary wire protocol over TCP, featuring connection pooling, timeout/retry logic, typed APIs for GET/PUT/DELETE operations, and optional CLI/benchmarking tools.',
         'The wire protocol (v1) is designed for correctness and safety: explicit message framing with length prefixes, big-endian encoding, protocol versioning, and deterministic error handling. The C++ implementation emphasizes zero-copy parsing where possible, RAII-based resource management, and robust error handling with structured error codes. The SDK provides a clean, type-safe API that abstracts protocol details while maintaining performance and control.'
       ],
       features: [

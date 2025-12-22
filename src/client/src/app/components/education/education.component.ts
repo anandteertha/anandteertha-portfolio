@@ -10,7 +10,6 @@ interface Education {
   period: string;
   gpa?: string;
   logo: string;
-  secondaryLogo?: string;
   isCurrent?: boolean;
   courses: {
     completed?: Array<{ name: string; grade: string }>;
@@ -52,12 +51,11 @@ export class EducationComponent {
     {
       id: 'mumbai-bachelors',
       degree: 'Bachelor of Engineering in Computer Engineering',
-      institution: 'SIES Graduate School of Technology',
-      location: 'Mumbai University, Mumbai, India',
+      institution: 'University of Mumbai',
+      location: 'Mumbai, India',
       period: '2018 - 2022',
       gpa: '9.5/10 CGPA',
-      logo: 'https://siesgst.edu.in/images/sies_gst_logonew.jpg',
-      secondaryLogo: 'https://mum.digitaluniversity.ac/user/pages/images/logo_university-of-mumbai.jpg',
+      logo: 'https://mum.digitaluniversity.ac/user/pages/images/logo_university-of-mumbai.jpg',
       courses: {},
       achievements: [
         'Essar Endowment Award (10/10 pointer in Second Year)',
