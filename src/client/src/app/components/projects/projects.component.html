@@ -90,6 +90,22 @@
             <span class="tech-tag" *ngFor="let tech of selectedProject.technologies">{{tech}}</span>
           </div>
         </div>
+        
+        <div class="modal-section" *ngIf="selectedProject.github || selectedProject.live">
+          <h3>Links</h3>
+          <div class="project-links">
+            <a *ngIf="selectedProject.github" [href]="selectedProject.github" target="_blank" rel="noopener noreferrer" class="project-link">
+              <span class="link-icon">📂</span>
+              <span>GitHub</span>
+              <span class="link-arrow">↗</span>
+            </a>
+            <a *ngIf="selectedProject.live" [href]="selectedProject.live" target="_blank" rel="noopener noreferrer" class="project-link">
+              <span class="link-icon">🌐</span>
+              <span>Live Demo</span>
+              <span class="link-arrow">↗</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

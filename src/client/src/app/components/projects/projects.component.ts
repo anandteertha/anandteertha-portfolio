@@ -12,6 +12,7 @@ interface Project {
   period: string;
   isHighlight?: boolean;
   github?: string;
+  live?: string;
   logo?: string;
 }
 
@@ -87,6 +88,46 @@ export class ProjectsComponent {
         'SOLID principles and clean code architecture'
       ],
       technologies: ['FastAPI', 'Python', 'MySQL', 'Redis', 'React', 'RAG', 'Pytest', 'Cypress', 'CI/CD', 'SOLID Principles', 'Database Design', 'Backend Development', 'Frontend Development']
+    },
+    {
+      id: 'trainer-crm',
+      title: 'Gym Trainer Client Management',
+      subtitle: 'Client CRM, Workout Tracking, Payments & Analytics',
+      period: '2025',
+      live: 'https://trainer-website-theta.vercel.app/',
+      description: [
+        'Built and shipped a production Gym Trainer Client Management Application used by real trainers to run their day-to-day operations.',
+        'The platform consolidates client CRM, workout logging, payments/revenue tracking, and a business analytics dashboard into a single, responsive experience so trainers can manage relationships, measure progress, and understand performance at a glance.',
+        'Supports full client lifecycle management (profiles, status, notes, history), detailed workout sessions (sets, reps, weight, duration, rest, notes), and flexible payment records (monthly, per-session, package, and custom).',
+        'Provides actionable analytics including revenue trends, workout frequency, top exercises, and client-level breakdowns, plus an integrated bug reporting workflow with severity/status and reproducible steps to keep feedback loops tight.'
+      ],
+      features: [
+        'End-to-end client CRM with lifecycle tracking, notes, and history',
+        'Rich workout logging with multi-exercise sessions and detailed fields',
+        'Flexible payment tracking (monthly plans, per-session, packages, custom)',
+        'Business analytics dashboard: revenue trends, workout frequency, top exercises, client breakdowns',
+        'Integrated bug reporting workflow for faster iteration and product quality',
+        'Responsive, mobile-friendly UI tailored for busy trainers on the go'
+      ],
+      technologies: [
+        'TypeScript',
+        'React 19',
+        'Vite',
+        'React Router',
+        'TanStack Query',
+        'React Hook Form',
+        'Zod',
+        'Tailwind CSS',
+        'Recharts',
+        'Node.js',
+        'Express.js',
+        'Better-SQLite3',
+        'PostgreSQL',
+        'TiDB',
+        'REST APIs',
+        'Full Stack Development',
+        'Analytics Dashboards'
+      ]
     },
     {
       id: 'lung-capacity',
