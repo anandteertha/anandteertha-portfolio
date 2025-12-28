@@ -1,0 +1,68 @@
+<section id="blog" class="blog" aria-label="Blog Section" itemscope itemtype="https://schema.org/Blog">
+  <div class="container">
+    <div class="section-header" appScrollAnimation>
+      <span class="section-badge">Articles</span>
+      <h2 class="section-title">My Writing</h2>
+      <p class="section-description">
+        Technical articles, insights, and thoughts on software development, systems programming, and technology
+      </p>
+      <a [href]="mediumProfileUrl" target="_blank" rel="noopener noreferrer" class="medium-link">
+        <span>View all articles on Medium</span>
+        <span class="link-arrow">↗</span>
+      </a>
+    </div>
+
+    <div *ngIf="loading" class="loading-state">
+      <div class="loading-spinner"></div>
+      <p>Loading articles...</p>
+    </div>
+
+    <div *ngIf="error" class="error-state">
+      <p>{{ error }}</p>
+      <button (click)="loadArticles()" class="retry-button">Retry</button>
+    </div>
+
+    <div *ngIf="!loading && !error && articles.length === 0" class="empty-state">
+      <p>No articles found.</p>
+    </div>
+
+    <div *ngIf="!loading && !error && articles.length > 0" class="articles-grid">
+      <article 
+        *ngFor="let article of articles; let i = index"
+        class="article-card"
+        [style.animation-delay.ms]="i * 100"
+        appScrollAnimation
+        (click)="openArticle(article.link)"
+        itemscope
+        itemtype="https://schema.org/BlogPosting">
+        <div class="article-image" *ngIf="article.image">
+          <img 
+            [src]="article.image" 
+            [alt]="article.title"
+            itemprop="image"
+            loading="lazy"
+            (error)="handleImageError($event)">
+        </div>
+        <div class="article-content">
+          <div class="article-meta">
+            <time [attr.datetime]="article.pubDate" itemprop="datePublished">
+              {{ formatDate(article.pubDate) }}
+            </time>
+            <span class="article-author" itemprop="author">{{ article.author }}</span>
+          </div>
+          <h3 class="article-title" itemprop="headline">{{ article.title }}</h3>
+          <p class="article-description" itemprop="description">{{ article.description }}</p>
+          <div class="article-footer">
+            <div class="article-categories" *ngIf="article.categories && article.categories.length > 0">
+              <span class="category-tag" *ngFor="let category of article.categories.slice(0, 3)">
+                {{ category }}
+              </span>
+            </div>
+            <span class="read-more">Read Article →</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+

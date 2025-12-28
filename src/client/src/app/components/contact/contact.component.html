@@ -37,6 +37,7 @@
           target="_blank" 
           rel="noopener noreferrer"
           class="social-link"
+          [class.medium-link]="link.name === 'Medium'"
           [style.animation-delay.ms]="i * 100"
           [style.background]="link.color">
           <img [src]="link.icon" [alt]="link.name">

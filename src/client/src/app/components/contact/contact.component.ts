@@ -23,6 +23,12 @@ export class ContactComponent {
       color: '#0077b5'
     },
     {
+      name: 'Medium',
+      url: 'https://medium.com/@raoanandteertha',
+      icon: 'assets/medium.svg',
+      color: '#f5f5f5'
+    },
+    {
       name: 'Email',
       url: 'mailto:raoanandteertha@gmail.com',
       icon: 'assets/gmail.png',
