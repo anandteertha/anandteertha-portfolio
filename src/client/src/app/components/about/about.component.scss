@@ -140,9 +140,10 @@
   transform: translateY(0);
 }
 
-.skill-category {
-  width: 100%;
-  overflow: visible;
+  .skill-category {
+    width: 100%;
+    overflow: visible;
+    position: relative;
 
   .category-title {
     font-size: 1.8rem;
@@ -158,6 +159,7 @@
     gap: 1rem;
     width: 100%;
     overflow: visible;
+    position: relative;
   }
 
   .skill-tag {
@@ -188,11 +190,32 @@
       .skill-tooltip {
         opacity: 1;
         visibility: visible;
-        transform: translateY(-8px) scale(1);
+        transform: translateX(-50%) translateY(-8px) scale(1);
+        
+        @media (max-width: 768px) {
+          transform: translate(-50%, -50%) scale(1) !important;
+          z-index: 999999 !important;
+        }
       }
 
       .skill-name {
         color: #667eea;
+      }
+    }
+    
+    // Add backdrop overlay on mobile when tooltip is visible
+    @media (max-width: 768px) {
+      &:hover::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 999998;
+        pointer-events: none;
+        animation: fadeIn 0.3s ease;
       }
     }
 
@@ -247,21 +270,35 @@
       visibility: hidden;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       pointer-events: none;
-      z-index: 1000;
+      z-index: 10000;
       backdrop-filter: blur(10px);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
 
-      // Prevent tooltip from going off-screen on mobile
+      // On mobile, use fixed positioning centered in viewport like a modal popup
       @media (max-width: 768px) {
-        left: auto;
-        right: 0;
-        transform: translateX(0) translateY(-8px) scale(0.95);
-        min-width: 200px;
-        max-width: calc(100vw - 2rem);
-
+        position: fixed !important;
+        top: 50% !important;
+        left: 50% !important;
+        bottom: auto !important;
+        right: auto !important;
+        transform: translate(-50%, -50%) scale(0.95) !important;
+        min-width: 0 !important;
+        width: auto !important;
+        max-width: 85vw !important;
+        max-height: 70vh !important;
+        overflow-y: auto !important;
+        margin: 0 !important;
+        z-index: 999999 !important;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 10000px rgba(0, 0, 0, 0.5) !important;
+        padding: 1.5rem !important;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+        border: 2px solid rgba(102, 126, 234, 0.3) !important;
+        
+        // Hide arrow on mobile
         &::before {
-          left: auto;
-          right: 1.5rem;
-          transform: translateX(0) rotate(45deg);
+          display: none !important;
         }
       }
 
@@ -391,6 +428,11 @@
       filter: brightness(1.2);
     }
   }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 }
 
 @media (max-width: 1024px) {
@@ -402,6 +444,13 @@
 @media (max-width: 480px) {
   .about {
     padding: 6rem 1rem;
+    overflow-x: hidden;
+  }
+
+  .container {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
   }
 
   .about-cards {
@@ -428,6 +477,7 @@
     gap: 0.8rem;
     justify-content: flex-start;
     width: 100%;
+    position: relative;
   }
 
   .skill-tag {
@@ -450,18 +500,30 @@
     }
 
     .skill-tooltip {
-      min-width: 180px;
-      max-width: calc(100vw - 2rem);
-      padding: 1rem 1.2rem;
+      position: fixed !important;
+      top: 50% !important;
+      left: 50% !important;
+      bottom: auto !important;
+      right: auto !important;
+      transform: translate(-50%, -50%) scale(0.95) !important;
+      min-width: 0 !important;
+      width: auto !important;
+      max-width: 85vw !important;
+      max-height: 70vh !important;
+      overflow-y: auto !important;
+      padding: 1.5rem !important;
       font-size: 1.2rem;
-      right: 0;
-      left: auto;
-      transform: translateX(0) translateY(-8px) scale(0.95);
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+      white-space: normal !important;
+      margin: 0 !important;
+      z-index: 999999 !important;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 10000px rgba(0, 0, 0, 0.6) !important;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+      border: 2px solid rgba(102, 126, 234, 0.3) !important;
 
       &::before {
-        left: auto;
-        right: 1.5rem;
-        transform: translateX(0) rotate(45deg);
+        display: none !important;
       }
 
       .tooltip-header .tooltip-name {
@@ -470,11 +532,13 @@
 
       .tooltip-description {
         font-size: 1.1rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
       }
     }
 
     &:hover .skill-tooltip {
-      transform: translateX(0) translateY(-8px) scale(1);
+      transform: translate(-50%, -50%) scale(1) !important;
     }
   }
 }
@@ -502,6 +566,7 @@
   .skill-tags {
     gap: 0.8rem;
     justify-content: flex-start;
+    position: relative;
   }
 
   .skill-tag {
@@ -521,6 +586,38 @@
 
     .skill-name {
       font-size: 1rem;
+    }
+
+    .skill-tooltip {
+      position: fixed !important;
+      top: 50% !important;
+      left: 50% !important;
+      bottom: auto !important;
+      right: auto !important;
+      transform: translate(-50%, -50%) scale(0.95) !important;
+      min-width: 0 !important;
+      max-width: 85vw !important;
+      width: auto !important;
+      max-height: 70vh !important;
+      overflow-y: auto !important;
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+      white-space: normal !important;
+      margin: 0 !important;
+      z-index: 999999 !important;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 10000px rgba(0, 0, 0, 0.6) !important;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+      border: 2px solid rgba(102, 126, 234, 0.3) !important;
+      padding: 1.5rem !important;
+
+      &::before {
+        display: none !important;
+      }
+    }
+
+    &:hover .skill-tooltip {
+      transform: translate(-50%, -50%) scale(1) !important;
+      z-index: 999999 !important;
     }
   }
 }
