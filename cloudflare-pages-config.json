@@ -1,0 +1,8 @@
+{
+  "build": {
+    "command": "cd src/client && npm ci && npm run build -- --configuration production",
+    "cwd": ".",
+    "output_directory": "src/client/dist/client/browser"
+  }
+}
+
