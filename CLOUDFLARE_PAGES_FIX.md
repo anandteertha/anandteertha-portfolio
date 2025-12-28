@@ -1,76 +1,72 @@
 # Fix Cloudflare Pages Deploy Command Error
 
-The error occurs because Cloudflare Pages is configured with a **Deploy command** in the dashboard that's using the wrong syntax.
+The error occurs because Cloudflare Pages is configured with **Direct Git Integration**, which tries to run build and deploy commands automatically. Since you're using **GitHub Actions** for deployment, you should disconnect Git integration.
 
 ## The Problem
 
-Cloudflare Pages is trying to run `npx wrangler deploy` which is for **Workers**, not **Pages**. 
+Cloudflare Pages is trying to run `npx wrangler deploy` which is for **Workers**, not **Pages**. This happens because:
+- Cloudflare Pages has Direct Git Integration enabled
+- It's trying to build and deploy automatically on every push
+- The deploy command is using the wrong syntax
 
-## Solution: Update Cloudflare Pages Settings
+## Solution: Disconnect Git Integration (Recommended)
 
-You need to update the deploy command in your Cloudflare Pages dashboard:
+Since you're using GitHub Actions for deployment, **disconnect Git integration** in Cloudflare Pages:
 
-### Option 1: Remove Deploy Command (Recommended if using GitHub Actions)
-
-Since you're using GitHub Actions for deployment, you can disable the deploy command:
+### Steps to Disconnect Git:
 
 1. Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
 2. Navigate to **Pages** → **anandteertha-portfolio**
 3. Go to **Settings** → **Builds & deployments**
-4. Find the **Deploy command** field
-5. **Leave it empty** or remove the command
-6. Save changes
+4. Scroll down to **Source** section
+5. Click **Disconnect** or **Remove connection** next to your Git repository
+6. Confirm the disconnection
 
-This way, Cloudflare Pages will only use the build output and won't try to run a deploy command.
+### After Disconnecting:
 
-### Option 2: Fix the Deploy Command
+- Cloudflare Pages will **stop** automatically building/deploying on Git pushes
+- Only **GitHub Actions** will handle deployments (via `.github/workflows/cloudflare-deploy.yml`)
+- You'll have full control over the build and deploy process
+- You can still use your custom domain
 
-If you want to keep the deploy command, update it to:
+### Verify GitHub Actions is Working:
 
-```bash
-npx wrangler pages deploy src/client/dist/client/browser --project-name=anandteertha-portfolio
-```
+After disconnecting Git, your GitHub Actions workflow will be the **only** deployment method:
+- Push to `main` branch → GitHub Actions runs → Deploys to Cloudflare Pages
+- Check the **Actions** tab in your GitHub repository to see deployment status
 
-**Steps:**
-1. Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
-2. Navigate to **Pages** → **anandteertha-portfolio**
-3. Go to **Settings** → **Builds & deployments**
-4. Update **Deploy command** to:
+## Alternative: Fix the Deploy Command (If you want to keep Git integration)
+
+If you prefer to keep Git integration, update the deploy command:
+
+1. Go to **Pages** → **anandteertha-portfolio** → **Settings** → **Builds & deployments**
+2. Update **Deploy command** to:
    ```
    npx wrangler pages deploy src/client/dist/client/browser --project-name=anandteertha-portfolio
    ```
-5. Save changes
+3. Save changes
 
-### Option 3: Disable Direct Git Integration (Best for GitHub Actions)
+**However, this is NOT recommended** because:
+- You'll have duplicate deployments (Git integration + GitHub Actions)
+- Harder to manage environment variables
+- Less control over the build process
 
-Since you're using GitHub Actions, you can disable direct Git integration:
+## Why Disconnect Git?
 
-1. Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
-2. Navigate to **Pages** → **anandteertha-portfolio**
-3. Go to **Settings** → **Builds & deployments**
-4. Under **Build configuration**, you can:
-   - Set **Build command** to: `cd src/client && npm ci && npm run build -- --configuration production`
-   - Set **Build output directory** to: `src/client/dist/client/browser`
-   - **Remove or leave empty** the **Deploy command**
-5. Save changes
-
-## Why This Happens
-
-Cloudflare Pages supports two deployment methods:
-1. **Direct Git Integration**: Cloudflare builds and deploys automatically (uses build/deploy commands)
-2. **GitHub Actions**: You control the build and deploy process via workflows
-
-Since you're using GitHub Actions (`.github/workflows/cloudflare-deploy.yml`), you should either:
-- Disable the deploy command in Cloudflare Pages, OR
-- Use the correct `wrangler pages deploy` syntax
+**Benefits of using only GitHub Actions:**
+- ✅ Full control over build and deploy process
+- ✅ Use GitHub secrets for environment variables (like `GROQ_API_KEY`)
+- ✅ Better CI/CD workflow
+- ✅ Can run custom scripts (like `load-env.js`)
+- ✅ No conflicts between Cloudflare's auto-deploy and GitHub Actions
 
 ## Recommended Approach
 
-**Use GitHub Actions only** (Option 1 or 3):
-- More control over the build process
-- Can use environment variables from GitHub secrets
-- Better for CI/CD workflows
-- The workflow already handles everything
+**Disconnect Git integration** and use **only GitHub Actions**:
+1. Disconnect Git in Cloudflare Pages dashboard
+2. Keep using `.github/workflows/cloudflare-deploy.yml` for all deployments
+3. Your custom domain will still work
+4. Deployments will be more reliable and controlled
 
-After updating the settings, your next push will deploy correctly via GitHub Actions.
+After disconnecting Git, your next push will deploy correctly via GitHub Actions only.
 

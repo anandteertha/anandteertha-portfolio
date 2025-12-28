@@ -4,7 +4,37 @@ Since Angular apps are static and environment variables are compiled into the bu
 
 ## Setup Instructions
 
-### Step 1: Add Groq API Key as GitHub Secret
+### Step 1: Create Cloudflare API Token with Correct Permissions
+
+**IMPORTANT**: Your current API token doesn't have Cloudflare Pages permissions. Create a new one:
+
+1. **Go to Cloudflare Dashboard**
+   - Navigate to: https://dash.cloudflare.com/profile/api-tokens
+
+2. **Create Custom Token**
+   - Click **Create Token**
+   - Click **Create Custom Token**
+
+3. **Set Permissions** (Critical - must include these):
+   - **Account** → **Cloudflare Pages** → **Edit**
+   - **Account** → **Account Settings** → **Read** (optional but recommended)
+   - **Zone** → **Zone Settings** → **Read** (if using custom domain)
+
+4. **Account Resources**
+   - Select **Include** → **All accounts** (or your specific account)
+
+5. **Create Token**
+   - Click **Continue to summary**
+   - Click **Create Token**
+   - **Copy the token immediately** (you won't see it again!)
+
+6. **Update GitHub Secret**
+   - Go to your GitHub repository → **Settings** → **Secrets and variables** → **Actions**
+   - Find `CLOUDFLARE_API_TOKEN`
+   - Click **Update** and paste the new token
+   - Save
+
+### Step 2: Add Groq API Key as GitHub Secret
 
 1. **Go to your GitHub repository**
    - Navigate to: `https://github.com/YOUR_USERNAME/anandteertha-portfolio`
