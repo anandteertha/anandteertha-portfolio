@@ -98,12 +98,9 @@ jobs:
           ls -la dist/client/browser/ | head -10
       
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: anandteertha-portfolio
-          directory: src/client/dist/client/browser
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          export CLOUDFLARE_API_TOKEN="${{ secrets.CLOUDFLARE_API_TOKEN }}"
+          export CLOUDFLARE_ACCOUNT_ID="${{ secrets.CLOUDFLARE_ACCOUNT_ID }}"
+          wrangler pages deploy src/client/dist/client/browser --project-name=anandteertha-portfolio
         continue-on-error: false
 
