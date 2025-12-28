@@ -7,6 +7,7 @@ import { ProjectsComponent } from "./components/projects/projects.component";
 import { BlogComponent } from "./components/blog/blog.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
+import { ChatComponent } from "./components/chat/chat.component";
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,8 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
     ExperienceComponent,
     ProjectsComponent,
     BlogComponent,
-    ContactComponent
+    ContactComponent,
+    ChatComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

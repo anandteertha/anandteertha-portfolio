@@ -32,11 +32,18 @@ jobs:
         working-directory: ./src/client
         run: npm ci
       
+      - name: Load environment variables
+        working-directory: ./src/client
+        run: node load-env.js
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      
       - name: Build Angular app
         working-directory: ./src/client
         run: npm run build -- --configuration production
         env:
           NODE_ENV: production
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       
       - name: Check secrets
         run: |
@@ -98,6 +105,5 @@ jobs:
           projectName: anandteertha-portfolio
           directory: src/client/dist/client/browser
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          skipGitHubDeployment: true
         continue-on-error: false
 
