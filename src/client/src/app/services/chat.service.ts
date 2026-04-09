@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
 import { environment } from '../../environments/environment';
 
 export interface ChatMessage {
@@ -11,12 +13,12 @@ export interface ChatMessage {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ChatService {
   private readonly apiUrl = 'https://api.groq.com/openai/v1/chat/completions';
   private readonly apiKey = environment.groqApiKey;
-  
+
   private readonly systemContext = `You are a helpful AI assistant answering questions about Anandteertha Rao's career and education. 
   
 Here is information about Anandteertha Rao:
@@ -32,7 +34,7 @@ EDUCATION:
    - Achievements: Essar Endowment Award (10/10 pointer in Second Year)
 
 WORK EXPERIENCE:
-1. Software Developer at Khayrallah Center for Lebanese Diaspora Studies, NC State University (2025 - Present, Part-time)
+1. Software Developer at Khayrallah Center for Lebanese Diaspora Studies, NC State University (November 2025 - Present, Part-time)
    - Developing web applications for research and data management
    - Building responsive frontend interfaces using React
    - Creating backend APIs using FastAPI with pytest
@@ -59,6 +61,9 @@ WORK EXPERIENCE:
 KEY PROJECTS:
 - NebulaKV: C++ Client SDK for Key-Value Storage (December 2025 - Present)
 - Neatd: Rust CLI Tool for Automated Folder Organization (September 2025 - Present)
+- rust-basics: Completed Rust fundamentals learning track with 10 hands-on Cargo micro-projects (September 2025 - March 2026)
+- rust-intermediate: Ongoing project-based intermediate Rust track focused on concurrency, Rc, RefCell, and systems thinking (March 2026 - Present)
+- RouteLab: Linux-first C++ userspace router and traffic telemetry daemon using TUN interfaces and configurable packet policies (March 2026 - Present)
 - NutriBite: Food Recommendation System with RAG (August 2025 - December 2025)
 - Gym Trainer Client Management: Production application for trainers (2025)
 - Various other projects in IoT, facial recognition, and web development
@@ -74,12 +79,17 @@ Answer questions professionally, accurately, and concisely based on this informa
 
   sendMessage(messages: ChatMessage[]): Observable<string> {
     if (!this.apiKey) {
-      return throwError(() => new Error('Groq API key not configured. Please add GROQ_API_KEY to your .env file or environment variables.'));
+      return throwError(
+        () =>
+          new Error(
+            'Groq API key not configured. Please add GROQ_API_KEY to your .env file or environment variables.',
+          ),
+      );
     }
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.apiKey}`
+      Authorization: `Bearer ${this.apiKey}`,
     });
 
     const payload = {
@@ -87,14 +97,14 @@ Answer questions professionally, accurately, and concisely based on this informa
       // Alternative models: 'llama-3.1-8b-instant' (faster), 'mixtral-8x7b-32768' (good balance)
       messages: [
         { role: 'system', content: this.systemContext },
-        ...messages.map(msg => ({
+        ...messages.map((msg) => ({
           role: msg.role,
-          content: msg.content
-        }))
+          content: msg.content,
+        })),
       ],
       temperature: 0.7,
       max_tokens: 500,
-      stream: false
+      stream: false,
     };
 
     return this.http.post<any>(this.apiUrl, payload, { headers }).pipe(
@@ -103,14 +113,21 @@ Answer questions professionally, accurately, and concisely based on this informa
       }),
       catchError((error) => {
         console.error('Groq API error:', error);
-        return throwError(() => new Error(error.error?.error?.message || 'Failed to get response from AI'));
-      })
+        return throwError(
+          () =>
+            new Error(
+              error.error?.error?.message || 'Failed to get response from AI',
+            ),
+        );
+      }),
     );
   }
 
   // Helper method to extract response from Groq API format (same as OpenAI format)
   extractResponse(data: any): string {
-    return data.choices?.[0]?.message?.content || 'Sorry, I could not generate a response.';
+    return (
+      data.choices?.[0]?.message?.content ||
+      'Sorry, I could not generate a response.'
+    );
   }
 }
-

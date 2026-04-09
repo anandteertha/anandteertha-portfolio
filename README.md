@@ -56,7 +56,7 @@ A modern, professional portfolio website showcasing my work as a **Rust Develope
 - Course listings and achievements
 
 #### 💼 **Work Experience**
-- **Khayrallah Center for Lebanese Diaspora Studies** (2025 - Present)
+- **Khayrallah Center for Lebanese Diaspora Studies** (November 2025 - Present)
   - Software Developer (Part-time)
   - React, FastAPI, Python, pytest, Locust
 - **Raychem (Chemelex)** (2022-2025)

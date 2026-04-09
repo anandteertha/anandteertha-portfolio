@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+
 import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 
 interface Experience {
@@ -19,7 +20,7 @@ interface Experience {
   selector: 'app-experience',
   imports: [CommonModule, ScrollAnimationDirective],
   templateUrl: './experience.component.html',
-  styleUrl: './experience.component.scss'
+  styleUrl: './experience.component.scss',
 })
 export class ExperienceComponent {
   experiences: Experience[] = [
@@ -28,7 +29,7 @@ export class ExperienceComponent {
       title: 'Software Developer',
       company: 'Khayrallah Center for Lebanese Diaspora Studies',
       location: 'NC State University',
-      period: '2025 - Present',
+      period: 'November 2025 - Present',
       type: 'part-time',
       isCurrent: true,
       logo: 'assets/ncstate-logo.svg',
@@ -37,9 +38,17 @@ export class ExperienceComponent {
         'Building responsive frontend interfaces using React with modern best practices',
         'Creating robust backend APIs using FastAPI with comprehensive test coverage using pytest',
         'Implementing stress testing and performance analysis using Locust to ensure system reliability under load',
-        'Collaborating with research teams to translate requirements into scalable software solutions'
+        'Collaborating with research teams to translate requirements into scalable software solutions',
       ],
-      technologies: ['React', 'FastAPI', 'Python', 'pytest', 'Locust', 'Stress Testing', 'Web Development']
+      technologies: [
+        'React',
+        'FastAPI',
+        'Python',
+        'pytest',
+        'Locust',
+        'Stress Testing',
+        'Web Development',
+      ],
     },
     {
       id: 'raychem',
@@ -55,12 +64,33 @@ export class ExperienceComponent {
         'Developed and published multiple Angular libraries on MyGet Package Manager, enabling cross-team reusability',
         'Implemented calculation formulas and mapper services while leveraging design patterns like Proxy, Abstract Factory, and Strategy to ensure scalability, maintainability, and consistency in business logic',
         'Optimized complex UI, improving application performance and UX by reducing loading time by 20% through API and database query optimizations',
-        'Integrated a Python-based scripting editor within an Angular application, allowing users to write, execute, and customize real-time validations (\'Smart Scripts\'), which enabled on-the-fly modifications and automated warnings',
+        "Integrated a Python-based scripting editor within an Angular application, allowing users to write, execute, and customize real-time validations ('Smart Scripts'), which enabled on-the-fly modifications and automated warnings",
         'Enabled scripts to dynamically modify input fields and automate repetitive tasks, which reduced manual effort, minimized errors, and enhanced design efficiency',
         'Deployed on AWS Lambda for scalability and serverless execution, providing an efficient alternative to Flask running in a Docker container on EC2, which improved system performance and reduced operational costs',
-        'Wrote automated tests, achieving 100% test coverage in pytest, Jest, and Cypress'
+        'Wrote automated tests, achieving 100% test coverage in pytest, Jest, and Cypress',
       ],
-      technologies: ['TypeScript', 'JavaScript', 'Angular', 'Three.js', 'Python', '.NET', 'AWS', 'AWS Lambda', 'Docker', 'EC2', 'GitLab', 'MyGet', 'JIRA', 'pytest', 'Jasmine/Karma', 'Jest', 'Cypress', 'XUnit Test', 'Design Patterns', 'Microservices']
+      technologies: [
+        'TypeScript',
+        'JavaScript',
+        'Angular',
+        'Three.js',
+        'Python',
+        '.NET',
+        'AWS',
+        'AWS Lambda',
+        'Docker',
+        'EC2',
+        'GitLab',
+        'MyGet',
+        'JIRA',
+        'pytest',
+        'Jasmine/Karma',
+        'Jest',
+        'Cypress',
+        'XUnit Test',
+        'Design Patterns',
+        'Microservices',
+      ],
     },
     {
       id: 'outrider',
@@ -74,10 +104,18 @@ export class ExperienceComponent {
         'Integrated Google Maps Drawing API to display live salesman locations and building backend APIs for seamless data exchange',
         'Oversaw task assignments, conducted code reviews, and coordinated directly with stakeholders',
         'Implemented real-time features using Socket.io for live updates',
-        'Served as Scrum Master, facilitating agile development processes'
+        'Served as Scrum Master, facilitating agile development processes',
       ],
-      technologies: ['Node.js', 'JavaScript', 'Socket.io', 'SQL', 'Google Maps API', 'Scrum', 'Leadership']
-    }
+      technologies: [
+        'Node.js',
+        'JavaScript',
+        'Socket.io',
+        'SQL',
+        'Google Maps API',
+        'Scrum',
+        'Leadership',
+      ],
+    },
   ];
 
   selectedExperience: Experience | null = null;
@@ -108,4 +146,3 @@ export class ExperienceComponent {
     }
   }
 }
-

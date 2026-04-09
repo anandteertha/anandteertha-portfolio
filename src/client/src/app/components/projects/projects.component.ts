@@ -25,6 +25,66 @@ interface Project {
 export class ProjectsComponent {
   projects: Project[] = [
     {
+      id: 'rust-intermediate',
+      title: 'rust-intermediate',
+      subtitle: 'Ongoing Intermediate Rust Track for Concurrency and Systems Thinking',
+      period: 'March 2026 - Present',
+      isHighlight: true,
+      logo: 'assets/rust-logo.svg',
+      github: 'https://github.com/anandteertha/rust-intermediate',
+      description: [
+        'rust-intermediate is an in-progress, project-based Rust learning track focused on the step between language basics and realistic systems programming. It keeps each exercise intentionally small while pushing into intermediate concepts like concurrency, channels, shared ownership, and interior mutability.',
+        'The repository currently includes a threaded task pipeline using mpsc channels and worker joins, a shared configuration example built with Rc<T>, and a collaborative draft editor using Rc<RefCell<T>>. It is actively evolving into a deeper systems-oriented Rust notebook for interview prep and learning in public.'
+      ],
+      features: [
+        'Project-based intermediate Rust track with focused repos instead of one oversized codebase',
+        'Concurrency foundations: worker threads, mpsc channels, ownership-safe message passing, and graceful shutdown',
+        'Shared ownership patterns with Rc<T> for service-style configuration and reuse',
+        'Interior mutability workflow with Rc<RefCell<T>> for shared single-threaded state updates',
+        'Designed for interview storytelling, learning in public, and stronger systems-programming intuition'
+      ],
+      technologies: ['Rust', 'Cargo', 'Concurrency', 'mpsc Channels', 'Rc', 'RefCell', 'Threading', 'Message Passing', 'Systems Programming', 'Interview Prep']
+    },
+    {
+      id: 'rust-basics',
+      title: 'rust-basics',
+      subtitle: 'Completed Rust Fundamentals Track with 10 Hands-On Cargo Micro-Projects',
+      period: 'September 2025 - March 2026',
+      logo: 'assets/rust-logo.svg',
+      github: 'https://github.com/anandteertha/rust-basics',
+      description: [
+        'rust-basics is a completed learning-in-public Rust repository that turns core language ideas into small, realistic Cargo projects. The track is structured to make ownership, borrowing, lifetimes, and type-driven design visible through code you can actually run and explain.',
+        'Across 10 self-contained micro-projects, the repo covers ownership and Drop-based RAII, references and slicing, structs and enums, Option/Result, traits and generics, borrowed-data lifetimes, iterator pipelines, and collections plus file I/O. It was designed as both a personal learning track and concrete interview evidence for memory-safe systems programming.'
+      ],
+      features: [
+        '10 self-contained Cargo micro-projects that progress from ownership to practical file I/O',
+        'Covers RAII, borrowing rules, slicing, structs, enums, Option/Result, traits, generics, and lifetimes',
+        'Includes iterator-driven data processing with filter, map, find, any, all, and fold',
+        'Brings collections and file parsing together with Vec, HashMap, validation, and reporting flows',
+        'Built to create explainable, interview-ready examples of memory safety and type-driven design'
+      ],
+      technologies: ['Rust', 'Cargo', 'Ownership', 'Borrowing', 'Lifetimes', 'Traits', 'Generics', 'Iterators', 'Collections', 'File I/O', 'RAII']
+    },
+    {
+      id: 'routelab',
+      title: 'RouteLab',
+      subtitle: 'Linux Userspace Router and Traffic Telemetry Daemon in C++',
+      period: 'March 2026 - Present',
+      github: 'https://github.com/anandteertha/RouteLab',
+      description: [
+        'RouteLab is a Linux-first C++ networking daemon that reads IP packets from one or more TUN interfaces, classifies flows, applies a configurable policy, and forwards traffic to output TUN devices. The design emphasizes userspace routing primitives, packet visibility, and deterministic policy execution.',
+        'The current implementation includes a CMake-based build, daemon entrypoint, JSON config loader, packet and flow primitives, a bounded backpressure queue, and structured logging foundations. The roadmap extends into multithreaded RX/parse/policy/TX stages, telemetry counters and latency histograms, runtime control surfaces, and Linux netns integration tests.'
+      ],
+      features: [
+        'Userspace packet processing pipeline built around Linux TUN interfaces',
+        'Configurable route, filter, and NAT-style rewrite policy design via JSON config',
+        'Core daemon scaffolding with packet and flow primitives plus structured logging',
+        'Bounded backpressure queue to keep packet handling explicit and controllable',
+        'Roadmap includes multithreaded routing stages, telemetry, CLI/control socket, and netns integration tests'
+      ],
+      technologies: ['C++20', 'Linux', 'TUN/TAP', 'Networking', 'Packet Processing', 'Routing', 'Telemetry', 'Daemon Development', 'CMake', 'Systems Programming']
+    },
+    {
       id: 'nebulakv',
       title: 'NebulaKV',
       subtitle: 'C++ Client SDK for Key-Value Storage with Custom Wire Protocol',
@@ -206,4 +266,3 @@ export class ProjectsComponent {
     document.body.style.overflow = '';
   }
 }
-
