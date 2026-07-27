@@ -25,6 +25,36 @@ interface Experience {
 export class ExperienceComponent {
   experiences: Experience[] = [
     {
+      id: 'qualcomm',
+      title: 'AI Software Intern',
+      company: 'Qualcomm',
+      location: 'San Diego, CA',
+      period: 'May 2026 - August 2026',
+      type: 'internship',
+      isCurrent: true,
+      logo: 'assets/qualcomm-logo.svg',
+      description: [
+        'Developing an agentic model-adaptation workflow that transforms Hugging Face PyTorch transformer models and large language models into Qualcomm deployment-ready compiled binaries for efficient edge AI execution',
+        'Owning the end-to-end deployment pipeline: model adaptation, graph conversion, compilation, on-device inference, functional validation, and accuracy and performance measurement',
+        'Analyzing transformer implementations from source code through computational graphs and hardware-executable operators to understand how attention, KV caching, normalization, and feed-forward layers map to edge-device execution',
+        'Building reusable agentic skills and iterative workflows that inspect model structure, orchestrate tools, apply graph-level adaptation strategies, and validate deployment outcomes automatically',
+        'Investigating Qualcomm AI accelerator and compiler documentation to identify operator-fusion opportunities, optimize models for resource-constrained hardware, and diagnose conversion, compilation, and runtime bottlenecks',
+        'Profiling compiled models on device for accuracy, latency, throughput, memory consumption, and operator-level performance',
+      ],
+      technologies: [
+        'Generative AI',
+        'PyTorch',
+        'Hugging Face',
+        'Transformers',
+        'LLMs',
+        'ONNX',
+        'Model Compilation',
+        'Edge AI',
+        'Agentic Workflows',
+        'Performance Profiling',
+      ],
+    },
+    {
       id: 'khayrallah',
       title: 'Software Developer',
       company: 'Khayrallah Center for Lebanese Diaspora Studies',

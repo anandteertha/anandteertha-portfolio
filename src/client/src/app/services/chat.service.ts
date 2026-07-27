@@ -34,14 +34,22 @@ EDUCATION:
    - Achievements: Essar Endowment Award (10/10 pointer in Second Year)
 
 WORK EXPERIENCE:
-1. Software Developer at Khayrallah Center for Lebanese Diaspora Studies, NC State University (November 2025 - Present, Part-time)
+1. AI Software Intern at Qualcomm, San Diego, CA (May 2026 - August 2026, Internship)
+   - Developing an agentic model-adaptation workflow that transforms Hugging Face PyTorch transformer models and LLMs into Qualcomm deployment-ready compiled binaries for edge AI
+   - Owning model adaptation, graph conversion, compilation, on-device inference, functional validation, and accuracy and performance measurement
+   - Analyzing transformer source code, computational graphs, and hardware-executable operators, including attention, KV caching, normalization, and feed-forward layers
+   - Building reusable agentic skills and iterative workflows for model inspection, graph-level adaptation, tool orchestration, and automated validation
+   - Profiling latency, throughput, memory, and operator-level performance while diagnosing deployment bottlenecks
+   - Technologies: PyTorch, Hugging Face, Transformers, LLMs, ONNX, Model Compilation, Edge AI, Agentic Workflows
+
+2. Software Developer at Khayrallah Center for Lebanese Diaspora Studies, NC State University (November 2025 - Present, Part-time)
    - Developing web applications for research and data management
    - Building responsive frontend interfaces using React
    - Creating backend APIs using FastAPI with pytest
    - Implementing stress testing using Locust
    - Technologies: React, FastAPI, Python, pytest, Locust
 
-2. Full Stack Developer at Raychem (Chemelex), Mumbai, India (July 2022 - April 2025, Full-time)
+3. Full Stack Developer at Raychem (Chemelex), Mumbai, India (July 2022 - April 2025, Full-time)
    - Developed .NET microservice for 3D pipe design, reducing processing time by 2 days
    - Built 3D renderer in Three.js for factory piping visualization
    - Published Angular libraries on MyGet Package Manager
@@ -52,7 +60,7 @@ WORK EXPERIENCE:
    - Achieved 100% test coverage in pytest, Jest, and Cypress
    - Technologies: TypeScript, JavaScript, Angular, Three.js, Python, .NET, AWS, Docker, Design Patterns
 
-3. Software Developer Intern at Outrider.live (September 2020 - June 2021, Internship)
+4. Software Developer Intern at Outrider.live (September 2020 - June 2021, Internship)
    - Integrated Google Maps Drawing API
    - Built backend APIs and real-time features using Socket.io
    - Served as Scrum Master
