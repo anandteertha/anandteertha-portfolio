@@ -25,22 +25,24 @@ Here is information about Anandteertha Rao:
 
 EDUCATION:
 1. Master of Science in Computer Science at North Carolina State University (August 2025 - May 2027)
-   - Current GPA: 4.11/4.0
-   - Completed courses: Design and Analysis of Algorithms (A), Software Engineering (A), Database Management Systems (A+)
-   - Upcoming courses: IoT Analytics, Foundations of Data Science, Automated Learning and Data Analysis
+   - Current GPA: 3.89/4.0
+   - Completed courses: Design and Analysis of Algorithms (A), Software Engineering (A), Database Management Systems (A+), Automated Learning and Data Analysis (A), Foundations of Data Science (B+), IoT Analytics (A-)
+   - Current courses (Fall 2026): Deep Learning Beyond Accuracy, Efficient Techniques of Advanced Deep Learning, Quantum Computing
 
 2. Bachelor of Engineering in Computer Engineering at University of Mumbai (2018 - 2022)
    - GPA: 9.5/10 CGPA
    - Achievements: Essar Endowment Award (10/10 pointer in Second Year)
 
 WORK EXPERIENCE:
-1. AI Software Intern at Qualcomm, San Diego, CA (May 2026 - August 2026, Internship)
-   - Developing an agentic model-adaptation workflow that transforms Hugging Face PyTorch transformer models and LLMs into Qualcomm deployment-ready compiled binaries for edge AI
-   - Owning model adaptation, graph conversion, compilation, on-device inference, functional validation, and accuracy and performance measurement
-   - Analyzing transformer source code, computational graphs, and hardware-executable operators, including attention, KV caching, normalization, and feed-forward layers
-   - Building reusable agentic skills and iterative workflows for model inspection, graph-level adaptation, tool orchestration, and automated validation
-   - Profiling latency, throughput, memory, and operator-level performance while diagnosing deployment bottlenecks
+1. Machine Learning Engineering Intern (AI Software) at Qualcomm, San Diego, CA (May 2026 - August 2026, Internship)
+   - Contributed reusable agentic skills and iterative adaptation loops connecting Hugging Face/PyTorch model source, ONNX export, Qualcomm compilation, on-device execution, and validation
+   - Helped reduce manual model-adaptation turnaround from approximately three months to a few hours (engineering workflow time, not inference latency)
+   - Applied and validated the workflow across three transformer models/families, including Phi-3.5, Mistral, and Gemma
+   - Diagnosed failures across the PyTorch-graph-compiler-runtime boundary (attention/QKV, normalization, KV-cache handling, feed-forward layers)
+   - Treated export, compilation, on-device execution, and output correctness as separate acceptance gates with regression checks
+   - Integrated the capability through an internal pipeline API for research users
    - Technologies: PyTorch, Hugging Face, Transformers, LLMs, ONNX, Model Compilation, Edge AI, Agentic Workflows
+   - Do not share internal Qualcomm APIs, prompts, thresholds, or benchmarks; they are not public
 
 2. Software Developer at Khayrallah Center for Lebanese Diaspora Studies, NC State University (November 2025 - Present, Part-time)
    - Developing web applications for research and data management
@@ -67,11 +69,16 @@ WORK EXPERIENCE:
    - Technologies: Node.js, JavaScript, Socket.io, SQL, Google Maps API
 
 KEY PROJECTS:
+- RouteLab (March 2026 - October 2026): C++20 Linux userspace IPv4 router over TUN devices with a bounded queue (drop_new / wait policies), ICMP errors, longest-prefix routing, and a read-only UNIX control socket. An 18-trial UDP sweep with a 1000 us injected service delay on WSL2 showed mean p99 latency growing from 12.62 ms to 342.50 ms as queue capacity grew from 8 to 256 above capacity, while delivered rate stayed near ~800 pps. ASan/UBSan passed; ThreadSanitizer did not run.
+- KV-Cache Compression (October 2026 - Present, three-person team research): SVD-based latent KV caches comparing uniform, spectral-energy, and loss-aware rank allocation at equal cache bytes. Team Qwen2.5 pilot (run by a teammate): Qwen2.5-1.5B perplexity ratio 363.5x (uniform) vs 2.02x (spectral-energy) at 75% retained bytes; nothing tested holds quality at 50% or below. Anandteertha built the allocation solver, Llama pipeline, integration, OPT integration, and a loss-aware DP study (PIQA 63.71% vs 52.39% for energy allocation at 50% bytes). "Energy" means the spectral-energy allocator, not power. No latency speedup measured.
+- GPU Transfer-Compute Overlap (2026): synthetic PyTorch benchmark overlapping chunked CPU-to-GPU KV transfers with FFN compute using pinned memory, CUDA streams/events, and CUDA Graphs. 105 runs / 15,750 steps on an RTX 3050; up to 92.3% background GPU-time overlap (not a speedup); a fixed 25% margin beat the adaptive policy.
+- rust-intermediate (March 2026 - Present): eight completed std-only Rust projects covering threads and channels, Rc/RefCell/Arc/Mutex, a bounded job queue, a worker pool with failure reporting, and lock ordering (20,000 transfers without deadlock). Async job runner planned.
+- Inference Optimization Basics (October 2026 - Present): lessons, a batching simulator, and a correctness-checked one-thread CPU batching benchmark: 216.2 items/s at B=1, 427.1 at B=8 (1.98x), 641.8 at B=16. FlashAttention studied, not implemented. Ongoing: writing custom CUDA kernels in the lab (starting with a row-wise online softmax), validated against PyTorch; no kernel performance results yet.
+- Length-Specialized ONNX Inference (Fall 2026, course project): fixed-length DistilBERT ONNX variants with a dynamic fallback; p95 latency 243.8 ms -> 50.6 ms on the calibration workload, 538/538 output checks passed, peak RSS 653.9 -> 1,228.7 MiB.
+- MaizeRunner (October 2026, team hackathon, NVIDIA Champions Choice Award): agent simulations sharing one vLLM-served model on an H100; 6.0 -> 29.31 seasons/hour from 1 to 20 concurrent simulations, 65.79% prefix-cache hit rate. Team work; Anandteertha benchmarked concurrency, latency, and cache behavior.
 - NebulaKV: C++ Client SDK for Key-Value Storage (December 2025 - Present)
 - Neatd: Rust CLI Tool for Automated Folder Organization (September 2025 - Present)
 - rust-basics: Completed Rust fundamentals learning track with 10 hands-on Cargo micro-projects (September 2025 - March 2026)
-- rust-intermediate: Ongoing project-based intermediate Rust track focused on concurrency, Rc, RefCell, and systems thinking (March 2026 - Present)
-- RouteLab: Linux-first C++ userspace router and traffic telemetry daemon using TUN interfaces and configurable packet policies (March 2026 - Present)
 - NutriBite: Food Recommendation System with RAG (August 2025 - December 2025)
 - Gym Trainer Client Management: Production application for trainers (2025)
 - Various other projects in IoT, facial recognition, and web development

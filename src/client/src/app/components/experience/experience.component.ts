@@ -26,23 +26,21 @@ export class ExperienceComponent {
   experiences: Experience[] = [
     {
       id: 'qualcomm',
-      title: 'AI Software Intern',
+      title: 'Machine Learning Engineering Intern (AI Software)',
       company: 'Qualcomm',
       location: 'San Diego, CA',
       period: 'May 2026 - August 2026',
       type: 'internship',
-      isCurrent: true,
       logo: 'assets/qualcomm-logo.svg',
       description: [
-        'Developing an agentic model-adaptation workflow that transforms Hugging Face PyTorch transformer models and large language models into Qualcomm deployment-ready compiled binaries for efficient edge AI execution',
-        'Owning the end-to-end deployment pipeline: model adaptation, graph conversion, compilation, on-device inference, functional validation, and accuracy and performance measurement',
-        'Analyzing transformer implementations from source code through computational graphs and hardware-executable operators to understand how attention, KV caching, normalization, and feed-forward layers map to edge-device execution',
-        'Building reusable agentic skills and iterative workflows that inspect model structure, orchestrate tools, apply graph-level adaptation strategies, and validate deployment outcomes automatically',
-        'Investigating Qualcomm AI accelerator and compiler documentation to identify operator-fusion opportunities, optimize models for resource-constrained hardware, and diagnose conversion, compilation, and runtime bottlenecks',
-        'Profiling compiled models on device for accuracy, latency, throughput, memory consumption, and operator-level performance',
+        'Helped build reusable agentic workflows that take Hugging Face/PyTorch transformers through ONNX export, compilation, on-device execution, and validation',
+        'Helped reduce manual model-adaptation turnaround from approximately three months to a few hours (engineering workflow time, not inference latency)',
+        'Applied and validated the workflow on three transformer model families: Phi-3.5, Mistral, and Gemma',
+        'Diagnosed failures across the PyTorch–graph–compiler–runtime boundary by tracing tensor shapes, operators, and transformer components (attention/QKV, normalization, KV-cache handling, feed-forward layers)',
+        'Treated export, compilation, on-device execution, and output correctness as separate acceptance gates, with functional, numerical, and performance regression checks',
+        'Integrated the capability through an internal pipeline API so research users could adopt it',
       ],
       technologies: [
-        'Generative AI',
         'PyTorch',
         'Hugging Face',
         'Transformers',
@@ -51,7 +49,7 @@ export class ExperienceComponent {
         'Model Compilation',
         'Edge AI',
         'Agentic Workflows',
-        'Performance Profiling',
+        'Regression Validation',
       ],
     },
     {
@@ -89,7 +87,7 @@ export class ExperienceComponent {
       type: 'full-time',
       logo: 'assets/chemelex.png',
       description: [
-        'Developed a .NET microservice to parse PCF files for 3D pipe design, eliminating reliance on costly legacy software and reducing 3D renderer parsing and generation time by 2 days, resulting in significant cost savings',
+        'Built a .NET microservice that parses PCF piping files for 3D pipe design, replacing licensed legacy software',
         'Built a 3D renderer in Three.js to visualize entire factory piping systems, improving the speed and clarity of design reviews',
         'Developed and published multiple Angular libraries on MyGet Package Manager, enabling cross-team reusability',
         'Implemented calculation formulas and mapper services while leveraging design patterns like Proxy, Abstract Factory, and Strategy to ensure scalability, maintainability, and consistency in business logic',

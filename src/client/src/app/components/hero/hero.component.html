@@ -9,15 +9,14 @@
     <div class="hero-content">
       <h1 class="hero-title" itemprop="name">
         Crafting High-Performance
-        <span class="gradient-text">Software Solutions</span>
+        <span class="gradient-text">ML Systems</span>
       </h1>
 
       <p class="hero-description">
-        Software developer with <strong>3+ years</strong> of experience building production applications.
-        Passionate about <strong>systems programming</strong> and <strong>memory-safe</strong> software.
-        Currently building <strong>NebulaKV</strong>, the in-progress <strong>rust-intermediate</strong> track, and
-        <strong>RouteLab</strong>, while recently completing <strong>rust-basics</strong>. My recent work centers on
-        packet processing, routing policy, telemetry, and hands-on systems programming in Rust and C++.
+        ML systems engineer with <strong>4+ years</strong> of software experience, focused on
+        <strong>inference optimization</strong> and <strong>model deployment</strong>, backed by
+        <strong>C++/Rust</strong> systems work. Previously at <strong>Qualcomm</strong>; currently building
+        <strong>KV-cache compression</strong> research and <strong>CUDA kernels</strong>.
       </p>
 
       <div class="hero-actions">
@@ -31,16 +30,16 @@
 
       <div class="hero-stats">
         <div class="stat-item">
-          <div class="stat-number">3+</div>
+          <div class="stat-number">4+</div>
           <div class="stat-label">Years Experience</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">11+</div>
+          <div class="stat-number">16+</div>
           <div class="stat-label">Projects</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">Systems</div>
-          <div class="stat-label">Programming</div>
+          <div class="stat-number">Inference</div>
+          <div class="stat-label">&amp; Deployment</div>
         </div>
       </div>
     </div>
@@ -53,21 +52,28 @@
             <span></span>
             <span></span>
           </div>
-          <span class="code-title">portfolio.rs</span>
+          <span class="code-title">portfolio.cu</span>
         </div>
-        <div class="code-content">
-          <div class="code-line">
-            <span class="keyword">use</span>&nbsp;<span class="string">std</span><span class="operator">&#58;&#58;</span><span class="string">collections</span><span class="operator">&#58;&#58;</span><span class="string">HashMap</span>;</div>
-          <div class="code-line"></div>
-          <div class="code-line"><span class="keyword">struct</span>&nbsp;<span class="type">Portfolio</span>&nbsp;<span class="operator">&#123;</span></div>
-          <div class="code-line">&nbsp;&nbsp;skills: <span class="type">HashMap</span><span class="operator">&lt;</span><span class="type">String</span>, <span class="type">Experience</span><span class="operator">&gt;</span>,</div>
-          <div class="code-line">&nbsp;&nbsp;projects: <span class="type">Vec</span><span class="operator">&lt;</span><span class="type">Project</span><span class="operator">&gt;</span>,</div>
-          <div class="code-line"><span class="operator">&#125;</span></div>
-          <div class="code-line"></div>
-          <div class="code-line"><span class="keyword">fn</span>&nbsp;<span class="function">main</span>() <span class="operator">&#123;</span></div>
-          <div class="code-line">&nbsp;&nbsp;<span class="keyword">let</span> portfolio = <span class="type">Portfolio</span><span class="operator">&#58;&#58;</span><span class="function">new</span>();</div>
-          <div class="code-line">&nbsp;&nbsp;portfolio<span class="operator">.</span><span class="function">build</span>();</div>
-          <div class="code-line"><span class="operator">&#125;</span></div>
+        <div class="code-content" ngPreserveWhitespaces>
+          <div class="code-line"><span class="keyword">#include</span> <span class="string">&lt;cuda_runtime.h&gt;</span></div>
+          <div class="code-line">&nbsp;</div>
+          <div class="code-line"><span class="keyword">struct</span> <span class="type">Portfolio</span> {{ '{' }}</div>
+          <div class="code-line">  <span class="type">Skill</span>* skills;</div>
+          <div class="code-line">  <span class="type">Project</span>* projects;</div>
+          <div class="code-line">{{ '}' }};</div>
+          <div class="code-line">&nbsp;</div>
+          <div class="code-line"><span class="keyword">__device__ void</span> <span class="function">ship</span>(<span class="type">Project</span>&amp; project);</div>
+          <div class="code-line">&nbsp;</div>
+          <div class="code-line"><span class="keyword">__global__ void</span> <span class="function">build</span>(<span class="type">Portfolio</span> portfolio) {{ '{' }}</div>
+          <div class="code-line">  <span class="type">int</span> i = blockIdx.x * blockDim.x + threadIdx.x;</div>
+          <div class="code-line">  <span class="function">ship</span>(portfolio.projects[i]);</div>
+          <div class="code-line">{{ '}' }}</div>
+          <div class="code-line">&nbsp;</div>
+          <div class="code-line"><span class="type">int</span> <span class="function">main</span>() {{ '{' }}</div>
+          <div class="code-line">  <span class="type">Portfolio</span> portfolio = <span class="function">load_portfolio</span>();</div>
+          <div class="code-line">  <span class="function">build</span>&lt;&lt;&lt;<span class="string">1</span>, <span class="string">16</span>&gt;&gt;&gt;(portfolio);</div>
+          <div class="code-line">  <span class="function">cudaDeviceSynchronize</span>();</div>
+          <div class="code-line">{{ '}' }}</div>
         </div>
       </div>
     </div>

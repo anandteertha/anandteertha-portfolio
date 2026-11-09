@@ -16,6 +16,14 @@ interface Project {
   logo?: string;
 }
 
+interface ProjectGroup {
+  id: string;
+  title: string;
+  description: string;
+  projectIds: string[];
+  projects?: Project[];
+}
+
 @Component({
   selector: 'app-projects',
   imports: [CommonModule, ScrollAnimationDirective],
@@ -25,25 +33,136 @@ interface Project {
 export class ProjectsComponent {
   projects: Project[] = [
     {
+      id: 'routelab',
+      title: 'RouteLab',
+      subtitle: 'C++20 Linux Userspace Router with Bounded Queues and Overload Experiments',
+      period: 'March 2026 - October 2026',
+      github: 'https://github.com/anandteertha/RouteLab',
+      description: [
+        'A C++20 userspace IPv4 router over TUN devices with one bounded queue and an explicit drop/wait policy, measured for packet loss versus tail latency.',
+        'The data path reads packets from TUN devices, validates IPv4 headers, handles TTL and checksums, generates ICMP errors (Time Exceeded, Net Unreachable, Fragmentation Needed), applies longest-prefix routing and filters, and writes to the egress TUN device. A separate thread serves a read-only UNIX control socket with stats, drop reasons, latency histograms, flows, and routes.',
+        'An 18-trial UDP sweep (queue capacity 8 / 64 / 256 × offered load 400 / 900 / 1800 pps × 2 trials, with a 1000 µs injected per-packet service delay on WSL2) showed that above capacity, mean p99 latency grew from 12.62 ms to 342.50 ms as the queue grew from 8 to 256, while delivered throughput stayed near the ~800 pps service capacity. A larger queue mostly added waiting time.',
+        'Limitations: this is a controlled lab with an injected delay, not natural forwarding speed. ASan and UBSan runs passed; ThreadSanitizer could not run on WSL2, so no race-freedom claim is made.'
+      ],
+      features: [
+        'Bounded queue with explicit drop_new / wait overload policies and high-water tracking',
+        'IPv4 validation, TTL and checksum handling, ICMP error generation, and MTU checks',
+        'Longest-prefix routing from validated JSON config, plus filters',
+        'Read-only UNIX control socket: stats, drops, latency histograms, flows, and routes',
+        'CTest unit tests plus a scripted network-namespace integration lab',
+        'Raw per-trial CSV results and experiment metadata committed to the repository'
+      ],
+      technologies: ['C++20', 'Linux', 'TUN', 'Network Namespaces', 'Packet Processing', 'Routing', 'CMake', 'CTest', 'ASan/UBSan', 'Python', 'Performance Engineering']
+    },
+    {
+      id: 'kv-cache-compression',
+      title: 'KV-Cache Compression',
+      subtitle: 'Low-Rank KV-Cache Compression and Layerwise Rank Allocation (Team Research)',
+      period: 'October 2026 - Present',
+      description: [
+        'A three-person NC State project on SVD-based KV caches: at a fixed byte budget, how rank is split across layers and between keys and values can change perplexity by orders of magnitude.',
+        'We compared uniform, spectral-energy, and loss-aware rank allocation at exactly equal cache bytes. In the team’s Qwen2.5 pilot (run by a teammate), moving the same bytes on Qwen2.5-1.5B at 75% retained KV bytes changed the perplexity ratio from 363.5× (uniform) to 2.02× (spectral-energy allocation). No allocator kept quality acceptable at 50% or 25% of the bytes.',
+        'My contributions: the rank-allocation solver, the Llama pipeline, integration, OPT integration, and an independent loss-aware allocation study using an exact dynamic program over calibration-loss damage. At 50% KV bytes it reached 63.71% PIQA accuracy versus 52.39% for spectral-energy allocation (native model: 68.66%).',
+        'Limitations: "energy" refers to the spectral-energy allocator, not power. No decode-latency or throughput speedup has been measured, and the additive damage model behind the dynamic program does not hold exactly.'
+      ],
+      features: [
+        'Truncated SVD per K and V projection with an exact byte-budget accounting',
+        'Uniform vs spectral-energy vs loss-aware allocation at identical cache bytes',
+        'Evaluation with perplexity ratios (WikiText-2) and task accuracy (PIQA, ARC-Easy)',
+        'Negative results reported: budgets of 50% and below fail for every allocator tested'
+      ],
+      technologies: ['PyTorch', 'Hugging Face Transformers', 'SVD / Low-Rank Factorization', 'Dynamic Programming', 'KV Cache', 'LLM Inference', 'Research']
+    },
+    {
+      id: 'gpu-overlap',
+      title: 'GPU Transfer–Compute Overlap',
+      subtitle: 'Synthetic PyTorch Benchmark of CPU→GPU KV Transfers Overlapped with Compute',
+      period: '2026',
+      description: [
+        'A PyTorch benchmark that overlaps chunked CPU→GPU KV-cache copies with compute, using CUDA streams, pinned memory, and CUDA Graphs.',
+        'When KV data lives in host memory, the GPU waits on transfers. This controlled single-layer attention benchmark schedules the copies on a separate CUDA stream so background FFN work can fill that gap.',
+        'Across 105 runs (15,750 steps, 9 configuration combinations) on an NVIDIA RTX 3050, up to 92.3% of background GPU time overlapped with transfers. That figure is overlap, not an end-to-end speedup. A fixed 25% scheduling margin outperformed the adaptive policy tested.',
+        'Limitations: a synthetic single-layer benchmark on a laptop GPU; results are from my own run records.'
+      ],
+      features: [
+        'Two CUDA streams synchronized with events; pinned host memory for asynchronous copies',
+        'CUDA Graphs to reduce launch overhead in the measured loop',
+        'Overlap measured separately from speedup, with fixed vs adaptive scheduling compared'
+      ],
+      technologies: ['PyTorch', 'CUDA Streams & Events', 'CUDA Graphs', 'Pinned Memory', 'GPU Benchmarking', 'Performance Engineering']
+    },
+    {
       id: 'rust-intermediate',
       title: 'rust-intermediate',
-      subtitle: 'Ongoing Intermediate Rust Track for Concurrency and Systems Thinking',
+      subtitle: 'Intermediate Rust Track: Building Concurrent Components',
       period: 'March 2026 - Present',
       isHighlight: true,
       logo: 'assets/rust-logo.svg',
       github: 'https://github.com/anandteertha/rust-intermediate',
       description: [
-        'rust-intermediate is an in-progress, project-based Rust learning track focused on the step between language basics and realistic systems programming. It keeps each exercise intentionally small while pushing into intermediate concepts like concurrency, channels, shared ownership, and interior mutability.',
-        'The repository currently includes a threaded task pipeline using mpsc channels and worker joins, a shared configuration example built with Rc<T>, and a collaborative draft editor using Rc<RefCell<T>>. It is actively evolving into a deeper systems-oriented Rust notebook for interview prep and learning in public.'
+        'rust-intermediate is a sequence of std-only Rust components that climbs from ownership semantics to bounded work distribution, worker pools with failure reporting, and lock-ordering hazards, each small enough to explain line by line.',
+        'Eight projects are complete (001–008): threads and mpsc channels, Rc<T> and Rc<RefCell<T>>, Arc<Mutex<T>>, a bounded job queue on sync_channel, a three-worker pool with deterministic failure injection (15 jobs → 12 ok, 3 failed, reported as data), and a lock-ordering exercise that ran 20,000 opposite-direction transfers without deadlock, with unit tests.',
+        'Next milestones (planned, not yet implemented): an async job runner and a small executor.'
       ],
       features: [
-        'Project-based intermediate Rust track with focused repos instead of one oversized codebase',
-        'Concurrency foundations: worker threads, mpsc channels, ownership-safe message passing, and graceful shutdown',
-        'Shared ownership patterns with Rc<T> for service-style configuration and reuse',
-        'Interior mutability workflow with Rc<RefCell<T>> for shared single-threaded state updates',
-        'Designed for interview storytelling, learning in public, and stronger systems-programming intuition'
+        'Bounded job queue with sync_channel backpressure and clean shutdown',
+        'Worker pool with result collection and failures returned as data instead of panics',
+        'Global lock ordering to prevent deadlock in concurrent account transfers, with tests',
+        'Shared ownership and interior mutability with Rc, RefCell, Arc, Mutex, and Barrier'
       ],
-      technologies: ['Rust', 'Cargo', 'Concurrency', 'mpsc Channels', 'Rc', 'RefCell', 'Threading', 'Message Passing', 'Systems Programming', 'Interview Prep']
+      technologies: ['Rust', 'Cargo', 'Concurrency', 'std::thread', 'mpsc / sync_channel', 'Arc', 'Mutex', 'Rc', 'RefCell', 'cargo test', 'Systems Programming']
+    },
+    {
+      id: 'inference-optimization-basics',
+      title: 'Inference Optimization Basics',
+      subtitle: 'A Performance Engineering Lab for Inference Serving and CUDA Kernels',
+      period: 'October 2026 - Present',
+      github: 'https://github.com/anandteertha/inference-optimization-basics',
+      description: [
+        'A public lab notebook that turns serving concepts (capacity, queue stability, batching, memory movement) into predictions first, then checks them against small controlled measurements and explains the surprises.',
+        'It contains four written lessons (metrics, prefill/decode and the KV cache, compute vs memory, batching and serving), an event-driven batching simulator, and a correctness-checked one-thread CPU batching benchmark (torch.mm against a float64 reference).',
+        'In the CPU benchmark, throughput rose from 216.2 items/s at B=1 to 427.1 at B=8 (1.98×) and 641.8 at B=16. Going from B=16 to B=32 bought only 1.9% more throughput for 96% more time per batch. In the simulator, serial serving at 8 ms per request supports ~125 req/s versus ~333 req/s with batches of 4.',
+        'Ongoing: writing custom CUDA kernels inside the lab, starting with the building blocks of attention such as a row-wise online softmax. Each kernel is checked against a PyTorch reference first; no performance results are claimed until they are measured.',
+        'Limitations: the published measurements are single-thread CPU operator benchmarks and modelled capacities, not LLM serving throughput. FlashAttention was studied, not implemented.'
+      ],
+      features: [
+        'Capacity and queue-stability analysis (arrival rate vs service rate)',
+        'Event-driven batching simulator with batch size and timeout policies',
+        'Benchmark discipline: warm-up, calibrated loops, shuffled repeats, median of block averages',
+        'Correctness checks against a float64 reference at every batch size',
+        'In progress: custom CUDA kernels (online softmax and other attention building blocks), validated against PyTorch'
+      ],
+      technologies: ['Python', 'PyTorch', 'CUDA', 'Batching', 'Queueing Models', 'Simulation', 'Benchmarking', 'Inference Optimization']
+    },
+    {
+      id: 'length-specialized-inference',
+      title: 'Length-Specialized ONNX Inference',
+      subtitle: 'Matching CPU Computation to Message Length (Efficient Deep Learning Course Project)',
+      period: 'Fall 2026 - Present',
+      description: [
+        'Short messages do not need a model compiled for 512 tokens. DistilBERT (SST-2) was exported to ONNX and specialized into fixed 16/32/64/128-token variants, with unchanged-weight and output checks, plus a dynamic fallback. Variants are selected under a process-memory cap.',
+        'On the calibration workload, p95 latency fell from 243.8 ms (dynamic model only) to 50.6 ms with the selected 16+32 variants, with 538/538 output checks passed and zero changed predictions. The price was peak memory: RSS grew from 653.9 MiB to 1,228.7 MiB.',
+        'Next: held-out evaluation of the frozen routing policy.'
+      ],
+      features: [
+        'ONNX export and fixed-length specialization with weight and output verification',
+        'Memory-capped variant selection with a dynamic-shape fallback',
+        'Latency percentiles and resident memory measured together'
+      ],
+      technologies: ['PyTorch', 'ONNX', 'ONNX Runtime', 'Hugging Face', 'Python', 'pytest', 'CPU Inference']
+    },
+    {
+      id: 'maizerunner',
+      title: 'MaizeRunner',
+      subtitle: 'Agent Application Serving on a Single GPU (Team Hackathon Project)',
+      period: 'October 2026',
+      description: [
+        'A team hackathon project (NVIDIA Champions Choice Award) in which concurrent agent simulations share one vLLM-served small model on a single NVIDIA H100, relying on continuous batching and prefix caching.',
+        'Going from 1 to 20 concurrent simulations raised application throughput from 6.0 to 29.31 seasons/hour (4.9×), with a 65.79% prefix-cache hit rate at higher load. My role: co-builder, benchmarking concurrency, latency, and cache behavior.',
+        'The award, agents, and serving setup are shared team work.'
+      ],
+      features: [],
+      technologies: ['Python', 'vLLM', 'NVIDIA Nemotron', 'FastAPI', 'NVIDIA H100', 'LLM Serving']
     },
     {
       id: 'rust-basics',
@@ -54,44 +173,24 @@ export class ProjectsComponent {
       github: 'https://github.com/anandteertha/rust-basics',
       description: [
         'rust-basics is a completed learning-in-public Rust repository that turns core language ideas into small, realistic Cargo projects. The track is structured to make ownership, borrowing, lifetimes, and type-driven design visible through code you can actually run and explain.',
-        'Across 10 self-contained micro-projects, the repo covers ownership and Drop-based RAII, references and slicing, structs and enums, Option/Result, traits and generics, borrowed-data lifetimes, iterator pipelines, and collections plus file I/O. It was designed as both a personal learning track and concrete interview evidence for memory-safe systems programming.'
+        'Across 10 self-contained micro-projects, the repo covers ownership and Drop-based RAII, references and slicing, structs and enums, Option/Result, traits and generics, borrowed-data lifetimes, iterator pipelines, and collections plus file I/O.'
       ],
       features: [
         '10 self-contained Cargo micro-projects that progress from ownership to practical file I/O',
         'Covers RAII, borrowing rules, slicing, structs, enums, Option/Result, traits, generics, and lifetimes',
         'Includes iterator-driven data processing with filter, map, find, any, all, and fold',
-        'Brings collections and file parsing together with Vec, HashMap, validation, and reporting flows',
-        'Built to create explainable, interview-ready examples of memory safety and type-driven design'
+        'Brings collections and file parsing together with Vec, HashMap, validation, and reporting flows'
       ],
       technologies: ['Rust', 'Cargo', 'Ownership', 'Borrowing', 'Lifetimes', 'Traits', 'Generics', 'Iterators', 'Collections', 'File I/O', 'RAII']
-    },
-    {
-      id: 'routelab',
-      title: 'RouteLab',
-      subtitle: 'Linux Userspace Router and Traffic Telemetry Daemon in C++',
-      period: 'March 2026 - Present',
-      github: 'https://github.com/anandteertha/RouteLab',
-      description: [
-        'RouteLab is a Linux-first C++ networking daemon that reads IP packets from one or more TUN interfaces, classifies flows, applies a configurable policy, and forwards traffic to output TUN devices. The design emphasizes userspace routing primitives, packet visibility, and deterministic policy execution.',
-        'The current implementation includes a CMake-based build, daemon entrypoint, JSON config loader, packet and flow primitives, a bounded backpressure queue, and structured logging foundations. The roadmap extends into multithreaded RX/parse/policy/TX stages, telemetry counters and latency histograms, runtime control surfaces, and Linux netns integration tests.'
-      ],
-      features: [
-        'Userspace packet processing pipeline built around Linux TUN interfaces',
-        'Configurable route, filter, and NAT-style rewrite policy design via JSON config',
-        'Core daemon scaffolding with packet and flow primitives plus structured logging',
-        'Bounded backpressure queue to keep packet handling explicit and controllable',
-        'Roadmap includes multithreaded routing stages, telemetry, CLI/control socket, and netns integration tests'
-      ],
-      technologies: ['C++20', 'Linux', 'TUN/TAP', 'Networking', 'Packet Processing', 'Routing', 'Telemetry', 'Daemon Development', 'CMake', 'Systems Programming']
     },
     {
       id: 'nebulakv',
       title: 'NebulaKV',
       subtitle: 'C++ Client SDK for Key-Value Storage with Custom Wire Protocol',
       period: 'December 2025 - Present',
-      isHighlight: true,
       description: [
-        'NebulaKV is a C++ project focused on building a production-ready client SDK for key-value storage. The C++ implementation includes a custom binary wire protocol over TCP, featuring connection pooling, timeout/retry logic, typed APIs for GET/PUT/DELETE operations, and optional CLI/benchmarking tools.',
+        'A C++ client SDK for a key-value store: a custom length-prefixed TCP protocol, connection pooling, and timeouts with retries.',
+        'The SDK provides typed GET/PUT/DELETE APIs and optional CLI and benchmarking tools.',
         'The wire protocol (v1) is designed for correctness and safety: explicit message framing with length prefixes, big-endian encoding, protocol versioning, and deterministic error handling. The C++ implementation emphasizes zero-copy parsing where possible, RAII-based resource management, and robust error handling with structured error codes. The SDK provides a clean, type-safe API that abstracts protocol details while maintaining performance and control.'
       ],
       features: [
@@ -250,6 +349,32 @@ export class ProjectsComponent {
       technologies: ['Node.js', 'Socket.io', 'HTML', 'CSS', 'EJS', 'MVC', 'Express.js', 'Stripe', 'MySQL']
     }
   ];
+
+  projectGroups: ProjectGroup[] = [
+    {
+      id: 'research',
+      title: 'ML Systems & Inference',
+      description: 'KV-cache compression, GPU overlap, model specialization, and serving experiments',
+      projectIds: ['kv-cache-compression', 'gpu-overlap', 'length-specialized-inference', 'inference-optimization-basics', 'maizerunner']
+    },
+    {
+      id: 'systems',
+      title: 'Systems Engineering',
+      description: 'C++ and Rust systems: routing, networking protocols, and concurrency',
+      projectIds: ['routelab', 'nebulakv', 'rust-intermediate']
+    },
+    {
+      id: 'other-projects',
+      title: 'Other Projects',
+      description: 'Full-stack products, Rust tooling, and earlier work in computer vision and IoT',
+      projectIds: ['trainer-crm', 'nutribite', 'neatd', 'rust-basics', 'lung-capacity', 'faculty-attendance', 'crowd-counting', 'gym-manager']
+    }
+  ].map(group => ({
+    ...group,
+    projects: group.projectIds
+      .map(id => this.projects.find(project => project.id === id))
+      .filter((project): project is Project => !!project)
+  }));
 
   selectedProject: Project | null = null;
   showModal = false;

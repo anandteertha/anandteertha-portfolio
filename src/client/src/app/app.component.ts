@@ -26,5 +26,5 @@ import { ChatComponent } from "./components/chat/chat.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'Anandteertha Rao - Rust Developer';
+  title = 'Anandteertha Rao - ML Systems Engineer';
 }

@@ -2,45 +2,52 @@
   <div class="container">
     <div class="section-header" appScrollAnimation>
       <span class="section-badge">Projects</span>
-      <h2 class="section-title">Featured Work</h2>
+      <h2 class="section-title">Work, Research &amp; Labs</h2>
       <p class="section-description">
-        Building innovative solutions across web development and systems programming
+        Inference and GPU performance work first, then systems engineering and earlier projects
       </p>
     </div>
 
-    <div class="projects-grid">
-      <div class="project-card" 
-           *ngFor="let project of projects; let i = index"
-           [class.highlight]="project.isHighlight"
-           [style.animation-delay.ms]="i * 100"
-           appScrollAnimation
-           (click)="openDetail(project)">
-        <div class="project-header">
-          <div class="project-logo" *ngIf="project.logo">
-            <img [src]="project.logo" [alt]="'Logo for ' + project.title + ' - ' + project.subtitle">
+    <div class="project-group" *ngFor="let group of projectGroups" [id]="group.id">
+      <div class="group-header" appScrollAnimation>
+        <h3 class="group-title">{{group.title}}</h3>
+        <p class="group-description">{{group.description}}</p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card" 
+             *ngFor="let project of group.projects; let i = index"
+             [class.highlight]="project.isHighlight"
+             [style.animation-delay.ms]="i * 100"
+             appScrollAnimation
+             (click)="openDetail(project)">
+          <div class="project-header">
+            <div class="project-logo" *ngIf="project.logo">
+              <img [src]="project.logo" [alt]="'Logo for ' + project.title + ' - ' + project.subtitle">
+            </div>
+            <div class="project-icon" *ngIf="project.isHighlight && !project.logo">🦀</div>
+            <div class="project-info">
+              <h3 class="project-title">{{project.title}}</h3>
+              <p class="project-subtitle">{{project.subtitle}}</p>
+            </div>
           </div>
-          <div class="project-icon" *ngIf="project.isHighlight && !project.logo">🦀</div>
-          <div class="project-info">
-            <h3 class="project-title">{{project.title}}</h3>
-            <p class="project-subtitle">{{project.subtitle}}</p>
+          
+          <div class="project-description">
+            <div class="description-item">
+              <span class="desc-icon">▸</span>
+              <p>{{project.description[0]}}</p>
+            </div>
           </div>
-        </div>
-        
-        <div class="project-description">
-          <div class="description-item">
-            <span class="desc-icon">▸</span>
-            <p>{{project.description[0]}}</p>
+          
+          <div class="project-tech">
+            <span class="tech-tag" *ngFor="let tech of project.technologies.slice(0, 4)">{{tech}}</span>
+            <span class="tech-more" *ngIf="project.technologies.length > 4">+{{project.technologies.length - 4}}</span>
           </div>
-        </div>
-        
-        <div class="project-tech">
-          <span class="tech-tag" *ngFor="let tech of project.technologies.slice(0, 4)">{{tech}}</span>
-          <span class="tech-more" *ngIf="project.technologies.length > 4">+{{project.technologies.length - 4}}</span>
-        </div>
-        
-        <div class="project-footer">
-          <span class="project-period">{{project.period}}</span>
-          <span class="project-action">View Details →</span>
+          
+          <div class="project-footer">
+            <span class="project-period">{{project.period}}</span>
+            <span class="project-action">View Details →</span>
+          </div>
         </div>
       </div>
     </div>

@@ -262,9 +262,16 @@
   background: #1e1e1e;
   color: #d4d4d4;
   text-align: left;
+  overflow-x: auto;
 }
 
 .code-line {
+  white-space: pre;
+
+  .comment {
+    color: #6a9955;
+  }
+
   .keyword {
     color: #c586c0;
   }

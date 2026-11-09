@@ -32,19 +32,22 @@ export class EducationComponent {
       institution: 'North Carolina State University',
       location: 'Raleigh, NC',
       period: 'August 2025 - May 2027',
-      gpa: '4.11/4.0',
+      gpa: '3.89/4.0',
       logo: 'assets/ncstate-logo.svg',
       isCurrent: true,
       courses: {
         completed: [
           { name: 'Design and Analysis of Algorithms', grade: 'A' },
           { name: 'Software Engineering', grade: 'A' },
-          { name: 'Database Management Systems', grade: 'A+' }
+          { name: 'Database Management Systems', grade: 'A+' },
+          { name: 'Automated Learning and Data Analysis', grade: 'A' },
+          { name: 'Foundations of Data Science', grade: 'B+' },
+          { name: 'IoT Analytics', grade: 'A-' }
         ],
         upcoming: [
-          'IoT Analytics',
-          'Foundations of Data Science',
-          'Automated Learning and Data Analysis'
+          'Deep Learning Beyond Accuracy',
+          'Efficient Techniques of Advanced Deep Learning',
+          'Quantum Computing'
         ]
       }
     },

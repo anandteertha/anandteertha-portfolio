@@ -2,26 +2,23 @@
   <div class="container">
     <div class="section-header" appScrollAnimation>
       <span class="section-badge">About Me</span>
-      <h2 class="section-title">Ready to Build Something Amazing?</h2>
+      <h2 class="section-title">From Production Software to ML Systems</h2>
       <p class="section-description">
-        I enjoy building systems-focused software across Rust, C++, and full-stack web development. Lately that has
-        meant shipping focused learning-in-public Rust projects, exploring Linux networking systems, and continuing
-        to grow as an engineer while pursuing my MS in Computer Science at NC State.
+        I work where models meet hardware: making inference faster, cheaper, and deployable. I'm pursuing my MS in
+        Computer Science at NC State, with coursework in efficient deep learning and research on KV-cache compression.
       </p>
     </div>
 
     <div class="about-content">
       <div class="about-cards">
         <div class="about-card" appScrollAnimation>
-          <div class="card-icon">🤝</div>
+          <div class="card-icon">⚡</div>
           <div class="card-content">
-            <h3>Building in Public</h3>
+            <h3>Inference &amp; Deployment</h3>
             <p>
-              With <strong>3+ years</strong> of experience building production applications, I bring expertise in
-              <strong>Angular</strong>, <strong>Python</strong>, <strong>TypeScript</strong>, and <strong>.NET</strong>.
-              My latest work includes the completed <strong>rust-basics</strong> repo, the ongoing
-              <strong>rust-intermediate</strong> track, <strong>RouteLab</strong> for Linux userspace routing, and
-              active systems-oriented work in <strong>Rust</strong> and <strong>C++</strong>.
+              At <strong>Qualcomm</strong> I helped automate the adaptation of transformer models for edge deployment.
+              At NC State I work on <strong>KV-cache compression</strong> research and custom <strong>CUDA</strong> kernels.
+              More in the projects below.
             </p>
           </div>
         </div>
@@ -31,10 +28,10 @@
           <div class="card-content">
             <h3>What I Bring</h3>
             <p>
-              Experience building complex applications with <strong>Angular</strong> and <strong>Three.js</strong>,
-              robust <strong>FastAPI</strong> backends, microservices, and CI/CD pipelines. Strong foundation in
-              full-stack development with a growing passion for <strong>Rust</strong> and systems programming.
-              I like projects that make architecture, performance, and correctness visible through thoughtful design.
+              The ability to take a model from research code to a <strong>measured, deployable</strong> system.
+              <strong>4+ years</strong> of shipping production software (nearly three full-time at <strong>Raychem</strong>),
+              plus <strong>PyTorch</strong>, <strong>C++</strong>, and <strong>Rust</strong> for the performance-critical parts.
+              Correctness first, benchmarks second, limitations stated.
             </p>
           </div>
         </div>
@@ -44,9 +41,9 @@
           <div class="card-content">
             <h3>What I'm Focused On</h3>
             <p>
-              Currently working part-time at <strong>Khayrallah Center</strong> (NC State) while pursuing my MS in CS.
-              I'm especially interested in <strong>systems programming</strong>, <strong>developer tooling</strong>,
-              and full-stack products with strong technical foundations. If you're building in that space, I'd love to connect.
+              <strong>Inference optimization</strong>, <strong>model deployment</strong>, and <strong>GPU performance
+              engineering</strong>: batching, memory movement, KV caches, and kernels. Currently part-time at the
+              <strong>Khayrallah Center</strong> (NC State). If you're building in this space, I'd love to connect.
             </p>
           </div>
         </div>
@@ -60,7 +57,7 @@
                  *ngFor="let skill of category.skills"
                  [class.rust-skill]="skill === 'Rust'"
                  [title]="getSkillName(skill)">
-              <div class="skill-logo-container">
+              <div class="skill-logo-container" *ngIf="getSkillLogo(skill)">
                 <img [src]="getSkillLogo(skill)" [alt]="skill + ' programming language or technology logo'" class="skill-logo">
               </div>
               <span class="skill-name">{{skill}}</span>

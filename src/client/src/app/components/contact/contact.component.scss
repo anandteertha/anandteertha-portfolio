@@ -73,61 +73,13 @@
 }
 
 .contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  margin-bottom: 6rem;
-  align-items: start;
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
-
-.info-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  padding: 3rem;
-  transition: all 0.3s ease;
-  opacity: 0;
-  transform: translateY(30px);
-
-  &.animate-in {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  &:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.15);
-  }
-}
-
-.info-icon {
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
-}
-
-.info-card h3 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
-
-.info-card p {
-  font-size: 1.6rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
+  max-width: 80rem;
+  margin: 0 auto 6rem;
 }
 
 .social-links {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
@@ -222,9 +174,8 @@
 }
 
 @media (max-width: 1024px) {
-  .contact-content {
+  .social-links {
     grid-template-columns: 1fr;
-    gap: 4rem;
   }
 }
 
@@ -239,10 +190,6 @@
 
   .section-description {
     font-size: 1.6rem;
-  }
-
-  .info-card {
-    padding: 2rem;
   }
 
   .social-link {

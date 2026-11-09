@@ -43,7 +43,10 @@ export class AboutComponent {
     'Cypress': 'assets/cypress-logo.svg',
     'CLI Development': 'assets/cli-logo.svg',
     'Clap': 'assets/clap-logo.svg',
-    'TOML': 'assets/toml-logo.svg'
+    'TOML': 'assets/toml-logo.svg',
+    'PyTorch': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
+    'Linux': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg',
+    'CMake': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cmake/cmake-original.svg'
   };
 
   skillDescriptions: { [key: string]: string } = {
@@ -80,33 +83,36 @@ export class AboutComponent {
     'Cypress': 'End-to-end testing framework for web applications. Runs in the browser for reliable, fast, and debuggable tests.',
     'CLI Development': 'Command Line Interface development - creating tools and utilities that run in terminal environments for automation and productivity.',
     'Clap': 'Rust library for building command-line argument parsers. Provides ergonomic API with automatic help generation and validation.',
-    'TOML': 'Tom\'s Obvious Minimal Language - a configuration file format that\'s easy to read and write. Used for project configuration files.'
+    'TOML': 'Tom\'s Obvious Minimal Language - a configuration file format that\'s easy to read and write. Used for project configuration files.',
+    'PyTorch': 'Deep learning framework I use for model work and benchmarks: KV-cache compression research, CUDA stream overlap experiments, and batching measurements.',
+    'CUDA': 'NVIDIA\'s GPU programming platform. I use CUDA streams, events, and graphs in PyTorch experiments and am writing custom kernels in my inference lab.',
+    'ONNX': 'Open model format I used to export DistilBERT and build fixed-length specialized variants for CPU inference.',
+    'ONNX Runtime': 'Inference engine for ONNX models, used to measure latency percentiles and memory for length-specialized variants.',
+    'Hugging Face': 'Transformers ecosystem I use for loading, adapting, and evaluating LLMs in research and model-deployment work.',
+    'vLLM': 'High-throughput LLM serving engine with continuous batching and prefix caching, used in a team hackathon project to serve concurrent agents on a single H100.',
+    'ASan/UBSan': 'Compiler sanitizers for catching memory errors and undefined behavior in C++, run on RouteLab.',
+    'KV Cache': 'Attention key/value cache that dominates LLM decode memory. My research studies low-rank compression and rank allocation under a fixed byte budget.',
+    'Benchmarking': 'Measurement discipline: warm-up, calibrated loops, repeated trials, percentiles, and correctness checks before any performance claim.',
+    'Linux': 'Operating system for my systems work, including TUN devices and network namespaces in RouteLab.',
+    'CMake': 'Build system for C++ projects such as RouteLab, alongside CTest and sanitizer builds.'
   };
 
   skillCategories = [
     {
+      title: 'ML Systems & Inference',
+      skills: ['PyTorch', 'CUDA', 'ONNX', 'ONNX Runtime', 'Hugging Face', 'vLLM', 'KV Cache', 'Benchmarking']
+    },
+    {
       title: 'Languages',
-      skills: ['Python', 'TypeScript', 'JavaScript', 'Rust', 'Java', 'C#', 'C++', 'C', 'SQL']
+      skills: ['C++', 'Python', 'Rust', 'TypeScript', 'C#', 'SQL']
     },
     {
-      title: 'Frontend',
-      skills: ['Angular', 'React', 'HTML', 'CSS', 'Three.js']
+      title: 'Systems & Tooling',
+      skills: ['Linux', 'CMake', 'ASan/UBSan', 'Git', 'Docker', 'pytest', 'GitHub Actions']
     },
     {
-      title: 'Backend',
-      skills: ['FastAPI', 'Node.js', '.NET', 'REST APIs', 'GraphQL']
-    },
-    {
-      title: 'DevOps',
-      skills: ['AWS', 'GCP', 'Terraform', 'GitHub Actions', 'CI/CD', 'Kubernetes', 'Docker']
-    },
-    {
-      title: 'Tools & Testing',
-      skills: ['Git', 'pytest', 'Jest', 'Locust', 'Cypress']
-    },
-    {
-      title: 'Systems Programming',
-      skills: ['Rust', 'CLI Development', 'Clap', 'TOML']
+      title: 'Web & Cloud',
+      skills: ['Angular', 'React', 'FastAPI', '.NET', 'Three.js', 'AWS']
     }
   ];
 
